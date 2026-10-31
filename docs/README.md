@@ -31,6 +31,8 @@ Ver [workshops/README.md](workshops/README.md): 6 sesiones con puntos clave, tra
 
 Herramienta de trabajo: **[BITACORA.md](BITACORA.md)**, la bitácora del incidente que llenaremos durante el reto.
 
+Material externo: **[referencias/](referencias/README.md)**, índice de repos, labs y docs de Azure, KQL, Terraform y Dynatrace para consultar durante el reto.
+
 ## Lo esencial en 30 segundos
 
 1. **Framework de 6 pasos:** Detectar → Observar → Analizar → Hipótesis → Corregir → Validar. Si la validación falla, volver a **Observar**.
