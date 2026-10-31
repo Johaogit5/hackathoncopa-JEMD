@@ -5,7 +5,10 @@ Repositorio del equipo (4 integrantes) para la Hackathon COPA 2026. Tracks: Micr
 ## Antes de trabajar en el reto
 
 1. Leer `docs/README.md` y, sobre todo, `docs/contexto/02-charla2-operacion-bajo-presion.md`: describe el tipo de fallas que plantea el reto (API 500, variable de entorno, URL mal configurada, error de integración, CORS, errores en cascada en `/health` → `/health/deep` → `/api/status`).
-2. Para conceptos: `docs/contexto/01-capsulas-informativas-microsoft.md`. Para Dynatrace/DQL: `docs/contexto/03-*.md` y `docs/contexto/04-*.md`.
+2. Guías destiladas: `docs/guias/reto-azure.md`, `docs/guias/reto-dynatrace.md` y `docs/guias/reglas-y-logistica.md`.
+3. Detalle: `docs/workshops/` (transcripciones W2–W6 con puntos clave; en `subtitulos/` están los subtítulos para buscar con grep) y `docs/contexto/` (PDFs oficiales convertidos).
+
+**Importante:** según W6, durante la competencia no se permite IA generativa externa. Claude sirve para preparar y estudiar, no para resolver el reto en vivo, salvo que la organización indique otra cosa.
 
 ## Cómo trabajar
 

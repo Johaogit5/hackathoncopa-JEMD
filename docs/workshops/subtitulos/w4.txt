@@ -1,0 +1,295 @@
+Bobs y observabilidad. Como lo mencioné, este es el cuarto workshop que se está ya eh celebrando, que ya llevamos tres workshops que hemos hecho en semanas anteriores. Eh, todos estos workshop los 
+podrán ver en la página web eh o bueno, en el canal de YouTube eh de el jacatón Jacaton CM. eh estos enlaces, el enlace se les será compartido en el chat para que lo puedan eh revisar. también 
+eh se les estará compartiendo eh información algunos enlaces extras de lo que son las redes sociales oficiales de el evento, así como un enlace de asistencia para que puedan registrarse eh para 
+que puedan registrar su participación en este evento. Muy bien. para también comentarles que eh todos los workshop van a ser subidos a nuestro canal de YouTube. Este va a estar disponible la 
+próxima semana eh para que puedan verlo. El workshop de la semana pasada fue un poco más práctico. fue un taller guiado, así que si no han tenido la oportunidad de verlo o no pudieron seguir el 
+taller de el workshop pasado, pueden ver entonces la grabación para que puedan ponerse al día y eh desarrollar lo que es el eh desarrollar lo que es el taller. Mi nombre es Luis Martínez, los 
+estaré acompañando como el host noche para este evento. Nos acompañan también Evely Ceballos, Daniel Vacas como parte de los compañeros de Business IT. [resoplido] También tenemos al señor 
+Hugo Aquino, que forma parte de la organización eh del comité organizacional del evento. Eh, y pues adelante, Evelin. Muchas gracias, Luis. Bienvenidos nuevamente a esta esta versión de Hakatón, 
+pues eh queremos presentarle a Daniel Vacas como el instructor del día de hoy. Esperamos que todos estos conocimientos que son impartidos por Daniel, pues sean de provecho para ustedes y eh pues 
+permitan mejorar todos los conocimientos que actualmente tienen. Le doy paso a Daniel Vacas. Muchas gracias. de muy buenas noches con todos, bienvenidos nuevamente. Okay, vamos a continuar con un 
+poco del contenido que visualizamos en clases anteriores y vamos a dar prioridad ahora a ciertos puntos interesantes que es cuando todo falla. ¿Qué pasa cuando todo falla? ¿Qué es lo que ocurre? 
+Vamos a iniciar. Ya, permítan un segundito, les comparto la pantalla para que puedan visualizar todo el contenido. ¿Okay? En vista de el objetivo del día de hoy es observabilidad, application lo 
+logs y KQLs. Daniel, pues nos hablaste en chino. ¿Qué es eso? Vamos a ver uno a uno, poco a poco. Vamos primero con el enfoque principal. Application Inside es básicamente un apartado exclusivo de 
+Asure, es un subelemento de Asure Monitor, el cual les va a dar una facilidad de dar seguimiento a cada uno de sus recursos y de esta forma poder dar seguimiento punto a punto, no solamente de locks, 
+sino también de eventos y también tener métricas mucho más definidas del comportamiento de cada uno de los recursos. También tenemos un tablerito en ASO. Sí, también podemos gestionar 
+apartados visuales por parte de Asure Monitor y podemos observar toda la trazabilidad, ojo, la traza trazabilidad de un error o un evento. De la misma forma podemos observar las excepciones, que son 
+los errores no controlados directamente, pero podemos observarlos en código directamente en assure momento. Ahora, las métricas, algo importante, todo lo que es anomalías, tendencias, la 
+analítica del comportamiento del mismo recurso, también lo podemos observar directamente desde Asure Monitor. Claro, estas métricas tienen facilidad directamente en cada uno de los recursos en 
+Asure. Y por último, pero no menos importante, lo más esencial vendría a ser loss estructurados. Loss básicamente vienen a ser los eventos con cada detalle de lo ocurrido en esa acción, 
+básicamente como un screenshot de lo que ocurre. Claro, estos seis elementos deberían estar alineados y enfocados para buscar una solución en el desarrollo de un programa, proyecto o incluso un 
+APOC. ¿Sí? Ahora, claro, al momento que relacionamos Asure Monitor, empezamos a hablar y abarcar todos estos conceptos básicos. application insight, Asure, eh Azure Dashwork, lo que vienen a ser 
+las trazas, las excepciones, las métricas y cómo no, los clops. Antes de avanzar un poquito en ello, vamos a considerar que hay dos focos principales en Asure, los cuales vamos a no vamos a 
+profundizar, pero sí vamos a considerarlos como los pilares principales. En este punto hablamos de Asure Monitor, como le había mencionado hace un momento atrás y también Sentinel o Defender. En 
+Asure Sentinel o Defender nosotros tenemos los focos principales sobre el comportamiento de cada log, una entidad o el comportamiento como no, de todo el Tenan completo. siempre y cuando existe esa 
+información, ¿dónde guardamos esa información? Cada evento, cada logure lo organiza a través de un espacio de trabajo. Estos espacios de trabajo son los analyticace. Locks Analytic Wordpace son 
+los ambientes en donde nosotros podemos organizar y clasificar ese tipo de logs de una forma adecuada, puntual y cómo no distribuida mediante tablas. Hay algunas tablitas las cuales vamos a hacer 
+mención el día de hoy y claro, mucho cuidado, no es que vamos a tener un histórico de todo un año, vamos a tener un aproximado de 60 días de eh retenividad sobre la información que vamos 
+obteniendo en estos logs. Ojo, tener mucho cuidado. Sí, claro. El otro punto es Asure Monitor. en Asure Monitor es cómo gestionamos, cómo administramos el aplicativo, cómo lo visualizamos y por 
+qué es importante monitor, aparte de tener muchos hijos que le permiten dar seguimiento a un aplicativo, entre ellos hemos escogido dos, application insight y métricas. Las métricas, como les 
+había mencionado hace un momento atrás, es el comportamiento de cómo trabaja y en relación de tiempo tiene acción un recurso. Por lo tanto, lo vamos a ver en un tablerito, ya lo vamos a ver en 
+un momento. Otro de los hijos que vienen a ser difundidos mediante Asure Monitor es Application Insite. aplication Inside viene de la manito con una tecnología open source llamada Open Telemetry. 
+Open telemetry es una característica, como acabo de mencionar, open source, la cual les ha permitido gestionar y tener una traza mucho más gestionable y viable de las métricas y eventos de un 
+aplicativo, pero es open source y que tiene que ver con las métricas en Asure. Podremos gestionarlo de forma independiente. Sí, de hecho, Open Telemetry es la base de application Insite. Pero, 
+¿qué beneficio tenemos? En application Insite, nosotros podemos poner Open Telemetry de forma e instantánea al momento que nosotros creamos el recurso. No tenemos que aplicar código, es fácil de 
+administrar, pocas configuraciones y alta disponibilidad. Cuando nosotros tenemos recursos en otras ubicaciones, en otras regiones o incluso en otras suscripciones, esto no le importa aso siguen 
+usando application insight. Pero hagamos una observación, ¿qué pasa si es que este aplicativo está en otra nube? O ¿quién quita si es que es un aplicativo huérfano existente solamente a nivel 
+local? ¿O por qué no? Solamente es un aplicativo de demostración, una POC. ¿Cómo podríamos gestionarlo? ¿Cómo lo integramos? Si queremos visualizar y tener métricas más profundas sobre este 
+aplicativo, es donde entra y interactúa Open Telemetry. ¿Sí? Okay, ahora que hemos visto un poquito más a fondo ciertas características de los dos pilares principales, vamos a ir profundizando 
+poco a poco sobre unos temas que vienen a ser principalmente la observabilidad. La observabilidad va a estar levantado mediante tres pilares. La observabilidad es el punto de partida para 
+diagnosticar un sistema o producto. Estos tres pilares vienen a considerarse los logs, las métricas y la traza. Los logs nos van a decir qué pasó exactamente, qué es lo que ocurre. las métricas 
+en su contraparte, cómo se comporta en el tiempo y la traza, por dónde pasó la solución. Aquí ya empezamos a observar tres contextos, los cuales tienen por debajo muchas soluciones, pero a nivel 
+global la traza, a nivel de código, por ejemplo, lo conocemos o hemos escuchado como el start trace, ¿no? Con eso podemos visualizar por dónde y cuál es la cascada de operación en el código y 
+podemos podemos dar en dónde está cayendo un error o por donde está pasando el código. Las métricas, ¿qué beneficio nos brindan? Al ser en tiempo real, las métricas nos brindan un punto 
+visible del comportamiento y a su vez poder hacer una analítica posterior. ¿Por qué no? Visualizar a futuro. ¿Qué quiere decir esto? Por ejemplo, si nosotros tenemos un proyecto y empezamos a 
+visualizar las métricas, supongamos que estamos en un ambiente adecuado. ¿Qué es lo que ocurre si es que nuestro aplicativo va a crecer? ¿Se ha visualizado ese punto de crecimiento? Okay, si es 
+que lo hemos hecho, entonces también hemos considerado como va a crecer a nivel de consultas la sobrecarga. ¿Cuánto va a tolerar nuestro aplicativo? poco, mucho, altas demandas. Imagínense que 
+tienen un aplicativo que es un banco. Opera muy bien en épocas tradicionales, pero seguirá funcionando en épocas navideñas, seguirá siendo la misma demanda, ¿a? ¿Disminuirá? ¿Será que su 
+aplicativo tolera esa presión? se han puesto a preguntar cómo tolera ese aplicativo, en qué punto se quiebra. Es como un diamante. En bajas presiones funciona bien, pero en un pequeño golpe 
+podría explotar. Las métricas y un análisis desde qua nos va a poder dar una visualización de cómo cumplir ciertos umbrales y poder incluso tener autoescalamientos. ya sea vertical u horizontal, 
+dependiendo la demanda. E incluso, ¿por qué no? Si es que tenemos una cobertura mucho más amplia, considerar un application gateway o un front door, dependiendo de lo del enfoque de la solución, 
+¿no? Y por último, pero no menos necesario, como prioritario, tenemos los logs. ¿Qué pasó exactamente cuando ocurre un problema en producción? ¿Cómo podemos visualizar qué está ocurriendo? 
+¿Qué es lo que está pasando exactamente ahora? ¿Hubo algún problema? ¿Dónde pasó? ¿Cuándo pasó? ¿Qué impacto tuvo? ¿Por dónde ocurrió? ¿Y cuáles son los sectores afectados? Vuelvo 
+repito, imagínense que son un banco y solamente por un lock pudieron determinar que una transacción se duplicó y fue una transferencia de millones de dólares. Una y se duplicó. ¿Quién 
+respondería a ese problema? Esto es una de las soluciones principales cuando queremos observar, ojo, observar el comportamiento del aplicativo, cómo está trabajando, qué pasó exactamente, a qué 
+hora y por dónde. La unión de los logs y las atrasas son la mejor unión que van a poder tener para un desarrollo productivo. Obviamente pasando por las etapas de desarrollo y CUA correspondientes, 
+¿no? Las métricas obviamente les van a dar su comportamiento y tolerancia en visualización de los umbrales que hayan considerado. Si no se considerado, pues podríamos atendernos a unas 
+consecuencias bastante fuertes. Ahora vamos a pasar a otro punto interesante. Vamos a comparar entre la observabilidad, pasar observando y monitorear lo que está ocurriendo. ¿Qué diferencia 
+podría existir? La observabilidad viene a ser cómo responde la lo que responde, mejor dicho, la pregunta que nos antepas eh a la que cual queremos visualizar toda el contenido de la telemetría, 
+pero el monitoreo responde a las preguntas que sabíamos que necesitábamos hacer antes. Por ejemplo, en el monitoreo está caído el servicio, pues coincide conocidas eh de antemano, coincidencias 
+conocidas de antemano, se tienen un dashboard de alertas predefinidas. Esto necesitamos contenerlo, visualizarlo, abstraerlo o a nivel de observabilidad, porque este usuario vio un error 500. ¿Qué 
+fue lo que ocurrió? La observabilidad es entre el proceso de error y posterior y el monitoreo es previo hasta el error. Es una pequeña brecha de donde nosotros podemos observar y monitorear. 
+previamente monitoreamos, posteriormente observamos cuál sería el tercer proceso, mitigar. ¿Listo? Ahora, ya que hemos considerado ciertos conceptos, vamos a ver lo que son logs, métricas y las 
+trazas. Ya lo expliqué un poquito hace un momento, pero ¿cuándo usar cada señal? Las métricas dice que algo está mal. Latencia promedio, tasa de error, uso de CPU en un tiempo pasado de un 
+umbral, menor a un umbral. Las trazas dice, ¿dónde está el problema? Recorrió completo una solicitud a través de ciertas clases. Obtuvo o pasó por ciertos objetos. o incluso los logs te dicen 
+por qué ocurrió. Registros directos del contenido enriquecido del evento. La traza es un punto importante que va de la mano de loss, como habíamos mencionado, pero no son aislados. Podemos 
+analizarlos de forma independiente, pero su unión puede potencializar el análisis de la solución. Ahora, y observando lo comentado anteriormente, application insight viene a ser una solución hija 
+de Azure Mon. La aplicación de consulta serían los siguientes flujos. tenemos una aplicación con su SDK, instalamos o aplicamos eh Insite dentro del mismo. Estos capturarían locks, los cuales 
+vendrían a almacenarse dentro de un log analyticpace. Y a su vez estos locks para hacer una observabilidad y mitigación del mismo en algún problema, lo podemos clasificar, consultar y, ¿por qué 
+no? Crear incluso hasta dashboards de KQLs. KQL es otro tipo de consultas. Sí, otra sintaxis, sintaxis muy similar a SQL, pero con ciertas variaciones. Sí, igual ya lo vamos a visualizar un poquito 
+más adelante. Mientras tanto, imaginemos ahorita que nos quedamos en los Logs Analytic Wordspace. Dentro del Lock Analytic Wordspace, les había mencionado que tenemos algo particular, una cierta 
+característica que nos va a dar la opción de clasificar y sin necesidad de nosotros realizar configuraciones extras, nosotros podemos consultar, visualizar toda la información organizada y 
+distribuida, por lo cual muchos con mucha información va a estar dividida por tablitas. Hay algunas tablitas que vamos a poder observar un poquito más adelante. Les voy a hacer una pequeña 
+explicación a nivel de código. Sin embargo, los conceptos clave que vamos a considerar dentro del portal es primero application map. Map viene a ser un mapa visual de dependencias entre los 
+servicios. Básicamente cuando nosotros tenemos un proyecto, [carraspeo] instalamos dependencias y estas tienen una relación. ¿Cómo se relacionan? Pues en este punto nosotros podemos hacer un 
+mapping sobre estas dependencias dentro del proyecto. Igual tenemos Lif Matrix, que es la telemetría en tiempo real de lo que les había mencionado. Posterior a ello, el performance, la latencia de 
+la operatividad o los cuellos de botella que podemos analizarlos mediante las métricas. Transition Search busca eh puntualmente las solicitudes específicas que se han llegado, mejor dicho, que han 
+llegado en la colora de solicitudes dentro de un servicio. También tenemos eh los filture, que son una vista consolidada de request, excepciones y dependencias de error. justamente estas tres no las 
+olvidemos porque son estas las tablitas las cual vamos a tener un enfoque en el ejemplo que vamos a visualizar en unos momentitos. Y por último, toda esta información recae a través de los logs, 
+los cuales los consultaríamos mediante KQLs que nos va a dar información telemétrica y de los eventos del eh proyecto o la solución. Regresando a este punto de las tablitas, obviamente incluso 
+podríamos ver dependencias, las consultas, las excepciones y cada una de ellas, obviamente va a tener información bastante profunda para poder analizar, observar y mitigar. En realidad son cuatro 
+piezas las que son los request, los exception, dependencias y los failures. Sí. Las cuatro tablitas, bueno, son en realidad tres. La cuarta es un concepto visual. Primero, los request vienen a ser 
+cada solicitud HTTP recibirá mediante un point un código que dé un resultado o duración de una excepción o file. Las excepciones son errores no controlados durante una ejecución, tipo mensaje, 
+un start trace, justamente como les mencioné. Del otro lado serían las dependencias, llamadas salientes hacia otros sistemas. por ejemplo, una consulta o una conexión a una base de datos, otra 
+consulta externa o una API colindante o un servicio de colas. Son dependencias que se utilizan dentro de un proyecto para que pueda consolidarse como uno. Por último, pero no menos importante, las 
+vistas. Dentro de de este apartado se eh correlacionan las consultas, las excepciones, los las dependencias y los errores en un solo lugar. ¿Cómo podemos visualizar esto a groso modo? Vamos a ver 
+un poquito dentro de la anatomía de una transacción fallida. Obviamente el request falla, ¿no? Hubo una excepción. El origen fue una dependencia caída o lenta. Okay. El diagnóstico, ¿qué? 
+¿Dónde y por qué? En la parte de abajo tenemos un pequeño ejemplo, ¿no? Hacemos un request sfw y en este caso está haciendo una comparación, si es que fue eh fallida con un false. Pasamos a 
+una excepción asociada. Caso eh dependiente viene a la dependencia. ¿Falló o no? Okay. Ahora, toda esta información puede ser beneficiosa, pero si la tenemos almacenada de alguna forma 
+tendríamos que consultarla y tendríamos que ingresar a cada uno de esos logs para observar que ocurrió. Sí, todo eso está almacenado incluso por tiempos. La introducción a KQL es un lenguaje de 
+consulta sobre la información de la telemetría. para consultar todo lo que viene a ser la evidencia de lo ocurrido. KQL tiene una sintaxis, como les mencionaba, sumamente parecida a SQL y tiene 
+algunas consultas o sintaxis que les va a facilitar de una manera bastante elegante algunas peticiones como el W. Simplemente el de SQL les ayuda a filtrar eh filas según la condición, pues tal 
+cual, nada del otro mundo. Un sumariz es un agregador de todos, puede ser con un count, un average o un zoom en las columnas o mejor dicho por columna. El order by es la forma de ordenar los 
+resultados. Tenemos el project, que viene a ser la selección o renombrar una columna según nosotros vayamos a definirla. Y por último, pero muy importante, es el bin. Este agrupa marcas de tiempo 
+en intervalos. Esta es una de las grandes eh opciones que se utiliza dentro de KQL, ya que muchas consultas o errores en la telemetría viene a considerarse en base a tiempo. Ustedes cuando les 
+informan un error es muy importante consultar, ¿sabe qué? Hay un error, se cayó el sistema. Ah, ¿desde qué hora empezó? Esto es muy importante preguntar. desde qué hora empezó, cuándo 
+ocurrió. Siempre preguntamos tiempos y en el bin lo que nos va a ayudar es visualizar esos intervalos. Nosotros podríamos capturar toda esa información en esos esos rangos de tiempo para poder 
+consultar. Vamos a ver un pequeño ejemplito en el cual justamente tenemos una consulta, la tabla request y en este caso aplicamos un we un tab. y estamos viendo que sea mayor a una hora atrás. Otro 
+we aplicando si es que ha sido exitosa eh la consulta o es fallida en este caso si es igual a false. Dentro del sumarize en fallos sí vamos a hacer un count por los resultando el time stamp hasta 5 
+minutos. Obviamente después de ello volvemos a aplicar un order by mediante el stand time en descenso. Sumamente eh fácil de comparar como si fuera una consulta SQL. Vamos a una segunda consulta, 
+un segundo ejemplo, la de excepciones. Tenemos un we de la misma forma con el tiempo, pero ahora de 24 horas. Ahora un sumarize en la eh columna de total. Estrayendo por tipo y el order message. 
+Tenemos también el el order nuevamente en descenso, pero algo particular. Aquí estamos tomando el take. Take es algo parecido a gestionar un top o un limit dependiendo la sintaxis en la base de 
+datos que lo reconozca. Básicamente aquí estamos pidiéndole que nos traiga los 10 elementos de esta consulta. Vamos a hacer una pequeña demo, ¿sí? Entre la cual vamos a ver la exploración del 
+aplicativo, vamos a observar el contexto de cómo se levantaría este proceso. Obviamente para visualizar todo este contexto necesitamos errores, fallas y las vamos a provocar. Obviamente a nivel de 
+código no vamos a provocar esas fallas voluntariamente para poder obtener este contenido. Obviamente para hacerlo más fácil vamos a usar un asure function, el cual va a estar trabajando con un 
+timer para generar constantemente eh este tipo de errores que queremos capturar. Y obviamente vamos a consultar unas dos tres tablitas para que observen cómo sería la visualización del contenido. 
+Permítame un segundo y vamos a pasarnos para acá. Okay. Este es un asure function. Eh, básicamente es un trigger cuyo único propósito, ojo, es generar el fallo de forma controlada y repetida. 
+Obviamente en esta sesión recordemos que nuestro objetivo principal es considerar la observabilidad, considerar el uso de application insight, logs, métricas y consultas KQL. En todo este código 
+vamos a ver que se ejecuta cada 2 minutos todo esta eh todo este asure function y obvio, por debajo tenemos cuatro funciones más, las cuales van a igual mantener este ciclo periódico de de cada 2 
+minutos. Esto va a pasar que haciendo una consulta durante todo el día hasta que lo detengamos o eliminemos la función. Por favor, tener mucho cuidado con este tipo de ejemplos. Obvio, eh para las 
+personas que ven aure Function por primera vez, esta es una eh sintaxis o eh consulta Chron con la que se está trabajando. Entonces con esto le determinamos que trabaje de forma cíclica cada 2 
+minutos. Ya. Ahora vamos a ver. Tenemos eh la simul simulación de fallo en las dependencias. Como habíamos mencionado, viene a ser una consulta hacia una base de datos, ojo, ficticia, la cual va a 
+generar un fallo, ¿no? Obviamente lo estamos haciendo eh de forma controlada. Luego tenemos el dependencias mediante HTTPs, que igual eh simula una dependencia HTTP real llamando un endpoint 
+público que responde a un código de estado solicitado. ¿Sí? Y por último, pero no menos importante, [resoplido] tenemos eh las excepciones. Este registra con una eh probabilidad, ojo, eh 
+superior al 0.4, 4, que vendría a ser eh superior al 60% para poder obtener este tipo de errores. Obviamente todos este tipo de excepciones que estamos capturando nos estaría mostrando dentro del 
+contenido de las tablitas en un log analyticpace. ¿Sí? Ahora, como habíamos hecho en clases anteriores, nosotros podemos hacer una publicación del proyecto directamente eh haciendo la 
+publicación desde aquí. Antes de ello, necesitaríamos crear nuestros recursos. Entonces, vamos a saltar, vamos a pasar a ello primero antes de hacerlo aquí para que lo consideren dentro eh de un 
+concepto más amplio. ¿Podemos hacerlo desde aquí, Daniel? Sí, podemos hacerlo desde aquí. Podríamos crear los recursos sin ningún inconveniente, pero hay temas importantes que quiero que lo 
+consideremos. Permítanme. Les comparto la pantalla por acá. Y bueno, obviamente vamos a iniciar. sesión en nuestro portal. Vamos a redireccionarnos a nuestro grupo de recursos prioritario, donde 
+vamos a levantar nuestro ambiente. Ahora, como habíamos mencionado, nosotros levantamos un function, entonces sin nada más que hablar, pues podríamos buscar function. Esto va a depender igual como 
+estén qué configuración tengan dentro, ya sea en español o en inglés. Puede ser appunción o función appure function o función apps. No es mucha la variación, pero lo pueden considerar. Okay. 
+En este caso vamos a ver nuestro function app. Vamos a hacer una creación. Okay. Bueno, en este servicio nosotros tenemos aproximadamente cinco servicios. Igual voy a poner un poco más en contexto 
+porque Asure Function al ser un servicio serverless es netamente uno de los principales servicios más usados dentro de Ashur. Ojo, no solamente para eh pruebas, sino a nivel productivo. a generar un 
+valor bastante amplio. Dentro de estos tres contextos, obviamente vamos a considerar un coste promedio [carraspeo] dentro de los flex consumo y los planes consumo tenemos que visualizar que tenemos 
+un umbral de gratuidad a nivel de ejecuciones por tenan. Posterior a ello, obviamente posterior a ese umbral, tendríamos que pagar ya sea por ejecución o por evento. Aquí tenemos justamente cómo 
+es que trabajan la el en base al comportamiento. que tenemos es más rápido para eventos dirigidos o es rápido por evento. Aquí tenemos una escalabilidad por métricas, igual por eventos. Y acá 
+es algo interesante, ya manejamos queda, que es eh el gestor de eventos de cubernets, y esto nos va a permitir visualizar otros soluciones más elevados. Ahora, eh, ¿qué diferencia tenemos entre un 
+Function Premium y un App Service [carraspeo] en comparación con los otros que son flix consumo y consumo? Pues en los Asure Function Premium y App Service nosotros ya podremos hacer configuraciones 
+a nivel de VPNs y aislamientos de red. en los planes eh consumo, flex consumo va a ser más limitado, por no decir que no lo vamos a tener, [carraspeo] pero considerarlo en a nivel de distribuciones. 
+Ahora, obvio, si queremos hacer aparence eh conexiones entre VPNs o eh application gateways, obviamente as function no solucionaría la vida. De la misma forma un App Servicice, pero Daniel está 
+diciendo que un Assure Function Premium y un service es lo mismo. No, no. Obviamente una premium vamos a tener todo un contexto de solución para nosotros, pero en App Service es un servicio 
+completamente aislado para nosotros, todo un service plan para que nosotros podamos hacer uso y abuso de ese servicio. ¿Okay? Esto es un punto muy importante a considerar dentro de App Service. 
+Obvio. Por último, pero no menos importante, tenemos los container apps in Environments. Estos de aquí ya son ambientes levantados para poder distribuir sus paquetes de cubernets, es decir, con 
+contenedores para sus aplicaciones. Estas aplicaciones eh van a darles el beneficio de que pueden hacer mediante eh configuraciones en GMLs uso y abuso no solamente del CPU, sino también del GPU, 
+por lo cual este es bastante utilizado cuando hacen renderizaciones de eh videos, películas, incluso para aplicaciones o eh juegos. Entonces ustedes envían a renderizar ciertas características, 
+ciertas solicitudes y pueden hacer abuso del GPU directamente y obviamente uso del CPU en estos ambientes de eh container apps. Ahora, sin alargarnos más, ¿qué diferencia tenemos de un flex 
+consumo de un consumo? está bastante evidente y lo cual hace mención aquí es que en consumo solamente podemos utilizar Windows, que quiere decir que podríamos levantar Node con Python, con e 
+punto, es decir, con C#ARP cualquier proyecto, pero Daniel Enflex consumo también. Sí, correcto. Pero hay ciertas características importantes a considerar. Dentro de un entorno de Windows, la 
+sintaxis de directivos va a cambiar y algunas eh dependencias de cómo eh gestiones la pila de ejecución también tiene mucha importancia. Por ejemplo, si utilizas ciertas eh o gestionas una 
+arquitectura en Python, tienes que considerar también cómo vas a manejar las tareas, cómo vas a trabajar los hilos y no es lo mismo trabajar, por ejemplo, en Windows en Linux ese tipo de 
+funcionalidad, por lo cual tenemos que visualizar cuál es el punto más necesario para nosotros un flex consumo o un plan consumo. Obviamente flex consumo al permitirnos manejar Linux va a ser mucho 
+más eficiente hasta cierto punto hasta más rápido y económico en caso de que pasemos de ese pequeño umbral. Ahora, visto este pequeño contexto, vamos [carraspeo] a seleccionar flex consum. 
+Aquí voy a tener una pequeña limitante, pero está controlado, así que lo vamos a ver en un momento. Obviamente vamos a ver la suscripción en donde vamos a hacer el despliegue de toda la 
+solución. Luego tenemos el resource group, que en este caso es donde vamos a distribuir qué grupo de recursos vamos a levantar la solución. el nombre de un aplicativo, pues siguiendo la sintaxis 
+recomendada con un acrónimo para asure function es az eh guion opa test la región en donde yo quiera utilizarla. En mi caso voy a poner ejemplar W es Dust, pero ¿qué es lo que me dice? Esto ya 
+está siendo utilizado, no está disponible aquí en esta región. ¿Qué nos toca hacer? Cambiarnos de región. Es muy importante considerar este tipo de mensajes que nos muestra Asure en la 
+creación de los recursos, ya que al momento que pasamos hacia la revisión y creación, siempre hay un proceso de validación de todos los parámetros y campos de creación de ese recurso y 
+disponibilidad del mismo antes de eh proporcionarles accesibilidad a la creación. Ahora, Roomstack, vamos a ver, nosotros vamos a seleccionar punto net. En este caso, miren, ya nos están 
+mencionando que Punet 8 aislado va a trabajar en un modelo eh hasta el 10 del 11 del 2026. Mucho ojo con esto. También les puede generar conflictos en algunos proyectos e incluso alertas si es que 
+tienen ambientes controlados con analyticace y si es que tienen sentinelo defender, pues obviamente les va a salir este salto que bueno por comentar Sentinel y Defender próximamente se van a unir 
+como Defender. Ahora pasémonos a el más alto que tenemos eh, que es el modelo con punnet 10 LTS. Tenemos redundancia. Por el momento no es necesario almacenamiento. Obvio, necesita un una 
+ubicación de almacenamiento distribuido para poder gestionar toda la distribución del desarrollo interno del Assure Function, por lo cual es que necesita un Asure Storage account y por otros 
+temitas eh necesarios dentro de la lógica. Podemos [carraspeo] hacer eh mención con assure openi para poder hacer conexiones, eh gestionar eh vectorizaciones, porque sí, también podemos hacer 
+vectorizaciones eh mediante eventos con assure functions. Por el momento no lo vamos a ver, no lo vamos a topar. El tema de las conexiones a nivel de networking, podríamos aplicar obviamente a 
+máquina eh a un entorno virtual eh si queremos hacerlo público o no para que puedan tener acceso al HTTP para acceder a consultas o no. Eso también podemos gestionarlo. En este caso vamos a 
+dejarlo activo. Las configuraciones de las VPNs, como les había mencionado, en un flex consumo lo tenemos, pero es muy limitado. Ahora, por el momento, lo vamos a dejar deshabilitado. Ahora, uno de 
+los puntos importantes y aquí vamos a tener una pequeña traba. Bueno, en mi caso, sin embargo, como les había mencionado, está controlado. Como pueden ver, ahorita eh tenemos todo este punto de 
+monitor y ya nos muestra application inside. Aquí nos dice, "En application Insight, ¿quieres considerarlo o quieres no considerarlo?" Puedo poner no, puedo poner sí, pero ojo, application Insight 
+tiene ciertos precios. cierto mont que se debe de considerar. Ahora yo estoy creando un application insight dentro de este grupo de recursos, el cual podría utilizarlo y voy a avanzar. Durable 
+function no lo vamos a manejar, no queremos durabilidad periódica en la ejecución de cada evento. En el deployment, de la misma forma, podríamos aplicar CCD sin ningún inconveniente. Podemos usar 
+GitHub o Devops. la autentificación con credenciales internas como se requiera o según las necesiten por eh aplicaciones bebidas, es decir, por ejemplo, un storage commond, un application insight, 
+etcétera, etcétera, etcétera. Obviamente también tenemos los TAXs que deberían utilizárselo de una forma bastante prudente y considerando que es una de las buenas prácticas no solamente como 
+desarrolladores, sino como gestores de proyectos. para poder clasificar e identificar eh cómo estamos gestionando un proyecto y visualizarlo a nivel de costes también. Ahora vamos a review. Ahorita 
+se puede observar todo el contenido de cómo lo crearía. Sin embargo, yo ya me he adelantado y he levantado esta solución en otro ambiente para poder tener un poco más de información y poder 
+mostrarles cómo se vería el comportamiento. En esta parte de acá yo ya tengo en el mismo function levantado con el mismo nombre, con el mismo plan. Sí. Y extra ello tenemos ya el application 
+inside. Ahora, obvio, como les había mencionado, eh tiene un storage account por ser un flex consumo y tiene eh su app service relacionado con el Asure Font. Ahora vamos a ver aquí qué es lo 
+principal que queremos iniciar a ver. Primero tenemos nuestro function. Nosotros ya tenemos distribuido el código, es decir, ya lo publicamos para poder visualizar cada uno de esos contenidos. Y 
+ahora aquí en la parte superior tenemos propiedades y notificaciones. Aquí es donde se les llega a mostrar temas importantes del comportamiento del aplicativo. Por ejemplo, eh si escogemos un stack 
+antiguo que está por deprecarse, obviamente aquí nos va a mostrar una un mensaje notificándonos, ¿saben qué? Aquí hay un error, está de que lo actualicen. Sería bueno que mejoren el stack 
+para que eviten filtraciones, vulnerabilidades e incluso se mantengan con el stack más actual que serían los LTSs. Como propiedades, podemos ver en el name el nombre del mismo. La publicación 
+viene a ser a nivel de código, no mediante eh un contenedor, porque sí también podemos gestionarlo como contenedores, como lo vimos hace un momento atrás y el DNET que estamos manejando con la 
+versión 10. Tenemos application inside activo en esta región y con este nombre correspondiente a esta función. el dominio del storage count y eh perdón, el dominio correspondiente al function eh 
+este de aquí eh obviamente en este punto, permítanme les comparto aquí es exactamente como inició el nombre, pero posterior a ello tenemos un subdominio aleatorio que nos proporciona Asure para 
+desplegar estas soluciones. y CLAG. Posterior a ello esasureweb site.com. [carraspeo] Listo. En la parte de arriba, como pueden observar ahora y sistema operativo es Linux. ¿Por qué? Es un plan 
+flex consumo. En el plan que netamente era consumo teníamos Windows. Ojo con ello. [carraspeo] Listo. Ahora, ¿cómo vemos? ¿Cómo entramos a ver la operación que está realizando la shure 
+Function de forma cíclica? Porque ojo, lo habíamos puesto para que opere. ¿Cada qué tiempo eran? Cada 2 minutos. Vamos ver por acá. Okay, aquí lo tenemos con una funcionalidad de cada 2 
+minutos. Entonces, bueno, vamos a darle clic en el nombre. Ojo, vamos a darle clic en el nombre de la función. Podríamos tener más. Sí, podríamos tener más de una. Claro que sí. En este punto 
+tenemos en la metadata de la función. Ya. Y algo interesante, en la parte de aquí abajo nosotros ya podemos observar los logs. Aquí extra podemos visualizar los logs por varios niveles. 
+Informativo, crítico, informacional, preventivo, errores y wars. Podemos detener ese análisis de loss, podemos copiar los logs, claro que sí, borrar la consola, dejarla limpia, nítida y 
+obviamente maximizarlo en caso de que queramos observar en todo el plano cómo es el comportamiento. Listo. [carraspeo] Ahorita le di clic solamente en el apartado de logs y se me oculta. ¿Qué 
+beneficio nos brinda tener visualización completa de eh ciertos documentos que son correspondientes a la shure Future? Ahora, ya en este caso particular [resoplido] eh tenemos el del host que lo vi 
+por aquí. Aquí está. Ya, obvio, en una sh function a nivel local pueden hacer configuraciones aquí para que puedan excepcionar las 3 horas de ejecución. ¿Qué quiere decir? Que a nivel local 
+Asure Function puede operar durante 3 horas y después les va a decir, "Okay, mira, he operado 3 horas. Esto ya no es un proyecto normal." O sea, tendrías que elevar el servicio ya a un a function 
+premium. Ah, okay, no hay ningún problema. Lo tuve considerar para poder hacer una consideración aquí tendríamos que hacerlo, ojo, a nivel local, una modificación para decirle cuánto tiempo 
+promedio es lo que debería de operar. Sí, eso como dato extra. Ahora regresemos acá. Podríamos hacer previtas [carraspeo] de testeo, es decir, ejecutarle manualmente para que empiece a producir o 
+generar eh eventos. En este caso ya le di ejecutar y me está respondiendo con un estatus 200 que dijo, "Okay, empezó a operar." Y miren, ya podemos visualizar los errores que metimos a propósito, 
+obvio, durante la ejecución. Por ejemplo, aquí ya nos está dando un estatus 503. Miren, aquí tenemos un warning, perdón, [carraspeo] nos dice un HTTP demo con un fallo en excepción de la red. 
+Sí. Por aquí tenemos más información general de la telemetría y excepción de una invocación. Acá tenemos obviamente el ciclo de la telemetría con los horarios que como les mencionaba es muy 
+importante. Ahora vamos a ver en la parte de aquí arriba tenemos estas características. Integración, eh, function key, invocaciones, locks y métricas. Estos apartados de aquí no todos van a 
+estar 100% activos, a no ser que utilicemos application inside. Si nosotros no estamos aplicando o usando application insight, logi telemetría no tendríamos. de forma principal no podríamos tener 
+esa observabilidad. Vamos a ver dentro de la integración. Es básicamente un un pequeño mapa de cómo está ingresando la información, qué función está trabajando y qué tiene de regreso. Sí, 
+el input y el output y la función que está trabajando. Podríamos hacer un refresh en caso de que hagamos alguna modificación. En este caso no lo hemos hecho, simplemente lo estamos observando 
+dentro de los function key. Ahorita tenemos uno por defecto, el cual se utiliza dentro del assure eh dentro del function, perdón, y empezamos a ingresar al apartado de visibilidad de mejor dicho, de 
+observabilidad. Hasta el momento esta función ya ha tenido aproximadamente 75 invocaciones, de las cuales 20 han estado en error. Como podemos ver, aquí tenemos las los horarios, las fechas, que en 
+este caso es el día de hoy. Los horarios, como pueden ver, son variados, pero ya tenemos distintos eh errores por aquí, los cuales podríamos empezar a visualizar. nos dice también la duración y 
+obvio si es que hay algún código de error que pueda capturarse lo va a mostrar aquí. Eso va a depender de la respuesta que tenga a nivel de HTTP. Ahora, si yo le doy clic en el horario, nos va a 
+mostrar en la parte derecha todo el contenido relacionado. Ojo, relacionado. Nos dice aquí es una ejecución a nivel de telemetría del demo que vimos hace un momento atrás. Sí. Y esta tarea fue 
+cancelada, fue con un warning. tenemos el error, la duración y ya nos podría dar una eh principal eh visualización hacia por dónde podríamos iniciar. Igual tenemos aquí room query into the eh 
+application insight. nos va a redireccionar hacia el application Insite a nivel de locks. Pero antes de saltarnos a todo este proceso chiquitico, voy a duplicarlo para no perderlo. Listo. Okay. Antes 
+de pasarnos a ese punto interesante, el cual ya nos adelantamos un poco, vamos a ver algo sobre la telemetría, qué es lo que está ocurriendo, cómo está el comportamiento del aplicativo. Algunos 
+recursos ya tienen involucrado lo que vienen a visualizarse como métricas. Al momento que ingresamos a métricas, obviamente si tenemos más servicios podríamos clasificarlos. En este caso es 
+netamente el único servicio, por lo cual no se nos va a mostrar más. Y dentro de métricas tenemos algunas opciones. Porcentaje de CPUs, demanda de la función por unidad, por conteo, memoria 
+trabajando, porcentaje de memoria, trabajando, eh auto scaling, es decir, para visualizar cómo está el el escalado por instancias. eh el número de unidades de lectura, las veces que está leyendo 
+por unidad y por conteo. ¿Okay? Ahorita vamos a ver algo interesante que sería el comportamiento del CPU. Ojo, aquí tenemos por el porcentaje, vamos a ver puntos máximos y mínimos. Vamos a ver 
+los máximos. No tenemos por acá. Vamos a ver los mínimos. Poco lo tenemos por aquí. La suma de los mismos sí lo tenemos. Y vamos a ver el count, el el porcentaje. También quiero ver los count, 
+pero como podemos ver está bien sesgadito en la parte derecha, no es muy intuitivo, no es fácil de visualizar. ¿Y por qué es esto? En la parte inferior nos v podemos dar cuenta que aquí dice 
+septiembre 6 am, 12 am, 6 pm. Está raro, ¿no? Como que algo no cuadra. En la parte superior nosotros tenemos algo interesante con lo cual nosotros debemos considerar siempre en este tipo de 
+analítica. tiempo local o UTC, UTC GMT o tiempo local. Si yo hago este cambio, podría considerarse pequeño, pero a nivel de horarios va a cambiar según su ubicación. Es importante considerar 
+cómo presentamos la información en base a los rangos de tiempo. En este caso estamos visualizando hace 24 horas. Vamos a verlo un poco más pequeño, algo más sesgadito. Veámoslo aplicado hacia 4 
+horas atrás. Y wow, ahora sí tenemos una visibilidad mucho más elegante. Pero sí ya tenemos y podemos ver el comportamiento del CPU diferente. Muy bien. Pero necesitamos ver otro. Ahora quisiera 
+ver el comportamiento de la memoria. Aquí he agregado un nuevo chart para visualizar ahora el comportamiento de la memoria. Y obvio, miren cómo se comporta mi puntero para hacer la comparativa 
+entre el comportamiento del CPU y la memoria. Ahora, miren, por ejemplo, aquí tenemos un pico bastante altito. Si yo lo doy click, puedo tener información correspondiente a ello. Sí, pero Daniel, 
+no me sirve mucho tener las métricas de la memoria y del CPU por separadas. Me encantaría poder verlo mixto para poder ver el comportamiento un poco más elegante, más enfocado a la solución. No 
+hay problema. Agreguemos una nueva métrica directamente en memoria. Vamos a ver, por ejemplo, la demanda en las lecturas, que no va a ser muy alta. Vamos a ponerle más bien aquí mismo el consulta 
+de CPU. Ya. Vamos a ver. Tenemos un rojo aquí. Vamos a ponerle por sumas máximos. Podemos ver que se mantiene bastante bien. Vamos a ver algo que pueda variar un poco más. mandas por aquí. Okay. 
+Miren, por aquí ya tenemos un poquito de saturación. Uicémoslo de esta forma. No sé si se puede apreciar un poco, pero aquí tenemos un poco de saturación en este trayecto. ¿Sí? ¿Qué quiere 
+decir? Eh, esta lectura roja viene a hacernos mención de la demanda de la función en ejecuciones. Sí, puedo aislarla así, puedo verla acá, miren. Puedo cambiar de color. Sí, podría cambiarla 
+sin ningún problema. Voy a tener las dos metricas de aquí y ya se me movió. Okay, vamos a ponerle de la última hora. Miren, por ejemplo, aquí tengo una métrica, quiero ver la otra. Vamos a 
+poner por miren. Y con eso puedo distinguir las métricas entre las funciones o visualizarlas de las dos, como podemos ver aquí. Sí, es así como se crean los dashboards. Ahora, estas métricas son 
+netamente de este proyecto. Si es que quisiera visualizar de más proyectos, ¿cómo podría visualizarlo? Antes de ello, recordemos que Asure Insite es un hijo de Asure Monitor y las métricas 
+vienen de Asure Monitor, por lo cual dentro de Application Insite podemos observar este mismo contenido, pero en application Insite podríamos ya distribuir el contenido con otros aplicativos y hacer 
+comparaciones. Por ejemplo, podría en application inside visualizar el backend, las métricas del backend y las métricas del front end. Ahora, sin pasarnos más allá de lo común, dentro de 
+monitoreo tenemos igual los log streams. Los log streams vienen a ser las métricas en vivo, eh los logs en vivo de cómo es el comportamiento del aplicativo. Aquí netamente tenemos igual la 
+clasificación de lo que habíamos visto hace un momento atrás y los mensajes de ejecución que se van a observar uno a uno. Ahora también tenemos los logs, pero este tiene su apartadito de 
+consultas. Sí, si yo hago una consulta en este caso vamos a tener algo bastante elegante, pero antes de vamos a saltarnos directamente a los al Analytic Wordspace, perdón, hacia el application 
+inside. Tenemos este application inside que viene bastante relacionado. Miren, automáticamente, sin hacer mención ya me empieza a mostrar métricas de los aplicativos relacionados. En este caso, 
+estamos haciendo uso exclusivo para esta función, por lo cual ya me muestra este tipo de contenido. Falles de ejecución. Miren, por aquí ya me da un número. Aquí ya me está dando un número 
+dentro de este rango de tiempo aproximado. [carraspeo] Ha fallado seis veces en este rango. Entre las eh seis más menos hasta la hora actual. Ha fallado seis veces. Ahora, respuesta en el tiempo del 
+servicio. Tiene un promedio de 10 segundos de respuesta. por ejecución. En la parte de acá tenemos la eh disponibilidad, está disponible prácticamente al 100%, no ha habido ningún problema de de 
+caídas. Y acá en las peticiones del servicio han sido 31 peticiones a este servicio hasta el momento, igual más menos desde las 6:30 hasta la hora actual. Okay, entrando entonces a la 
+visualización del monitoreo, de la misma forma como visualizamos en las pantallas anteriores, directamente en el recurso tenemos las métricas, lo cual repito, podríamos hacer modificaciones. 
+Tenemos también los Wordbooks, que son cuadernitos, como dice la palabra, son cuadernos de trabajo, los cuales podríamos manejarlos como si fueran nuestros tableros de métricas y poder tener un 
+contexto mucho más amplio en base a lo que nosotros queramos. ¿Qué tiene de interesante? es que como son tableritos, podríamos guardar esa ese tablerito con ciertas configuraciones para ver los 
+dashboard según las métricas que nosotros vayamos requiriendo. Por tiempo no vamos aondar en los Wordbooks, pero sí vamos a hacer un pequeño ejemplito de cómo eh se ven algunas tablitas dentro 
+del assure el application inside. Ahora, ahora sí vamos a saltar al apartado del meo de loss antes de esto. Okay, como les había mencionado antes, eh todo lo que son logs se gestiona y se 
+distribuye mediante tablitas. En la parte izquierda nosotros podemos ver, hago un poquito más grande. Okay. Tenemos las tablitas, también tenemos los queries, las consultas, las más usadas, las 
+históricos, los históricos. También podemos hacer funciones, el histórico de ejecuciones, pero en este caso vamos a concentrarnos en las tablitas. Dentro de las tablitas ya vamos a observar 
+algunas que había mencionado previamente. Entre ellas tenemos eh los request, ¿sí?, que como les había mencionado son las consultas que se hacen directamente hacia mediante HTTP a nuestro 
+recurso. Los recursos visualizando Open Telemetry, como les había mencionado, siempre y cuando tenga ese tipo de consultas hacia un consumo de un recurso o un servicio que tenga telemetría. 
+También tenemos el trace, la trayectoria de un log, un evento que siempre y cuando esté trabajando con track trace. tenemos las excepciones, lo que habíamos mencionado, igual en el eh de parte del 
+cliente a hacer la consulta. También tenemos ese contexto siempre y cuando, vuelvo repito, tengamos ese maping. Y último, pero no menos importante, tenemos las llamadas a las dependencias. También 
+podemos hacerlo siempre y cuando hagamos eh énfasis sobre eh las dependencias de un proyecto o manejando track dependencies. Ahora vamos a hacer una consultita a cada uno de ellos, algo a groso modo 
+para que puedan considerarlo y visualizarlo. Y vamos a empezar con los trace. Vamos a hacer una consulta en este caso con un time stamp mayor a 24 horas. Bueno, por acá. Hm. Permítanme hacer un 
+poquito más grande este contenido para que sea más fácil de mapearlo. Y okay, aquí tenemos la tablita con la información de lo que ha ocurrido en este periodo de tiempo. En este caso, por 
+ejemplo, recuerden que estamos consultando los trace, la trayectoria. Estamos viendo eh qué horario, en qué eh fecha y hora ocurrió el mensaje que devolvió el nivel de severidad, el tipo de item, 
+información más detallada que vendría a ser el Gust Animation sobre el contenido de lo ocurrido. es un información leve dentro de un modelo en el web y acá abajo tenemos un operation id. Este de 
+aquí es bastante importante gestionarlo si es que trabajamos en telemetría dentro de proyectos de front y backend. Es una de las funcionalidades que deberíamos aprender a usar para tener 
+trazabilidad de un error o de un lock entre varios proyectos. Sí, porque puede recaer en un proyecto que está unido o atado a otro y podríamos hacer correlación. Eh, igual tenemos el de 
+operación parent ID, el tipo eh de cliente, en este caso es un PC, obviamente porque es un servidor. Tenemos eh en caso de que aplique, lo repito, el client IP, que obviamente no va a ser la IP eh 
+principal de su host, sino el eh IP dinámica, ¿sí? La IP con la que se gestionan los gateways entre los servicios. el recurso de donde se de donde ocurrió en la nube eh con el rol que se aplicó, 
+el app ID, el app name en este caso suscripción y dónde ocurrió. Sí tenemos más información sobre la función como tal y la versión incluso del SDK que se utilizó. Obvio, si queremos tener 
+más información más detallada sobre lo ocurrido, podríamos gestionarlo mediante openetry. Acá tenemos otro que es un estatus 200. Eh, es un estatus, ¿okay?, los estatus 200 con eh la misma 
+trayectoria, mismas características, pero eh nos va a mostrar contenido, obviamente de traza, de qué es lo que está ocurriendo, por dónde está gestionándose esto, qué es lo que está 
+ocurriendo y obviamente lo distinguimos justamente por los nombres de los mensajes, ¿no? Igual esto siempre y cuando lo vayamos gestionando y utilizando de una forma prudente y adecuada. Recuerden 
+que también esta observabilidad tiene un costo de almacenamiento por GBTes gestionados. Ahora, ahorita lo consulté con un eh tiempo eh de las últimas 24 horas, pero si yo quisiera modificarlo, 
+obviamente lo puedo hacer de forma manual visualizándolo como un KQL. Ojo acá en la derecha. como una consulta KQL o a su diferencia en un modo simple en donde con las características de aquí 
+podría ser consultas más customizables, tal vez más reducidas, más fáciles de observar y cómo no, tal vez a nivel visual esto sea un poco tedioso, pero tenemos una opción a nivel de chart para 
+ver cómo está trabajando en base a estas peticiones el comportamiento de mi aplicativo. Sií. Carga de la función fue encontrada, application lo logs a nivel de course, todo este comportamiento, 
+horarios, tiempos, acciones, caídas, puede ser un poco más fácil e intuitivo para algunas personas, quizás para otras a nivel de análisis de data, pueda ser mucho más fácil a nivel visual, 
+incluso hacer análisis y filtrados directamente de la consulta. Obvio, podemos aplicar los shows a nivel de Max, máximos de información limitada en caso de que queramos hacer pequeños muestreos, 
+¿no? Ahora, ahorita consultamos la tablita de los trace, es decir, la trayectoria. Vamos a consultar otra de las tablitas que son muy importantes de considerar, que son los request. Y miren, aquí 
+estoy haciendo la consulta a los requests. Sí. Y obviamente tenemos bastante contenido interesante, como por ejemplo igual el tiempo, el ID, el nombre que se le puso a esta telemetría, el estado, 
+el estatus que se fue true, por ejemplo. Ojo, este sería un request, serían los consultas http, ¿sí? Tenemos más información, categoría de host, full name, eh fusion ecutation time, eh nivel 
+de log, operación, eh razón del trigger, operación y en poco más de información, que en este caso es redundante, ¿sí? Pero bajo el contexto de consultas. Ahora, de la misma forma, podríamos 
+cambiar a un modo simple, hacer consultas, podríamos incluso aplicar ciertos ciertos filtros y hacer la consulta mixta entre eh modo simple y modo eh calel mode. Sí. Otra de las funcionalidades que 
+teníamos que ver son las excepciones. ¿Okay? Dentro de estas igual tenemos todas nombradas según los títulos que hayamos expuesto nosotros. Tenemos los tiempos, podemos ver en el chart el 
+comportamiento de las decepciones, problem ID, system argument out range exceptions y otras características importantes que podríamos hacer mención en visualización con los colores que queramos 
+hacer relación o búsqueda de filtrado del mismo. Sí, como vemos ahorita los system argument out range exceptions. [suspiro] Igual hay información que puede estar redundante en los otros 
+contextos, pero acompañada de información bastante puntual, como por ejemplo este de aquí. Este es una severidad nivel 3 que hace detalle a una operación de espera. Por ejemplo, aquí muestra un 
+poco más de detalle de la excepción. Es un signession. Como la diferencia de lo que podemos ver aquí es dentro de la ciudad. Por ejemplo, esto tenemos la ciudad, la operación, provincia y el 
+estado. Y por último, pero no menos importante, tendríamos las dependencias. Vamos a ver igual una pequeña consulta a las dependencias. Ah, sí. Eh, para mencionarles, recuerden que podrían hacer 
+más de eh es un script, por lo cual podrían poner varias consultas y solamente para hacerla tienen que seleccionar y y dar run. En este caso estoy haciendo una consulta hacia las dependencias y 
+miren, aquí hay algunas invocaciones bastante interesantes, como puede ser esta de aquí que hace una consulta SQL, unas peticiones y ha dado como un mensajes de respuesta. Miren dónde fue que se 
+ejecutó. Virginia, Bonon, ubicación, número de intentos. Por acá tenemos invocaciones, por ejemplo, tenemos una invocación, el tipo, el name, el ID, de la misma forma, más información 
+relevante. Eh, invocación ID, eh, a schema URL, donde estamos haciendo todo el contenido de la información, visualizando el contenido de la información. Aquí sigue siendo de de Voidon, el mismo 
+grupo de recursos, la ubicación, suscripción y bueno, podríamos continuar con varios ejemplos que hemos realizado para visualizar. Sin embargo, es importante que puedan visualizar y contemplar 
+este tipo de variaciones de observabilidad dentro de un proyecto, las cuales pueden ser muy necesarias cuando levantamos un proyecto en producción y muy importante usarlo desde el ambiente de CUA, 
+justamente para ver el comportamiento previo de la distribución ya productiva. Okay, eso sería por la clase del día de hoy. Vamos a ver si es que eh tenemos algunas preguntas por aquí. E bueno, 
+ahí no sé si está el Luis. Sí, sí, aquí estoy. Dame solo un momento. ¿Qué tal? ¿Qué tal, chicos? No sé si tienen alguna duda, consultas respecto de la de lo que nos han eh explicado 
+Daniel, la pueden dejar en el eh en el chat para que puedan ser respondidos. adelante. Eh, s ¿Qué tan diferente es eh de hacer lo mismo, pero con Grafana o Prometeus? Eh, principalmente es el 
+enfoque, la solución y la aplicación. Tom en cuenta que al momento que nosotros creamos un recurso, nosotros automáticamente podemos dar con un solo clic la selección de Open de application 
+Insight, por lo cual desde un inicio tú ya tendrías esta sin ningún inconveniente, no tendrías que hacer más configuraciones extras para aplicar, por ejemplo, Grafana o Prometeus. Tome en cuenta 
+también que hm eh si es que queremos tener todo esto distribuido, es más fácil almacenarlo y gestionarlo dentro de Asure, ya que tiene un portal que ya te permite hacer la integración de forma 
+más sanitizada. un link de de la documentación eh de la documentación de Asure Insight. Les podría compartir para que puedan visualizarlo dentro del contexto de Microsoft Learn, ¿sí? Para que 
+puedan profundizar un poco más. Comparto el enlace. Igual si tienen más dudas o preguntas pueden ponerles en el chat, las vamos contestando mientras tanto. Sí, igual ahorita voy a mostrarles el 
+enlace directamente de Microsoft Learn para que puedan leer un poco más sobre application. Okay, les comparto un enlace. Aquí pueden iniciar y posteriormente ir profundizando sobre el contexto y el 
+uso y el manejo, el teje y maneje, que se diría vulgarmente de application insight y la observabilidad con Open Telemetry. Sí, recuerden que Open Telemetry eh inició como open source, lo cual van 
+a encontrar bastante información y pueden gestionarlo de forma eh gratuita en la Open Telemetry en proyectos los cuales ustedes gusten. La integración sería más bien a nivel de application 
+insightes si está fuera de los dominios de Asure o tiene colindancia con alguna entidad externa. Sí. Okay. Eso sería de mi lado, Luis. Muchas gracias. Excelente. Bueno, eh de mi parte pues no 
+tengo nada más que agregar, más que agradecerte, Daniel, por todo eh ese conocimiento que nos has compartido. Eh ha sido una noche de mucho provecho. Recuerden muchachos que todo esto es parte de 
+los fundamentos que van a necesitar para el desarrollo de las actividades, de los retos que se van a dar el día de el día de los eventos, tanto en el Jacatú en Santiago como el Jacatú en la 
+ciudad de Panamá. Eh, la también pues le voy a estar compartiendo en el chat los enlaces eh de los sitios web de el Jacatón y a su vez eh lo que es un formulario de asistencia para que lo que para 
+los que no la han llenado pues puedan eh allí completar la asistencia. De mi parte, pues nada más que agregar, simplemente pues recordarles que el próximo martes 8 tendremos nuestro último 
+workshop eh que se estará brindando o estará iniciando a eso de las 7 de la noche, de 8, perdón, de 7 de la noche a 8:30 eh de la noche, horario Panamá, para que puedan eh asistir y atenderlo. De 
+igual forma, el día lunes 14 vamos a tener una sesión para eh dudas y y respuestas que pues se estará también eh compartiendo en el enlace desde la página web del jacatoncopa.com. Bueno, eso 
+sería todo. Espero tengan una excelente noche y nos vemos la próxima semana. Listo. Muchas gracias con todos. Igualmente, hasta la próxima.

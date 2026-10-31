@@ -1,0 +1,318 @@
+Quería comentarles que pues en la noche de hoy estaremos viendo el tema de eh lo que es este workshop, que será el tema de aplicaciones modernas API, frontend y backen. Y bueno, los dejo en estos 
+momentos con Evely que nos va a compartir parte de esta información importante que necesitan. Buenas noches con todos. Mi nombre es Alin Ceballos. Me presento nuevamente. Soy learning leader en 
+Business IT. Eh, bueno, nosotros somos una empresa de tecnología, justamente estamos con Dani Vacas, que va a ser instructor de esta noche. De mi parte me gustaría poderles indicar cómo acceder al 
+material oficial de los entrenamientos justamente por parte de Microsoft. Les voy a dejar un mensaje en el chat para que lo puedan revisar, por favor. Tenemos dos pasos a seguir. Uno que es ingresar 
+a un entrenamiento que es la Z900, que está basado los eh los fundamentos que vemos en estos workshops y pues por otro lado un link que les permitirá canjear códigos de logro. En este momento voy 
+a proceder a compartir mi pantalla para que ustedes puedan visualizar cómo acceder al a Microsoft Lar. Denme un segundo, por favor. Procedo con la presentación. Listo. Me comentan cuando ya puedan 
+visualizar mi pantalla. Listo. Bueno, ¿qué es Microsoft? Microsoft es la plataforma eh donde Microsoft aloja toda la información oficial de nuestros entrenamientos. ¿Listo? Acá tenemos en el 
+chat dos links, uno que es la guía de estudio, vamos a copiarla y pegarla en nuestro buscador y nos va a llevar de referencia al entrenamiento A900, que es el cual está basado los workshop que 
+estamos mirando el día de hoy. [resoplido] Vamos a poder revisar nuevamente la información y vamos a ir avanzando en cuanto de conocimientos. Dentro de cada una de las rutas ustedes van a encontrar 
+diferentes eh descripciones, diferentes módulos donde ustedes pueden ir revisando la información y también interactuando. Vamos a encontrar evaluaciones, vamos a encontrar resúmenes, vamos a 
+encontrar videos para que ustedes también vayan eh apoyándose con este contenido para poder ir estudiando. ¿Listo? En el siguiente link eh vamos a ingresar es un código de logro. Este código de 
+logro permite habilitar los entrenamientos y los certificados de los cursos que vamos a ir desarrollando. Vamos a colocar canjear y por lo tanto se agregan a nuestro perfil. ¿Listo? Es importante 
+que puedan ustedes visualizar su perfil, que tengan los datos correctos para que los certificados de igual forma tengan su dato correcto, valga la redundancia. Vamos a visualizar nuestro certificado 
+con nuestros datos que hayamos registrado en Microsoft. ¿Listo? Eso es todo de mi parte, chicos. De igual forma les presento a nuestro instructor, eh, Daniel Vacas. Daniel Vacas es nuestro consultor 
+de desarrollo de software especializado en tecnologías Microsoft. Eh, tiene más de 3 años de experiencia en tecnologías de Microsoft Assure, automatización de procesos, cyberseguridad. Cuenta 
+con experiencia en implementación de soluciones Cloud, Microsoft Sentinel, Ashonal, integraciones empresariales, gestión de proyectos tecnológicos y además participa en actividades de 
+capacitación como es estos workshop. Eh, nos ayuda también como parte de nuestros instructores seleccionados en inteligencia artificial y le doy paso. Bienvenido, Dani. Muchas gracias por esa 
+introducción. Les agradezco mucho. Bueno, eh ya nos vimos anteriormente en la primera sesión. Visualizamos un poco de conceptos un poco básicos con sobre el contenido de distribución de servicios 
+en Asure, básicamente todo lo que necesitamos conocer para iniciar con un desarrollo. Ahora vamos a empezar a profundizarnos un poco más sobre algunos servicios en este caso como vendría a ser 
+servicios de front, appis y back. Permítanme, les comparto la pantalla e iniciamos con este contenido. Un segundo. Okay, perfecto. En esta sesión del día martes vamos a ver aplicaciones modernas, 
+apps service, APIs y aplicaciones que vienen a contener front end y backend. Vamos a ver a groso modo algunos conceptos, aclarar ciertos eh puntos que son necesarios, entenderlos y obviamente vamos a 
+profundizar en los servicios de Asu. Sí, dicho esto, pues dentro del cronograma vamos a observar un poquito sobre lo que qué son los Azure App Service, ¿sí? ¿Qué viene? ¿Qué contiene todo 
+este concepto de los app service? Obviamente un front end y back end. ¿Qué conceptos tienen de la misma forma? ¿Qué es un rest? Vamos a ver una pequeña una demostración. De la misma forma vamos 
+a eh la comunicación eh cómo se consume desde el front un servicio desde el back y obviamente lo que serían end points, servicios HTTP y errores comunes al realizar uno que otro despliegue. Vamos 
+a iniciar previamente con lo que es un servicio UPS service. Primero, como habíamos mencionado en las sesión anterior, nosotros vimos tipos de servicios, teníamos IAS, Past y SAS. Past es 
+plataforma como servicio y su alojamiento netamente va a estar distribuido en la web, en este caso dentro de Ashur. ¿Qué beneficios tendríamos al tener un servicio PAS? netamente, eh, Asure va a 
+estar administrando todo el servicio, el sistema operativo, lo que son parches, actualizaciones, el balanceo de la carga y la disponibilidad. Esto es un un gran, mejor dicho, una gran ayuda cuando 
+nosotros escogemos este tipo de servicios, ya que no tenemos que estar preocupados sobre todas las distribuciones y configuraciones previas a un despliegue en un servicio. Haciendo una pequeña 
+analogía, como tenemos en pantalla en el recuadro azul, tenemos que sería como rentar un departamento amoblado. Si una vez eh se puede ver como si fuera una comparación a un terreno o una 
+construcción de un edificio. Entonces no es lo mismo comprar un terreno sí que alquilar un departamento. Okay. Puede ser más costoso, obviamente, y los beneficios de rentar pueden ser más 
+elevados, menos costos, más disponibilidad. A su vez, eh, el código, todo lo que se programa, todo lo que se desarrolla va a ir directamente eh enfocado hacia el despliegue. No tenemos que darnos 
+vueltas sobre el apartado de la infraestructura, ya que el servicio PAS ya lo integra y da solución sobre ello. Lo que sí, obvio, tenemos que tener en cuenta que hay ciertas configuraciones 
+necesarias que si influyen, ojo, si influyen sobre cómo queremos que se comporte nuestro aplicativo. Ahora, hay dos conceptos de Asure App Service. Enfocándonos primero en qué es un App Service. 
+Es un servicio web que contiene por dentro un Asure Plan Service. Dicho esto, Asure Plan Service viene a ser un servidor, obviamente un servicio PAS que viene de la mano con un web service. ¿Qué 
+diferencia es el web app? Básicamente es un aplicativo que ya está eh desplegado, que se puede visualizar. a su vez necesita tener un poco de lógica, configuraciones como les había mencionado, 
+para su despliegue. Y en este punto es el momento álgido donde uno dice, "Okay, ¿y dónde está el servidor?" Y justamente Assure Plan Service es uno de los servicios que nos permite hacer ese tipo 
+de configuraciones como pueden ser automatizaciones, ¿sí? algunas características de red, monitoreo, también distribuciones, balanceo y, ¿por qué no? Uno que otro proceso. Vamos a avanzar un 
+poquito. Eh, cabe recalcar que hay algunas tecnologías con las que podemos trabajar dentro de un web app y vienen netamente incluidos dentro de los proyectos cuando nosotros queremos desplegarlos. 
+Ahora, saltándonos a las ventajas que les había mencionado, tenemos escalado automático, se ajustan los recursos en base a la demanda. Podemos configurar ciertos parámetros o umbrales, sea por 
+CPU, por memoria, por escritura y lectura de información o por incluso por tráfico de red. Esto nos va a permitir tener ciertas características de distribución de información y como tal aumentar 
+capacidades, sea horizontal o vertical. En la reunión anterior habíamos mencionado sobre este tipo de escalado. En el vertical básicamente sería aumentar las capacidades, mejor dicho, eh aumentar 
+las instancias de un servicio. Y en el otro, que sería el vertical, tendríamos un escalado eh como si fuera un chicle. Vamos a imaginarnos que el servidor va a ser un chicle, que nosotros podemos 
+estirarlo y acoplarlo en nuestras necesidades de demanda, aumentar ciertas características como poner más RAM, eh tener más eh virtual CPUs o incluso mejorar el tráfico de red o como no, incluso 
+el almacenamiento. Hay algunos planes y ya lo vamos a visualizar un poco más adelante. justamente en los procesos HTTP incluidos tenemos ya certificados y cifrados listos siempre y cuando manejemos 
+un entorno. Configuraciones eh como los DNS también lo podemos aplicar sin ningún inconveniente. Podemos aplicar cifrados desde un inicio. Claro que sí, no habría ningún problema. Ahora, como 
+les mencioné hace un momento atrás, el servicio de los App Service vienen a tener un enfoque de solución directa, simplemente tener el código y desplegarlo. Pero puede ser un poco caótico cuando 
+nosotros tenemos eh algunas costumbres de enviar el código directamente a producción. ¿Qué pasa si el código lo enviamos de forma directa? Puede generar un poco de caos porque los 
+versionamientos pueden cambiar. ¿Y qué pasó con una versión anterior? Se puede perder. justamente podemos hacer integraciones a nivel de devops con CD junto con GitHub y Assure Devops. Podemos 
+escoger cualquiera de las dos como focos principales. ¿Existen otras? Sí, existen otras. No hay ningún inconveniente en ese punto, pero los dos focos principales en donde nos van a permitir hacer 
+integraciones mucho más ágiles son nivel de GitHub y Azure DevOBS. Igual en la sesión próxima vamos a profundizar un poquito más sobre DevOBS y va a ser mucho más interesante incluso cómo 
+gestionar y manejar el código de una forma elegante, prudente y escalable. Y como punto cuatro, cero administración, no hay servicios físicos ni sistemas operativos que mantener. Nos deslindamos 
+de ese problema. Netamente nos enfocamos en el desarrollo y el despliegue. Estos dos puntos son necesarios visualizarlos. El cual sería el frontend y el backend. ¿Qué diferencia hay? Primero, el 
+frontend viene a ser la cara al cliente, lo que viene a mostrarse información en pantalla, donde van a poder interactuar. Son donde vamos a dar clics, vamos a ver formularios, incluso justamente lo 
+que están viendo actualmente en pantalla es una interfaz de Fornet. De la misma forma, todo contiene y conlleva una arquitectura, una infraestructura a nivel de código en el frontent, el cual puede 
+tener HTML, CS, JavaScript, Frameworks como puede ser React, Angular, Views, Belt, entre otros. Y por qué hago esta diferenciación bastante prudente con lo que sería un backend. Lo voy a explicar 
+en un momento. Sí, los backends vienen a ser la parte lógica, toda la regla del negocio, todo el core y este incluso viene conexiones con un apartado de almacenamiento de datos, el cual puede ser 
+una base de datos, un storage account, un datab, eh un foundary eh o incluso podríamos conectarnos a un fábrica. El reto aquí que vamos a visualizar es sobre un API levantado en punto net que lo 
+vamos a ver un poco más adelante. Antes de entrar en contexto sobre este contenido, voy a hacerles un poco de contexto sobre esas dos diferencias de backend y frontend. Un segundo, les voy a 
+compartir por acá. Listo. Okay. Bueno, tenemos esta pequeña suscripción donde podemos hacer estas pruebitas bastante elegantes y en este caso tenemos este grupo de recursos que es Copa, ¿ya? Eh, 
+netamente cuando tenemos nuestro grupo de recursos podemos crear un recurso. Recuerden en la clase anterior no podríamos tener un recurso completamente aislado, sino que siempre va enlazado, ¿sí? 
+Para tener un orden y gestión de forma adecuada. Ahora nosotros vamos a ver lo que sería un una web app y por ahí ya empezamos a ver incluso que nos hacía mención con contenedores. Sí, también 
+podemos hacer configuraciones, modificaciones o levantamiento de proyectos con contenedores. De hecho, tenemos un pequeño apartado que lo vamos a observar breve a breve rasgo, el cual nos va a 
+permitir hacer este tipo de levantamientos. Aquí, justamente, como tenemos en pantalla, hay dos servicios que quiero hacer énfasis. Ya. El primero, primero es web app. Web app netamente es la 
+página web. Sí. Ahora hay una pequeña diferencia. entre manejar una web app y una static web app. En la parte de la derecha tenemos otro servicio. ¿Qué diferencia tienen? En cierto punto, en una 
+web app, nosotros podemos levantar cualquier proyecto, sea frontend o backend, pero puede ser un poco caótico y no es muy administrable hasta cierto punto, más que nada para frontends. La solución 
+más limpia, íntegra, pulcra para un proyecto frontend son netamente las static web apps. Al otro lado tenemos lo que serían las web apps y estas tendrían su principal solución hacia la lógica y 
+hablamos de el backend como APIs. ¿Sí? Ahora, ¿qué beneficios nos brinda los static web apps de una web app tradicional? Es que en las static web apps nosotros ya podemos escoger el framework con 
+el que queremos eh distribuir, manejar y transformar la data. para el servicio es mucho más fácil. Pocos clics y como escuchan pocos clicks básicamente es un servicio pas. Del otro lado, 
+igualamente tenemos las web apps y tenemos ciertas características mucho más elegantes y vamos a hacer énfasis en por qué es más fácil utilizar una web append que una static web app para 
+frontend. Vamos a ir una por una. En este caso vamos a iniciar con lo que sería un static web app. En la parte eh inferior nosotros ya podemos ir visualizando un poco más a fondo ciertos 
+contenidos, un pequeño overview, planes, información, soportes, rendimientos. Eh, aquí justamente nos puede mostrar que es una stat app que se puede automatizar para crear proyectos como Full 
+Stack en especialmente para eh código en repositorios. Y eh claro, aquí nos hace mención sobre algunas características que se pueden utilizar eh directamente como pueden ser HTML, CSS, 
+JavaScript, pero no necesariamente podemos usar o necesitamos usar eso. Podemos incluir otros planes. Vamos a empezar con la creación de sumamente rápida. Al momento que nosotros vamos a crear, 
+ojo, un static web app, siempre pensemos hacia el frontend. Recordemos que siempre tenemos que escoger nuestra suscripción. y también nuestro grupo de recursos, el cual siempre tiene que estar 
+validado previamente. Mucho ojo con esto. Ha sucedido ocasiones en cualquier momento en donde se hacen despliegues y resulta que el despliegue lo hicieron sin darse cuenta en otra suscripción o en 
+otro grupo de recursos y eso puede generar un poco de retraso sobre los despliegues. Ahora, en este caso vamos a tener una región global y en la static web appu ejemplo, si solamente pongamos e 
+front web. Listo. Nada del otro mundo, algo sencillo. Algo interesante que podemos observar aquí es que depende de en qué punto del crecimiento de nuestro aplicativo estemos, podemos seleccionar 
+entre un tipo de despliegue, ya sea para un hobby, algo, un proyecto personal, incluso para desarrollo QA, podríamos utilizar un plan free. Pero si ya tenemos visualización a un entorno productivo, 
+ya también necesitaríamos un plan estándar. ¿Qué beneficio nos brinda? Muchas más características y configuraciones que necesitaremos en los despliegues tradicionales de una solución. De la 
+misma forma, como les había mencionado hace un momento atrás, tendríamos como dos principales focos de despliegue de información, GitHub y Asure Web eh Devops. Sí, podemos tener otros. Sí, 
+podemos tener otros. No hay ningún problema en la en lo que nosotros queramos escoger. De hecho, en este punto nos va a permitir directamente ir hacia otras características de configuración, como 
+lo vemos acá arriba. Pero claro, si yo escojo, por ejemplo, GitHub o Assure the Bobs, me va a permitir ir navegando entre la organización, proyectos y, obviamente, repositorios. Vamos a ver, por 
+ejemplo, en este de Ghub una pequeña mención en mi organización. Aquí tengo algunas eh bastante elegantes. Eh, vamos a poner este ejemplo en angular. Y miren, puede escoger incluso la rama 
+directamente en donde queremos hacer el despliegue. pocos clicks, mucho más rápido. Ahora, de la misma forma, nosotros podemos escoger entre algunas algunos frameworks y tecnologías que pueden ser 
+Angular, Blessor, eh Next, GS, Nest 3, Reacts, Belt, View, HTML puro, entre otras como pueden ser GATS, View, Go, View Press, Yell o personalizado, simplemente puede ser un HTML común y corriente. 
+Sí. En este caso voy a ponerle, por ejemplo, un Angular y puedo obviamente hay ocasiones que tenemos proyectos con enfoques a microfrontend y queremos hacer un despliegue desde el foco principal de 
+la solución completa. Entonces, nosotros podemos escoger la carpeta del build del front para poder hacer el despliegue con la que nosotros correspondemos. En este caso va a ser desde la raíz, no 
+habría ningún inconveniente, simplemente avanzaríamos. De la misma forma podemos hacer configuraciones del deploy mediante git o deploy con tokens y ciertas configuraciones como vendrían a ser eh 
+assure functions. Esas assure function vienen a ser eh configuraciones a niveles deus. Sí, tenemos el apartado de TAX, que bien habíamos mencionado en la eh reunión anterior que tiene el enfoque 
+hacia visualización y clasificación de costos. Y por último, pero no menos importante, de hecho, es lo que tenemos que validar. Justamente podemos observar que al final tenemos un apartado en la 
+parte superior que nos va a ir mostrando qué características están siendo afectadas, qué tenemos que cambiar o qué está ocurriendo. Sí, en este caso eh nos dice que el template eh no cumple 
+con ciertos parámetros. Sí, obviamente estos proyectitos eh es a nivel de front desplegar, solamente es uno de ejemplo. Vamos a ponerlo en Houston para que no nos dé ningún problema y pongámosle 
+algún otro proyecto para que sea mucho más fácil escogerlo. Vamos a avanzar. Ya. Y claro, en este caso no me va a dar ningún problema. Yo voy a ponerle en crear. Eh, claro, la solución no tiene 
+el enfoque que se requiere ahorita para el despliegue, por lo cual eh se va a levantar el servicio, pero al momento que ya se despliegue, en este caso ya se levantó, hacia el mismo. Damos unos 
+segunditos y tenemos ya la solución levantada. Si yo voy a la dirección URL, debería presentar el contenido referente al proyecto. En este caso, eh escogí un proyecto que no tiene una solución 
+eh con eh etiquetas HTML, por lo cual no me muestra contenido. Sí, de hecho, si quieren pueden observarlo y les comparto a nivel del chat para que puedan ingresar y van a ver que no van a obtener 
+nada más que esta pantallita. Obviamente cuando yo escoja en el repositorio, en el lugar donde esté evaluando el servicio mediante un pipeline, un despliegue con Cicd, obviamente se va a 
+redistribuir el servicio y se levanta. Les pongo este pequeño apartado para que prueben el frontend. Ahora, como pudieron ver, pues sumamente sencillo el despliegue a nivel de frontend, no fue mayor 
+problema. Ahora vamos a visualizarlo con el enfoque hacia el backend. Ahora vamos a cerrarlo por aquí. Vamos a regresar a nuestro grupo de recursos. Y bueno, tenemos ya nuestro frontend. Ahora vamos 
+a la contraparte, que sería nuestro backend. Nuevamente vamos a poner web app. Esperamos que haga la búsqueda y vamos hacia el otro servicio. Aquí ya empezamos a ver un una pequeña variación. De 
+hecho, en el overview, como pueden observar acá abajo, ya nos está haciendo mención sobre qué tecnologías podemos utilizar. Node, Python, PHP, Java e incluso net. Obvio, si manejamos aquí Node 
+GS podemos levantar servicios también con eh JavaScript, ¿ya? Muy importante, ojo, y muy necesario considerarlo. Solo vamos a trabajar con servicios, perdón, servicios de almacenamiento 
+distribuidos con Linux o con Windows. Lo mismo aplica para los servicios con contenedoras. Ahora, de la misma forma, acá tenemos soporte con Visual Studio, Visual Studio Code, Eclipse y otros más. 
+netamente podemos hacer integraciones con Cicd, eh incluso aplicaciones eh de entornos con pipelines, containers registry y otros más. beneficios que vamos a tener es netamente eh dar seguimiento 
+con application insightes y assure monitor, que igual lo vamos a ver un poco más a profundidad posteriormente. Ahora vamos a iniciar con la creación del servicio. Okay, ahora regresemos nuevamente. 
+Primer punto, revisión de suscripción y grupos de recursos, lo cual estamos check. Ahora vamos a ponerle un nombre y acá abajo, miren, tenemos para levantar el proyecto del backend como código o 
+como contenedor. Ojo, para levantar el código mediante contenedores tenemos que considerar un Asure Container Registry, que viene a ser una analogía con un Docker Hub. Sí, de la misma forma 
+tenemos que tener un poco de entendimiento sobre si vamos a hacer un despliegue eh eh directamente del contenedor dentro de una web appi o un Asure Container Instance o Asure Container Apps o si 
+vamos a manejar y a nivel de entornos con Cubernets, también tenemos que visualizar ese contexto. En este punto lo vamos a trabajar netamente con web apps, por lo cual vamos a manejarlo con código. 
+¿Listo? Ahora vamos a ponerle un nombre elegante. Miren, esto es lo que quería llegar. Y siempre que ustedes ponen un nombre, siempre van a tener una validación y les va a decir netamente en 
+dónde estamos trabajando. Sí, en Canadá Central este nombre ya existe, por lo cual no podremos utilizarlo. Tenemos que aplicar otro nombre y obvio, va a tener un subdominio, el cual sería punto 
+ashrwebsite.net. Si queremos cambiarlo, podemos hacerlo. Sí, podemos hacerlo siempre y cuando eh configuremos los DNS en un entorno adecuado. Ahora, si manejamos, repito, otras distribuciones de 
+solución, como podrían ser acá, es eh tendríamos que cambiar el enfoque. Ya en este punto lo que viene a ser de backend, vamos a ponerle un contexto extra. Sí, vamos a ponerle copa. No quiero 
+que Listo. Miren, tampoco podemos poner ciertos caracteres como pueden ser especiales. En este caso, un slash no está permitido directamente, ya no es invalido. Si en este caso eh va a tener back 
+copa y tendría este el restante de esta extensión. Sí. nos va a mostrar un check como visto en verde aquí quiere decir que ha sido exitosa la validación y podemos continuar. Ahora, el run time 
+stack a hacer referencia qué tecnología vamos a usar. En este caso, para la ejemplificación tenemos un punto net con una versión 10 y como les había mencionado, como nos había mencionado 
+previamente la misma eh el mismo portal, podemos utilizar netamente Windows o Linux. Daniel, pero ¿qué diferencia hay si utilizo Windows o Linux? ¿Qué qué beneficio voy a tener? Una, tienes que 
+visualizar cómo está tu proyecto, qué solución, qué arquitectura, qué distribución lógica tiene y eh qué tecnología, porque no todas las tecnologías van a trabajar de la misma forma en los 
+mismos sistemas operativos. Por ejemplo, Python no trabaja de la misma forma en Linux que en Windows. Al menos si manejamos tareas va a variar. ¿Okay? Eh, a nivel de costes es mucho más rentable 
+manejar Linux, es mucho más rápido, pero tomar en cuenta cómo están usando eh consultas internas dentro de los patch. Cuando usamos patch en Windows, no se gestionan de la misma forma que en 
+Linux, por lo cual también puede generar caos en una en un despliegue. Si no tenemos eso claro desde un inicio de la solución, podríamos tener conflictos. ¿Okay? Y por último, pero no menos 
+importante, la patada de la región. Ahora, si yo escojo una región lejana a nuestro cliente final, netamente voy a tener una latencia mucho más alta, la cual va a afectar el rendimiento del 
+aplicativo y va a haber quejas de los clientes finales. Estamos actualmente en Latinoamérica, entonces podríamos visualizar una solución mucho más cercana, por ejemplo, Brasil. Recuerden que eh 
+algunas regiones pueden variar entre costes, precios, distribuciones, ejemplificaciones, incluso planes en los cuales no siempre podríamos hacer un levantamiento de la misma solución. Entonces, eso 
+también se debe considerar. ¿Quién lo hace esas consideraciones? netamente el arquitecto. Arquitecto de software es quien visualiza todo este contexto de soluciones. ¿Cuándo se aplica? ¿Por 
+qué se aplica? ¿Con qué servicio se aplica? ¿Qué tecnología, qué región, qué ubicación, qué plan se va a utilizar y qué planes de contingencia tendrá en base a la demanda de la 
+solución. Todo eso tiene que verlo el arquitecto y obvio, en este caso, por ejemplo, aquí tenemos este apartado que les mencionaba hace unos minutos atrás. Una web app tiene su plan que viene a 
+ser su servicio, su servidor, en donde va a estar eh la potencia de solución. Obviamente nosotros no nos vamos a encargar de ese servidor a 100%. Es decir, no vamos a poner el sistema operativo, no 
+nos vamos a preocupar por licencias antivirus, el defender, que las tareas, no, no hay ningún problema. Esto ya está completamente distribuido como servicio pas, el cual simplemente tendríamos que 
+hacer algunas configuraciones para mejorar el rendimiento de nuestro aplicativo, nada más. Okay. Ahora, de la misma forma, como si fuera un servidor, podremos eh seleccionar uno si existe, ojo, o 
+crear uno nuevo en este caso. Y tenemos los planes, tenemos algunos de los planes y obviamente tenemos un free, un básico, un premium, un aislado y tenemos el otro que vendría a ser el de 
+contenedores. Ahora en el plan free netamente es un apartado compartido sumamente pequeñito. Como pueden ver tenemos 1 GB de almacenamiento muy corto, muy pequeño. Para hacer previtas ejemplos 
+super bien, no hay problema. Si ya empezamos a ver que tenemos un poco más de demanda y queremos hacer algo mucho más elegante, más fuerte, podemos ir por un plan básico que vendría a ser esto 
+de aquí. Ojo, aquí ya nos muestra las estimaciones de los costos. Esto puede variar, vuelvo y repito, según la región que hayamos escogido. Igual tenemos los que son premium, ¿ya? Y desde aquí 
+ya podemos tener algunas características mucho más fuertes. Tenemos también plan estándar y desde el plan estándar premium y aislado tenemos ciertas características como eh el escalado 
+automático. En un plan básico y free no vamos a tener escalado automático ni tampoco escalado manual. tendríamos [carraspeo] que elevar el servicio hacia un plan mínimo estándar para poder 
+tener estas configuraciones. De la misma forma, configuraciones a nivel de red van a estar disponibles para gestionarlos desde el plan estándar. Estándar, premium y aislado les van a proporcionar 
+estas configuraciones. El estándar, de igual forma es un apartado dividido proporcionado de un servicio que se comparte. El premium netamente es un computador ya proporcionado en en mayor forma, con 
+mayores características. Obviamente va a tener mayor coste por las características que ustedes requieran. Sí, por ejemplo, cuatro. Eh, ojo, esto es interesante que tengo que aclarar en Asure, 
+aquí podemos visualizar que dice gigabyte, pero en realidad sonytes. Es otra unidad de medida de cómo visualizamos. Muchas veces ustedes compran un disco duro, ingresan en la computadora y 
+compraron un disco duro de un ter y resulta que al final en realidad están 926 GB. Esa es la pequeña diferencia de la transformación de GB con gigabytes. Sí, es una pequeña medida estándar que 
+utiliza directamente eh Microsoft y Asure directamente para el almacenamiento, ¿sí? Y también para el tráfico de datos. Ahora tenemos también lo que es la memoria eh premium en este B3 que viene 
+a ser hasta de 16 GB y dos CPUs. Daniel, pero ¿por qué tenemos más memoria RAM que CPUs si se supone que tenemos o requerimos procesamiento? Recuerden, cuando ustedes utilizan una máquina o una 
+computadora y la tienen activa durante más de una semana, no se pone lenta, es porque le hace falta un poco más de memoria RAM. Un servidor es una computadora, pero que está activa 247 por lo 
+general. Entonces, en ese punto sí requiere más memoria RAM que CPUs. Es por eso esas variaciones. De la misma forma tenemos el aislado y este ya es un poco más costoso, como pueden visualizarlo, 
+pero va a depender de qué capacidad y demanda requieran. Daniel, pero ¿por qué no escoger entre esta solución y esta de acá? No es lo mismo. No me brinda la misma capacidad y es más barato. 
+Sí, pero no. En el premium tenemos ciertas limitaciones que en el aislado no. en un plan premium. Recuerden que les mencionaba que era una partición que comparten con eh otros usuarios, por lo cual 
+vamos a tener una limitación de eh del de levantamiento de aplicativos dentro de este servicio. En el aislado, netamente, esa instancia de ese computador, a pesar de que se considere como 8 GB de de 
+memoria RAM y poca CPU, es netamente 100% usado por ustedes. Pero toda la capacidad de demanda de tráfico también la va a usar esa instancia. En la parte de aquí arriba, esa instancia va a ser 
+compartida de la computadora. Obvio, ustedes tendrán dos de CPU y ocho de de RAM, pero eh la instancia del computador va a estar compartida. Esta de aquí no va a estar compartida y tienen mayor 
+capacidad de levantamiento de servicios web que la de aquí arriba. Esa es la diferencia. ¿Okay? [carraspeo] Es muy importante reconocer ese tipo de características para no incurrir en gastos que 
+no se necesitan. ¿Okay? Ahora, eh solamente para ejemplificar vamos a ir a un plan básico y van a observar que incluso tengo limitaciones de características ya en un plan básico. Dentro de 
+ciertas configuraciones tenemos eh un database, podemos sí, podemos hacer una conexión directamente ya creación y conexión de forma instantánea de una base de datos según lo que nosotros 
+vayamos requiriendo. Obviamente este va a ser un servicio SQL Server Assure. Eh, podemos escoger entre Postg, My Sequel y Cosmos DB. Ojo aquí, Cosmos DB tiene otras configuraciones que en este caso 
+Tlat tiene un enfoque con DB, pero tiene otras eh bases que les permite hacer otras configuraciones muchísimo más elegantes, depende de lo que requieran. Obviamente tendríamos que hacer ciertas 
+configuraciones y netamente si requieren utilizar cachés podemos hacer una inclusión de un en instancia de Ris. En este caso lo vamos a emitir en la ejemplificación. netamente las mismas. De la 
+misma forma, autentificación básica, podemos dejar habilitada o deshabilitada. Voy a cometer este pequeño error, voy a dejarlo deshabilitado porque quiero ejemplificar unas características muy 
+importantes. Ahora también podemos dejar esto como si fuera un proyecto para una intranet. Podemos aislarlo o dejarlo público. Podemos configurar eso. Sí, lo podemos hacer. Recuerden, ojo, hasta 
+cierto punto, dependiendo del plan, vamos a poder hacer ciertas eh conexiones a Virtualnet Nets o no. Si es que tenemos un plan básico, no vamos a poder hacer eso. Ahora, dentro de lo que es 
+monitoreo, vienes a tener una pequeña inmersión de un recurso para monitorearlo. Si ya escuchamos monitorear, netamente hablamos de Asure Monitor. Asure Monitor nos va a permitir hacer análisis no 
+solamente de eventos, sino también del comportamiento del aplicativo. concetamente podemos usar application insightes con open telemetry para poder observar el comportamiento del rendimiento de la 
+aplicación y el ciclo de vida del mismo. En este caso no lo vamos a aplicar solamente para eh mostrarlo y considerarlo. Después tenemos los tags y por último, pero no menos importante, el pequeño 
+review. En este caso, volvemos a ver, va a ser un plan básico. SK1 tiene este costo por mes, ¿sí? económico. En este caso, dependiendo para las soluciones que se requieran. Podemos escoger otros 
+planes. Sí, podemos escoger más planes. En la parte inicial nosotros en el plan tenemos explorar planes y precios. Podemos escoger una pletora completa de divisiones de comportamientos según lo 
+que nosotros queramos en base a nuestra demanda. obviamente considerar los costes, ¿no? Y por último vamos finalmente a la creación del servicio. Algo interesante que quería que pasamos para acá 
+es que en el grupo de recursos, no sé si recuerdan, teníamos el static web App, ¿no es cierto? En unos instantes va a aparecer un service plan y una web app. ¿Qué es lo que está ocurriendo en 
+la parte de aquí arriba? Podemos visualizar qué es lo que está ocurriendo. En este caso va a estar haciéndose el deploy todavía. Todavía no termina de revisar esa configuración. Vamos a 
+observar. Vamos a darle clic y nos dice que ya se ha desplegado. Como está en verde, tenemos desplegado una de los recursos. Voy a ver por acá. Vamos a resource. Okay. Antes de irnos para acá 
+vamos al grupo de recursos. Okay, ahora recordemos que este era nuestro static web app enfocado hacia el frontend y teníamos en la parte de arriba, lo que configuramos hace unos instantes, lo que 
+vendría a ser el backend, ¿sí?, con un App Service Plan y un App Service. Okay, entonces tenemos ya eh la arquitectura para levantar nuestro proyecto, tanto back como front. Ahora nosotros vamos a 
+ir hacia el backend. Cerrar esto para observar un poquito mejor. y tenemos nuestro plan. Recuerden, en este caso nosotros escogimos un servicio Linux, por lo cual ya nos sale el iconito del card de 
+Linux, ¿no? Con su pingüito correspondiente. Ahora, características que tenemos es en configuraciones de los planes podríamos tener un escalado, manejar el escalado, pero a ver, esperemos que nos 
+cargue. Vamos a poder hacer el escalado eh de las instancias, en este caso el escalado vertical, pero el horizontal vamos a visualizar que nos va a mostrar. Y miren, aquí tenemos las 
+características de nuestro plan. tenemos el precio, el el plan que actualmente estamos corriendo, la memoria máximo hasta lo que podemos escalar de instancias, ojo, y eh la actividad de las 
+instancias que estamos trabajando en este instante. Ya tenemos propiedades, ¿sí? esto si es que se requiere hacer alguna integración o eh manejar eventos, porque sí podemos hacer manejo de 
+eventos mediante Asure Function, Logic Apps o Evengrate. Eh, ¿qué sucede? ¿Qué acontece en EVRD? Asure Function y Logics, en base a desencadenadores de acciones y comportamientos que tenga el 
+aplicativo, en este caso el Service Plan, podemos en programar en high code o low code qué acciones tomar en base a ciertos eventos o comportamientos que tenga este servicio. Ahora vimos cómo 
+estaría el servidor. Ahora, ¿dónde estaría la solución? ¿Dónde se va a desplegar el proyecto? ¿Dónde está el backend? Va a estar en la web app. Okay. Esta web app, como vimos anteriormente, 
+les vamos a desplegar como código dentro eh de un proyecto Netcore que va a ser desplegado en punto net 10. Ahora, en este caso, igual tenemos un dominio en el cual podemos hacer pruebitas. Démosle 
+unos segunditos. Obviamente, como son primeras consultas, siempre va a tardar un instante. Y vamos a ver, mientras tanto por acá voy a duplicarlo para que vean algo interesante. igual les voy a 
+compartir este enlace para que vayamos haciendo pruebas posteriores. Voy a compartir en el chat tenemos dudas o preguntas, eh, por favor pueden ponerlas en el chat. sin ningún inconveniente y eh en 
+unos minutitos vamos a solventar cada una de sus dudas. Sí, antes de avanzar quería mostrarles un pequeño comportamiento que puede ser muy curioso y vámonos para el grupo de recursos. Vamos a 
+observar elent y vamos a ver métricas. En métricas yo puedo observar el comportamiento que ha tenido el aplicativo en este caso. Okay, vamos a ver. Eh, sí. S en error here function hits data out. 
+Okay. En este caso, [carraspeo] si empezaríamos a hacer consultas, entrarían, accederían a el primer enlace que les compartí. podría ver el comportamiento del aplicativo que tiene en el trayecto 
+de estos momentos, ¿no? De la misma forma podemos hacerlo con el backend. Actualmente ya tenemos el backend levantado. Sí, es justamente el último enlace que les compartí, pero vamos a ver, 
+tenemos el front end y el backend. ¿Por qué separarlos? El objetivo de separarlos es netamente una forma distinta de distribución. El front end puede tener una cierta carga, pero el backend puede 
+tener una carga distinta y tener consultas y servicios completamente aislados. Pero, Daniel, ¿y ahora, ¿cómo los conectamos? Si tenemos los dos separados. Para ello, así como teníamos el back y 
+el front, vamos a hacer un pequeño analogía de solución mediante un mesero. El mesero puede tomar el pedido del cliente, llevarlo al plato, pero no cocina. En el BAC, prepara lo pedido, aplica la 
+receta, pero no tiene mesa. ¿Cuál sería la solución? Consultas API. En este caso vamos a hacer consultas API Rest. Sí, si me pides de una forma te devuelvo lo que solicitas. Hay algunos 
+protocolos que se utiliza en este caso protocolos HTTP. Sí hay el protocolo GET, que actualmente ya se está cambiando, SQY. Sin embargo, para mantener la convención de lo tradicional, obviamente 
+vamos a visualizarlos como get para no confundirlos. Hay algunos verbos como son el get, el post, el put, el patch, incluso el delete, que básicamente podemos observar ya desde aquí un crude. 
+Entonces, podríamos aplicar las consultas de forma directas mediante los verbos. En el get, obtener y extraer información. En el post registrar un nuevo dato. En el put o el patch modificar un dato 
+ya existente. Y incluso el delete eliminar un dato. Vamos a ver sobre el código eh que ya existe. Les voy a presentar un pequeño proyectito. Obviamente hay algunas formas de levantar un proyecto. 
+Existen otros eh lenguajes y otras tecnologías que se pueden utilizar sin ningún problema. Sin embargo, en este el objetivo principal es hacer una petición mediante un usuario, visualizar cómo se 
+obtendría en el frontend, hacer consultas recibiéndolas mediante el API y obteniéndolas obviamente mediante la lógica del backend. Al final lo que va a recibir al frontend es netamente un objeto 
+Jason, que el frontend tendría que renderizarlo y gestionarlo para mostrarlo en pantalla. Obviamente el frontend puede que sea el contexto mucho más eh legible, más visual, porque tiene que estar 
+100% presentable, enfocado hacia el usuario. No podemos presentarle a un usuario un formato JSON donde puede confundirle, generar algo de confusión e incluso incógnita del contenido si es que está 
+adecuado o no. Netamente no todos los usuarios tienen conocimientos tecnológicos como para definir si es que es un objeto o no. Entonces para ello se utiliza lenguajes etiquetado que vendrían ser 
+HTML y mostrarlo de una forma mucho más elegante y bonita. Ahora, si es que no fuera así, ¿cómo se observaría el contenido? Pues se observaría como lo que tenemos actualmente en pantalla. Si 
+hacemos una pequeña petición get, obtendríamos este tipo de contenido con formatos Jon. Ya es mucho más fácil, es más liviano. Existía anteriormente y de hecho se utiliza hasta la actualidad 
+eh consultas Swap para eh obtener eh XMLs. es un poco más pesado, conlleva un poco de análisis un poco más profundo, pero a nivel de Jason puede llegar a ser una de las soluciones mucho más 
+livianas, ligeras, rápidas y mucho más eficiente de compartir información. Claro está que repito, hay todavía empresas que utilizan XML en las consultas de sus APIs. En la actualidad ya estamos 
+evolucionando y ya no hablamos no solamente de consultas con información de JSONs, sino con eh formatos TON. ¿Y qué son los T? Lo vamos a ver porque en el contexto del código que se tiene 
+también tenemos una estructura que puede ayudar en las soluciones que tenemos en la actualidad. Ahora, esta información que nos llega puede tener algunos conflictos y pueden ser conflictos a nivel 
+de código, tal vez pasó algo con el servidor o todo está bien. Estos códigos de los verbos http, los códigos nos van a mostrar el comportamiento que tiene. Por ejemplo, si todo está bien, nos 
+va a mostrar un estatus 200 2011 que se ha creado o se ha obtenido el contenido. Un estatus 400, 401, 404. Todos estos códigos van a tener diferentes eh contextos sobre lo que ocurre y el 
+comportamiento que tiene el servicio de comunicación. Por ejemplo, un 400 mal formateada, un 404 no existe o un 401 que si conocen cuál es el 401 pueden ponerlo en el chat y podríamos 
+considerarlo. Y también tenemos los 500. Los 500 vienen a ser un error netamente del servidor. Ahora vamos a visualizar y vamos a hacer unas pruebas con ustedes de eh algunas peticiones que va a ser 
+a nivel de Health, Health Dep, API Products, va a haber dos y también API status. Sí, un resumen de estado del sistema. a nivel de negocio los productos, el health dip, que viene a ser un chequeo 
+profundo, si el API y sus servicios internos están funcionando todo check, todo bien y por último el Health, si es que la aplicación está viva. Sí. Okay, nos dice, "Er de APK 401, sí, no 
+autorizado." Perfecto. Okay, vamos viendo ahora este pequeño ejemplificación en un solo sistema que vendría a ser cómo se mostraría para el frontend, cómo se comunicaría con el API y cómo 
+procesaría eh brevemente en el backend. Permítanme un segundo, les voy a compartir nivel de código. Tenemos este pequeño proyectito. Un segundo. Vamos a mover esto por acá. Y okay. A ver, 
+tenemos esta pequeña distribución de proyecto. Les voy a hacer un poquito más chiquito. Y tenemos infraestructura, dominio, controles y aplicación. Si ya entendemos o conocemos un poquito de esta 
+distribución, por favor pongamos en los comentarios cómo se llamaría esta distribución. De la misma forma, vamos a ver a groso modo cómo se estaría trabajando este contenido. Obviamente el 
+program sería cómo se va configurar todo el proyecto. Sí tenemos la infraestructura que vienen a ser las interfaces de cómo se van a consultar algunos servicios. Obviamente no es un no vamos a 
+realizar consultas a una base de datos, pero vamos a mantenerlos en memoria, por lo cual tenemos este contenido que se va a ir eh va a ir aumentando en base a las consultas que vayamos realizando. 
+¿Sí? Eh, tenemos luego el dominio que vendría a ser cómo vamos a gestionar, como vamos a visualizar el contenido que vamos a tener en este caso eh quemado, pero podríamos visualizarlo hacia una 
+base de datos. algún contenido de almacenamiento. Luego tendríamos los controladores, que es la lógica de consulta, ¿sí?, hacia ciertos end points. Aquí hay un punto bastante interesante y si 
+pueden verlo en pantalla, esta estructura hace referencia a un a perdón, a dos consultas distintas, pero están siendo llamadas por el mismo nombre. Aquí tenemos para lectura y escritura. Si 
+alguien conoce cómo es, cómo se llama mejor dicho este patrón de diseño, por favor igual coméntenos en los comentarios, vamos a observarlo y vamos a observar quién le atraiva. Y obvio, vamos a 
+hacer mención de por qué se utiliza en la actualidad con mucha frecuencia. Y para las aplicaciones netamente tenemos eh vamos a hacerlo así, para productos tenemos queries y comments. Sí. Si nos 
+abrimos, los queries van a permitirnos hacer consultas, los comments van a ser hacer eh eh no solamente consultas, sino ya acciones sobre el comportamiento de algún adapta. Ya, obviamente manejamos 
+igual su interfaz correspondiente para sus consultas y no sobrecargar todo el contenido. Y tenemos el de querer con help para visualizar eh el comportamiento, ya como sería el estatus. Ahora vamos a 
+hacer una pequeña pruebita. Vamos a levantar el servicio. Esperemos unos segunditos. Esperemos que todo se nos levante y por el navegador ya deberíamos poder observar que se nos levantó el 
+servicio. Okay. En este punto, si yo hago una consulta a al Swager, ya podemos observar que tenemos health, el products y el status. Obvio, vamos a hacer unas pequeñas pruebitas de forma directa 
+para que puedan observar. Esta sería la forma de hacer la consulta hacia cada una de estas peticiones y vamos a obtener el ambiente, la versión y el time, la zona horaria en la cual se está 
+consultando. Sí. Así que nos dice que en este caso el estatus está check. Vamos a ver el help. Igual hacemos una pruebita. El healthy está está saludable. Bien, el estatus está saludable. Igual 
+tenemos el eh la consulta en el tiempo. Ahora vamos a ver acá vamos a observar esta consulta y nos dice que la dependencia de productos está sumamente bien, no habría ningún inconveniente, está 
+healthy, saludable. Ahora vamos a observar el siguiente. Products, ¿cierto? en products. Nosotros ya teníamos quemados algunos productos, los cuales podemos visualizarlos aquí. Ahora vamos a 
+hacerlo con post. Vamos a utilizar esta pequeña estructura. Vamos a poner que esto sería una laptop. Perdón, vive aquí. Listo. Vamos a poner que esto es una eh laptop. Vamos a ponerle un precio 
+de 10. Sí. Y en stock vamos a dejar que sí. Sí, supongamos que son 10 chelines. En este caso nos dice que se ha agregado el siguiente eh el siguiente producto con el ID 4. Sí, vamos a volver a 
+hacer esta consulta de aquí arriba. Ojo, recordemos que teníamos tres productos y volvemos a hacer la ejecución y netamente ahora tenemos el cuarto que vendría a ser la laptop. ¿Sí? Ahora, 
+¿qué tenemos de interesante aquí? Justamente este patrón se llama CQRS Course. Este patrón de diseño nos va a permitir hacer consultas cuando manejamos inteligencia artificial, los cual nos va 
+a permitir discernir entre consultas y acciones directamente aplicadas a eh contenido de la información. Obvio, en este caso para discernir ese contenido, la IA, por ejemplo, podría tener consultas 
+netamente get y para otros servicios expuestos o para otro tipo de consumos podríamos distribuirlos con consultas post. variación netamente sería el verbo. Sí, esto es muy útil y escalable, no 
+solamente interno, sino externo cuando se gestiona y se trabaja con eh productos con inteligencia artificial. Esto siempre se debería utilizar. Ahora, muy bonito y todo, pero ¿por qué no lo 
+desplegamos? ¿Cómo se despliega si tenemos Visual Studio? Visual Studio, perdón. En este caso, simplemente le damos un clic derecho sobre el proyecto, le damos en publicar y vamos a hacer algo 
+interesante. Vamos a borrar todo lo que tenemos aquí y les voy a explicar algo sumamente entretenido. Vamos a borrarlo. Listo. A ver, cuando nosotros hacemos un despliegue, tenemos algunas opciones. 
+Recordemos que teníamos cómo publicar el código mediante CCD, pero también podemos subir un ZIP, también podemos hacerlo directamente desde el Visual Studio y también podemos hacerlo 
+directamente desde la línea de comandos. En este caso, desde el Visual Studio, podemos escoger la publicación. Y miren, aquí vamos a observar dos formas distintas, mediante Asure y mediante un 
+perfil de publicación. Mediante Asure, simplemente vamos a ir escogiendo cómo es la distribución de nuestro proyecto. En este caso era en Asure con un app service con Linux. Después de eso vamos 
+a escoger la carpetita que nosotros trabajamos y era copack. Algo importante, interesante que le voy a explicar es ranuras de implementación. Ya les voy a explicar en un momento. Miren, como ya 
+tiene un enfoque de back end, ya me pregunta si quiero hacer o gestionar un API management. En este caso lo vamos a omitir por el momento. Y por último, pero no menos importante, eh la publicación 
+del mismo. Ponemos un finish y esperamos que cargue toda la información. Una vez que nos haya cargado la información, simplemente le damos clic en publicar y observamos en la salida del contenido 
+si es que está trabajando o no. Como pueden ver aquí arriba dice que está validando credenciales de publicación. Publicación en Asure App Service en Linux. Miren, automáticamente ya me dice que 
+si quiero deporar detener la deporación. A mi mente sí. Vamos a detenerla. Esperamos unos segunditos. Mientras tanto, mientras nos carga esto, voy a aprovechar el tiempo para mencionarles esto de 
+acá. Cuando nosotros tenemos nuestro back end back, ya nosotros tenemos en nuestro back end lo que vendrían a ser deploy slots. Ya, ¿qué ocurre aquí? Los slots o ranuras de implementación son 
+una especie de segundo foco de soluciones. Así como nosotros tenemos ambiente de qua, eh qua, por ejemplo, tenemos dev y producción, nosotros podemos crear pequeños ambientes sin necesidad de 
+tener que crear nuevamente otro app service, otro service plan. No, podemos utilizar el mismo Service Plan con varios web apps y aquí podríamos hacer las distribuciones. Pero miren qué problema y 
+qué limitación tengo es que en nuestro service plan yo escogí un plan básico, por lo cual me va a dar un inconveniente para tener este tipo de implementaciones de los slots. ¿Qué es lo que me 
+dice? que al menos tengo que tener un plan orumo y gestión de los slots. Okay. Y por lo que vemos se nos ha publicado el backend. Vamos a ver. Sí, publicación exitosa, como podemos observar en la 
+parte de aquí. Y hay una segunda forma, la cual también podemos utilizarla para hacer este tipo de despliegues, mediante un perfil de publicación. Un perfil de publicación es un archivo el cual 
+ya podemos ingestarlo directamente en el Visual Studio para hacer uso del despliegue sin necesidad de estar gestionando y hacer búsqueda de servicio por servicio. Pero, ¿por qué nos daría 
+beneficio esto? Muchas veces tenemos muchas suscripciones y puede ser algo caótico hacer una búsqueda entre las tantas suscripciones que se pueden tener. En este caso tenemos Donald Publish 
+Perfect. Damos click y nos va a decir, "Oh, tienes la autentificación deshabilitada." ¿Qué tenemos que hacer? Tenemos que ir a configuraciones y habilitar dos puntos necesarios, configuración y 
+autentificación y eh FTPs básicos de autentificación de publicación. Le damos click, esperamos que se nos guarde y nuevamente vamos a intentar descargar el mismo perfil. Vamos a ponerle aquí y 
+vamos a darle en guardar. Listo. En este caso se llama backcop. Aquí en este botoncito nos va a decir nuevo perfil. Vamos a escoger importar perfil. Siguiente, exportar. Vamos a observar el del 
+back. Seleccionamos, damos en siguiente y automáticamente este archivo ya tiene todo el contenido de lo mismo que realizamos. dimos menos clics y es exactamente lo mismo. Ojo, muy importante, cuando 
+nosotros tenemos un plan premium o aislado, consideren que tenemos que hacer algunas configuraciones a nivel de red para poder tener el aislamiento aislamiento correspondiente, por lo cual sí 
+tenemos que considerar nuestra IP pública, dinámica o estática para gestarla dentro del Bond y los OB. Ahora vamos a observar. Teníamos nuestro backend por aquí. Perfecto. Y teníamos algunas 
+consultas de las cuales ya estábamos haciendo uso. Por ejemplo, el de productos. Nuestra ruta del era esta. Entonces podríamos utilizarlo por acá. Y miren, ya nos está respondiendo. Okay, les voy 
+a compartir igual esta ruta. Pueden hacer uso y gestión para poder hacer pruebitas. Y claro, mientras más utilicen este servicio, yo podría observar el comportamiento de la demanda que tienen 
+directamente en el portal. Igual tenemos en el área de monitor eh monitoreo, perdón, las métricas de eh comportamiento y eventos del servicio. En este caso estoy ojo, en el backend. Vamos a 
+visualizar si tenemos consultas 200 y podemos observar que ya tenemos algunas consultas por acá. Podemos tener una suma, un porcentaje, podemos ver altos, máximos y mínimos y un conteo. Sí, por 
+ejemplo, ya tenemos dos consultas por aquí. Si realizan más consultas, en este momento podríamos observar más comportamiento de demanda en el servicio. Bueno, esta ha sido una pequeña 
+ejemplificación de el comportamiento y un despliegue rápido de un proyecto de backend con su correspondiente API y un consumo como se podría observar en el frontend. Pueden dejarnos sus consultas 
+y dudas en el chat. Vamos a iniciar con el área de preguntas. Okay. Orlando nos mencionaba eh este servicio de web app y static web app se pueden juntar porque no se eh no es uno, es para backend y 
+el otro para frontend. Sí, se pueden juntar eh dependiendo de cómo lo requieras. Por ejemplo, eh si requieres o trabajas, por ejemplo, con un proyecto en PHP, si es mediante la Arabel, por ejemplo, 
+puedes tener los fundidos como un proyecto tradicional antiguo de del back con el front directamente en bebidos, como si fuera un proyecto MBC. Eh, si lo separamos, obviamente es porque requieres 
+tener un mayor control sobre la demanda en las consultas del BC y tenerlo separado con el frontend te va a permitir tener una mayor gestión de análisis del comportamiento del servicio hacia el 
+usuario final. Eh, a ver, Jasel dice sobre la herramienta de inteligencia artificial en el jacatón. Mi pregunta es si estarán permitidos libremente o no. Eh, bueno, de ese lado eh los coordinadores 
+nos podrían ayudar con esta eh esta duda directamente eh sobre las limitaciones y lineamientos que tendrían en el jacatón de forma instantánea. Eh, sin embargo, eh si es que se requiere o van a 
+hacer uso de inteligencia artificial, recuerden que tenemos algunos puntos a considerar, no solamente sobre el consumo en el back end, sino también en limitaciones de tokens. ventanas de contexto. 
+Sí. Eh, algo interesante, importante, si es que van a manejar bases de datos, cómo van a manejar los bailings, cómo van a manejar los indexamientos de información, si van a manejar una base de 
+datos con caché o no, eso es muy importante y eso les va a ahorrar y optimizar tiempo y costos, no solamente costos eh de consulta, sino también costes de tokens. ¿Sí? Muy importante 
+considerarlo. ¿En qué se diferencian estos servicios de Asure con otras opciones de eh despliegues de web app como Versel o render? Ya en ese punto estas soluciones te van a permitir tener más 
+control directamente sobre los proyectos que quieres distribuirlos. Sí, obviamente si es que tienes el back end y el front endualizados como una solución, a nivel de código lo puedes desplegar. 
+Tienes integraciones de forma directa en Asure, las puedes integrar incluso con control de eventos como pueden ser Asure Function, Logic Apps y Event Grid. Un control absoluto sobre los eventos y 
+comportamiento con Asure Monitor, visualización de open telemetry y application inside. para visualizar tener control eh manejo y distribución de errores como pueden ser los star trrace sobre cada 
+uno de las actividades y comportamientos que tenga eh el aplicativo. Sí. Eh José, la clase será subida a alguna plataforma o a YouTube. No sé si en ese caso eh Luis o Larisa nos pueden aclarar. 
+Creería que sí, no sé si tenemos correcto, con gusto. Todas las grabaciones de los workshops van a quedar en el canal de YouTube del Jacatón. Lo pueden buscar como Jacaton CM. Y bueno, por aquí 
+Luis un poquito más temprano puso el link, se los volvemos a colocar. Sí, exactamente. De hecho, aprovechando el espacio, eh la grabación de la semana pasada ya está arriba, así que pueden verla 
+eh para que puedan entonces si no tuvieron la oportunidad de participar en el workshop el martes pasado, puedan ver entonces la grabación. Perfecto, muchas gracias. Eh, a ver, dice Manuel, "Me quedo 
+con una duda sobre el tema de los ASP. Si yo tengo una un plan gratuito, okay, pero es necesito escalar la app, se debería cambiar de plan para poder escalar, ¿cierto? Sí, sí. Eh, a ver, ojo 
+aquí. Si es que quieres escalar de forma eh vertical lo puedes hacer, pero si quieres de forma horizontal te puede generar un poco de conflicto tomar en cuenta ello Sí. En ese caso sí tendrías 
+que cambiar de plan para poder hacer uso de las dos. Eh, más que nada también te va a dar un poco de limitación si es que quieres utilizar los slots de implementación, lo cual es la joya de de 
+las soluciones que incluso te va a permitir hacer los switch entre bases de datos y entornos. Por ejemplo, si quieres hacer una especie de invento de distribución eh bluegren, por ejemplo, te va a 
+permitir trabajar en una conexión de una base de datos con un entorno y hacer una combinación entre bases y entornos. Eso es super bueno. Si que quieres hacer algunas pruebas, es genial. Y eh Roger 
+nos dice, "A nivel de eficiencia, ¿es mejor desplegar la app web en una BPS o un servicio autogestionado como este?" Y me imagino que depende de la etapa y madurez del proyecto. Bueno, correcto. 
+Depende de cómo esté distribuido tu proyecto. Me refiero a la arquitectura que tenga. Por ejemplo, si es un monolito, eh un proyecto eh con arquitectura hexagonal o microservicios. podría eh más 
+bien recomendarte ahí eh pasarte a a contenedores, ¿sí? Que te va a ser mucho más eficiente la distribución de cómo eh utilizarías las conexiones entre proyectos. Te va a ser mucho más 
+fácil, más eficiente, eso sí, claro, a nivel de coste puede tomar un poco más, pero a nivel de eficiencia va a ser increíble. Los despliegues igual te van a permitir trabajar de una forma más 
+eficiente, te va a costar menos tiempo al inicio, sí, hasta que se despliegue, pero e para integrar soluciones eh o arreglar eventos con eventos las soluciones dentro de algún proyecto es mucho 
+más fácil. Ahora, eh con el tema de la madurez del proyecto, por ejemplo, si tenemos algún servicio ya levantado, eh podemos tener como recomendación algunas previsualizaciones del comportamiento 
+bajo demanda y poder ir haciendo escalados, ya sea vertical o u horizontal. Sí, recuerda que también tenemos escalamientos eh automáticos en base a umbrales, los cuales te van a permitir tener una 
+mejor eficiencia sin tener que estar tú detrás del comportamiento del aplicativo. El día de las competencias nos dirán eh créditos o algún plan especial para uso de los servicios en Ashur. Ahí 
+igual no sé si Luis o Larisa, creo que les podrían dar un poco más de contexto o directamente ya en el jacatón al momento de iniciar les darían todos esas lineamientos y reglamentos que 
+tendrían que manejarse. Sí, efecto. En efecto, esto pues ya se estará compartiendo eh muy posiblemente el día viernes. Durante las charlas estarán compartiendo un parte de las directrices que va 
+a tener el los desafíos, cómo se van a desarrollar y el día sábado pues también se van a estar reforzando dichas reglas o condiciones que se van a tener para el desarrollo de los retos que van a 
+atender. S. Perfecto, Luis allí, perdona, Daniel, de si en todo caso para los retos necesitan tener algún tipo de crédito o acceso a alguna plataforma, todos esos accesos, todo lo que sea 
+necesario para que puedan desarrollar las actividades, se les va a proveer. Excelente, Luis, muy completo en realidad este jacatón. Bueno, eh no sé, eh esas serían las últimas preguntas y 
+consultas que tendríamos con los participantes. Más bien ahí te doy paso, Luis. Perfecto. Excelente. Muchas gracias, Danel. Bueno, ha sido una noche de mucho aprendizaje. Muchas gracias, Anel, por 
+compartir todo ese conocimiento con eh todos estos estudiantes ansiosos por aprender. Y pues no queda más que agregar. Quería recordar eh tal como lo mencioné hace un momento, la grabación de la 
+sesión pasada ya está en nuestro canal de YouTube Hakaton CM. Allí pueden encontrar este enlace y podrán encontrar dentro de unos días esta grabación también para que la puedan ver. Si en todo 
+caso conocen a alguien que no pudo asistir a este workshop, puedan entonces indicarle que lo puede encontrar en la eh en nuestro canal oficial de YouTube. De igual forma voy a compartirles en el chat 
+el formulario de asistencia para el workshop del día de hoy. Llénenlo, por favor. También estaré compartiéndoles nuevamente los enlaces de los sitios oficiales del Hakatón, eh tanto lo que es 
+el canal de YouTube como la página web oficial donde se va a estar publicando información con respecto al evento. Allí pueden encontrar fechas y demás. Y nuestro eh canal de difusión en WhatsApp 
+en donde también se están compartiendo eh ciertas eh en algunos momentos algunas trivias o algunos otros datos que les puedan ser de utilidad. Eh, Larisa, no sé si tienes algo más que agregar, 
+algo que quieras comentarnos, invitarlos al próximo workshop que va a ser el martes. Eh, bueno, que nos sigan en el canal, también en la página web e vamos a ir colocando todos los workshop, les 
+va a ser de muchísima ayuda para poder tener los conocimientos necesarios para resolver el reto. Y bueno, también queda a disposición la cuenta de correo jacatoncopa@copaer.com para cualquier duda 
+que puedan tener después. Justamente ahí en base a la última pregunta que nos pusieron con eh Juan Castillo para no quedarnos sin hambre. En este contexto que nos consulta sobre qué ventaja 
+tenemos de rendimiento, el rendimiento puede darse el mismo, depende de qué service plan estés escogiendo. Lo importante es cómo trabajes a nivel de tu equipo. Si eh tienes variaciones de sistemas 
+operativos con Mac, Linux, Windows en tu equipo eh de desarrollo, eh es recomendable utilizar contenedores, ¿no? Ya que los ambientes pueden cambiar. De ahí si manejas un stack bastante eh 
+distribuido, sólido y estable con tu equipo, un run time clásico te va a solucionar este problema también. Eso para finalizar, Luis. Muchas gracias. Perfecto, perfecto. Muchas gracias, Daniel. 
+Gracias a todos por participar, por eh permitirnos eh llevarles a ustedes todo este conocimiento, a ustedes por brindarnos este tiempo también. Muchas gracias por ello y pues los esperamos el 
+próximo martes eh a esta misma hora por este mismo canal [risas] para que no se lo pierdan y pues cualquier consulta está allí. Le les compartí también el correo electrónico 
+jacatoncopa@coper.com para cualquier consulta o duda que tengan acerca del jacatón. Bueno, sin más que tengan una excelente noche. Muchas gracias a todos por participar. Muchas gracias. Una buena 
+noche. Hasta la próxima.

@@ -5,6 +5,20 @@ Material de preparación entregado por los organizadores, convertido a Markdown 
 **Equipo:** 4 integrantes.
 **Tracks:** Microsoft (Azure Monitor + Application Insights) y Dynatrace (observabilidad).
 
+## ⚡ Empieza aquí: guías destiladas
+
+| Guía | Para qué |
+|---|---|
+| [Reto Azure](guias/reto-azure.md) | Método de diagnóstico, mapa de síntomas, KQL, CORS/health checks/variables, App Service y Terraform |
+| [Reto Dynatrace](guias/reto-dynatrace.md) | Cómo será el reto, ruta Problems → traza → log, Kubernetes y cheat-sheet DQL |
+| [Reglas y logística](guias/reglas-y-logistica.md) | IA prohibida, agenda, transporte, premio y contactos |
+
+**Hay dos retos separados:** Azure (workshops 1–5) y Dynatrace (workshop 6). Según W6, **no se permite IA generativa externa** durante la competencia, así que estas guías deben poder usarse sin Claude.
+
+## Workshops (transcripciones + videos)
+
+Ver [workshops/README.md](workshops/README.md): 6 sesiones con puntos clave, transcripción oficial y subtítulos para buscar frases textuales.
+
 ## Contexto (material oficial)
 
 | # | Documento | De qué trata | Cuándo consultarlo |
@@ -13,6 +27,7 @@ Material de preparación entregado por los organizadores, convertido a Markdown 
 | 02 | [Charla 2: Operación Bajo Presión](contexto/02-charla2-operacion-bajo-presion.md) | Metodología de troubleshooting, mapa de síntomas, 5 casos típicos, KQL de bolsillo | **Durante el reto: es el mapa principal** |
 | 03 | [Conceptos clave de Dynatrace](contexto/03-dynatrace-conceptos-clave.md) | Observabilidad, DQL, end-to-end, LiveDebugger, AppSec, Business Events | Para repasar Dynatrace |
 | 04 | [Dynatrace Sesión 1](contexto/04-dynatrace-sesion1-observabilidad-inteligente.md) | Pilares, Kubernetes, servicios, PurePath, DQL con ejemplos, equivalencias KQL↔DQL | Para escribir consultas DQL |
+| 05 | [Guía del estudiante Dynatrace](contexto/05-guia-estudiante-dynatrace.md) | Registro en Playground, University y curso Essentials | Para practicar DQL antes del reto |
 
 Herramienta de trabajo: **[BITACORA.md](BITACORA.md)**, la bitácora del incidente que llenaremos durante el reto.
 

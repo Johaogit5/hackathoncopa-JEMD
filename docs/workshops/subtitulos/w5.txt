@@ -1,0 +1,333 @@
+Perfecto. Okay. Bueno, muchas gracias a todos, bienvenidos nuevamente. En sesiones previas habíamos visto algunos conceptos bastante moderados de lo que es la nube, conceptos a nivel de desarrollo y 
+también incluso plataformas de devobs incluso el día de hoy vamos a ver en qué razón con qué cómo razonamos, mejor dicho, para llegar a solucionar uno de estos inconvenientes que llegan a ser 
+eh evidentes hasta cierto punto, pero otros pueden llegar a tener a requerir un poco más de intuición dependiendo end de cómo levantamos un proyecto. El día de hoy vamos a ver trouble shooting, 
+health checks, course y configuraciones. Sí, vamos a ver cinco pilares importantes desde donde avanzaremos en el día de hoy. Primero, lo que son diagnósticos estructurados de los errores, 
+variables de configuraciones, los cores y seguridades, eh los health checks y los errores. HTTP. Dentro de lo que es el diagnóstico, vamos a ver síntomas, evidencia, hipótesis. validación. Aparte 
+en el punto número dos dentro de las variables de configuración es un punto bastante controversial que vamos a topar con pinzas y lo vamos a ver dentro del application settings y dentro de otros 
+ambientes. También dentro de lo que son los course y seguridad. Vamos a ver cómo podríamos ir haciendo algunos bloqueos por algunas entidades o direcciones o por qué no si en caso queamos hacer 
+pruebas habilitarlo de forma general para todo el público o el ambiente. Igual dentro de los checks confirmar si el sistema sigue funcionando, que todo este check, todo esté correcto, que no haya 
+ningún inconveniente. Y por último, pero no menos importante, los errores HTTP y la causa raíz. Aquí igual es un punto bastante controversial el cual vamos a topar con pinzas para aclarar ciertos 
+puntos de cómo se debería gestionar y organizar en nuestro có. Okay, entonces vamos a iniciar primero con lo que es el diagnóstico estructurado de errores. Mucha gente está contenta. Bueno, en 
+este punto vinimos a topar el método eh paso a paso, que son cinco, ¿okay? Son cinco pasos los cuales vamos a ir eh avanzando uno a uno. Ojo, puede ser un poco tedioso, pero es muy importante. Es 
+necesario poder ir de punto en punto para poder visualizar en dónde está fallando. Primero vamos a observar cuál es el síntomo, qué es lo que está ocurriendo, qué mensaje aparece, cuándo, a 
+quién, dónde, incluso por dónde. Las cinco Ws es muy importante considerarlas cuando encontramos este tipo de problemas. Muchas veces son de capa ocho, pero para llegar a ese punto y definirlo, 
+tendríamos que ver cuáles son los síntomas, cuáles son los problemas, dónde, cuándo, quién, por dónde y los tiempos. es algo muy importante. Actualmente ya existen algunas herramientas que 
+nos permiten hacer un análisis y seguimiento de algunos proyectos, ya sea que estén desplegados o incluso si es que los tenemos todavía en desarrollo. Después de visualizar, entender, eh 
+comprender cuáles son los síntomas, pasaríamos al siguiente punto. Vamos a ver el comportamiento a nivel de red de nuestro aplicativo. Vamos a ver la evidencia. Esta evidencia puede ser a través 
+de logs, consola, código HTTP o https y network tables. Muy importante. Aquí en las sesiones anteriores habíamos mencionado algo interesante sobre la visualización de los logs a través de las 
+tablitas en los application. Aquí nosotros podemos visualizar algunas tablas muy importantes sobre el resource, eh exceptions y otras tablitas que nos iban a dar un tracking mucho más amplio de lo 
+que está ocurriendo en ese instante. Sí, ojo, sería un snapshot bastante elegante para poder dar continuidad a este seguimiento del síntoma. Una vez que ya tenemos las evidencias a través de los 
+logs, ojo, a través de la consola, configuraciones, HTTP, algo importante en la consola tenemos que eh recordar que en Ashure tenemos Ashure Monitor, lo que nos permite eh ir visualizando los 
+eventos y también loss dependiendo si es que vamos a usar un componente hijo, nos va a proporcionar un campo mucho más amplio de visualización como puede ser eh application insightes mediante Open 
+telemetry para hacer la captura e ingesta de logs hacia las tablitas. Entonces, igual las eh la consola nos puede proporcionar información mucho más eh profunda de cómo está trabajando ons en ese 
+instante el aplicativo para poder dar seguimiento. Es decir, la consola nos dará información en tiempo real y los logs nos darán la información del histórico de lo que ha ocurrido. Muy 
+importante considerar que para observar la información en consola, nosotros tenemos que a través de código considerar los mensajes que tenemos que capturar en las de excepciones o en los puntos o 
+los puntos quiebre que queremos previsualizar desde consola. Es muy importante entender que estos mensajes van a ser informativos más no reactivos. Ahora existen otras funcionalidades colindantes 
+dentro de Asure que habíamos visto como Asure Function. Los assure function nos van a permitir ejecutar un pedazo de código, es decir, es high code, el cual va a poder realizar alguna acción 
+previamente codificada en base a algún evento. Por ejemplo, tengamos un proyecto eh con una base de datos coned o quizás e alguna lógica de tiempo que queramos analizar. Asure Function puede 
+capturar ciertos eventos en la funcionalidad dentro de una base de datos. por ejemplo, usando un Cosmos DB o un Post SQL o quien quita incluso el manejo de un storage account. Los eventos podríamos 
+hacer un control y ejecutar funciones en base a las actividades que nosotros requerimos. De hecho, ese es un punto bastante interesante que se puede observar en algunas certificaciones de Microsoft, 
+que es como sugerencia utilizarlos para inteligencia artificial. Esto nos permite eh utilizar cuando realizamos enings dentro de bases de datos un lanzamiento [carraspeo] de un asure function para 
+poder hacer la actualización de la tablita con la columna de losings y la nueva información. Por ejemplo, actualizamos información, realizamos un waiting y automáticamente se actualizaría esa 
+información también correspondiente al vector que queremos hacer consulta. ¿Okay? Ahora ya visualizamos los síntomas, ahora hemos visto la evidencia. Amos a los logs y también a la consola. 
+¿Qué pasa después? Tendríamos que levantar una hipótesis, una causa probable basada en evidencia. ¿Qué es lo que ocurrió? ¿Qué está ocurriendo? y qué es el dónde es el punto donde se 
+está afectando. Aquí tenemos que distinguir en todo el flujo de la arquitectura de nuestro proyecto en dónde se está viendo afectada la información o el proceso o incluso la conexión. Es muy 
+importante eh entender que son los tres pilares importantes, proceso, almacenamiento y red, los cuales tenemos que ir visualizando en contexto con el error que se nos presente. Ahora, ¿qué pasa si 
+nosotros nos lanzamos a hacer una hipótesis directamente? Puede que estemos equivocados. El punto tres es un punto álgido y es una regla de oro que no podemos saltarnos al punto tres sin 
+previamente hacer un análisis de los anteriores dos puntos. ¿Por qué? Puede que hagamos una hipótesis eh incorrecta, fallida o que no tenga mucha relevancia con el error que se realice. Muchas 
+veces pueden ser errores de capa 8, considerados un error de factor humano o en último de los casos podríamos tener algún problema interno como conexiones de red, algún problema de firewall por 
+parte del cliente incluso. Entonces tenemos que tomar esas consideraciones. Pero para poder llegar a ese descarte tenemos que pasar por el síntoma, luego la evidencia y al final la hipótesis. 
+¿Okay? Ahora, si ya tenemos una hipótesis tenemos que ir a verificar que esta sea válida, ¿no? Entonces cambiar una sola cosa a la vez es importante para entender cómo afecten todo el flujo de 
+lo que se está trabajando y que no afecte a groso modo dentro de la arquitectura. Sí, aquí empezamos ya hablar mucho más sobre la arquitectura de la solución porque no solamente puede estar 
+afectándose un pedacito pequeño del proyecto, no solamente el backend, no solamente el front end, puede incluso estar fallando algún recurso, algún problema de conexión, pero para llegar a ello 
+tenemos que pasar por los tres primeros procesos. Dentro de la verificación tenemos que hacer un estudio de una cola de ejercicios. Estos tenemos que irlos haciendo muy ligeramente y muy 
+conscientes. Ojo, esto de aquí tenemos que hacer el análisis netamente en un ambiente islado. No cometamos el error de hacer pruebas y validaciones en producción. Es una falla tenaz que sí en 
+algún momento de su vida posiblemente les haya tocado hacer modificaciones en producción por algún motivo, razón, circunstancia de fuerza mayor. Sin embargo, no es una de las mejores prácticas. 
+Recuerden que hay información que llega a ser auditada y si se llega a hacer una modificación en producción, todo el histórico va a tener una afectación y claro, podrían tener incluso problemas 
+legales. Es importante, por ello no hacer cambios en producción, sino primero en ambientes aislados como sería QUA o DEP. Lo correcto sería mantener en caso de una corrección eh emergente un 
+hotfix, por ejemplo, una rama previa a producción. Se revisa, se prueba, pasa por Quba obviamente y luego a producción. No se debería realizar cambios forma directa en el ambiente productivo. 
+Ahora, claro, si nosotros cometemos un error en el ambiente productivo, se vería afectado toda la operación. Imagínense que somos un banco. Todas las operaciones y transacciones a niveles de locks 
+y todo la cantidad de dinero que tienen en trazabilidad de tiempo, porque claro, es por tiempo, muchas de las transacciones pueden fallar, pueden desaparecer y es dinero, es algo mucho más delicado. 
+Entonces, no solamente información puede generar incluso problemas no solamente legales, sino fiscales. Ahora, pasándonos de la verificación, punto por punto tenemos que ir observando desde la 
+capa del cliente. Primero visualizamos qué es lo que observa el cliente, qué ocurre desde la parte del cliente, si es que llegamos desde la parte del cliente, que es la parte más fuerte, 
+encontramos algo, pues esto es a nivel del frontend, sino la parte del backend, porque recuerden, hay información que viene procesada desde el backend y en el frontend solamente se renderiza. Ahora 
+si es un problema visual, es netamente del frontend. Claro. Ahora, si es que llegar a darse, por ejemplo, un caso particular, un proyecto se observa en todos los clientes sin ningún inconveniente, 
+pero exclusivamente en un país un solo cliente tiene problemas para ingresar a esa dirección. ¿Qué es lo que ocurrió? ¿Qué es lo que pasó? Se hace una reunión con cliente, se revisa, se 
+hacen pruebas en caliente, en vivo, junto con el cliente y se observa qué está realizando, qué es lo que hizo, cuándo, a qué hora. Y ojo, importante, qué información sube y desde dónde está 
+conectado. Ese punto puede ser algo raro, pero es un punto álgido que puede llegar a solventar muchos, pero muchos problemas. ¿Qué es lo que ocurrió? El el sistema estaba operando de forma 
+adecuada, sin ningún inconveniente. El problema es que el cliente había habilitado en su firewall unas reglas y restricciones por algunas IPs. Obviamente, como habían considerado que este sistema 
+tenía varias operaciones, habían bloqueado por el firewall el backend de las conexiones hacia ese servicio. Entonces, obviamente el aplicativo iba a mostrar mensajes de falla de comunicación. 
+Claro, esto es importante y nos va a dar un feedback mucho más elegante a nosotros cuando pongamos eh mensajes mucho más intuitivos para nosotros, pero que sean traqueables para identificar este 
+error. Este es uno de los problemas que pueden suceder. Pueden ser incluso problemas de red, como es en este caso, problemas de conectividad, almacenamiento, procesamiento o visualización. Claro, 
+una vez que validamos que era un problema del cliente, llegamos al punto número cinco, se observa que no es un problema del aplicativo como tal, sino un problema de conectividad por parte del 
+cliente. Entonces, esto no es un problema del sistema, es un problema de el final de las operaciones en donde visualiza el contenido del cliente. Y claro, ¿cómo podemos ir discriminando? Obviamente 
+era un cliente en un solo país el que se veía afectado. El resto de operaciones, el resto de clientes, el resto de países no tenían ningún inconveniente, ningún problema. Entonces, nos 
+podríamos focalizar directamente con el cliente. Si hubiéramos tenido algún problema que nos reporten más clientes, esto ya nos levanta una bandera roja y nos hace referencia a que es un problema 
+netamente del de todo el proceso de levantamiento del proyecto. Ahora, si es que es algún problema de conectividad interna dentro del proyecto, igual lo podemos revisar en el punto número dos, lo 
+que son lo logs, consola, códigos HTTP y tablitas network, porque sí, también hay algunos proyectos que se gestionan con backend directamente por private points, ¿sí? y realizan pering para 
+poder conectarse. Entonces, en este punto, si no visualizamos este contexto, puede ser un poco más caótico. Recuerden, son cinco pasos principales, los cuales los tres primeros tienen que verse uno 
+a uno sin saltarse ningún proceso. Regla de oro. ¿Okay? Ahora, si visualizamos a nivel de un flujo, podríamos analizarlo de la siguiente forma, ¿no? Se reproduce primero el error en el navegador, 
+que en torno ocurrió, qué es lo que pasó, como cuando don es constante, es intermitente. Esto también nos va a dar una visualización si es que es intermitente o constante. Podremos identificar 
+incluso que puede ser algún problema de lógica o de algún flujo, ¿okay? Pero si es que es un solo cliente podríamos focalizarlo. Vamos a la recolección de evidencias. En The Bobs, en los de 
+Tools dentro de la consola y los navegadores, eh tenemos cómo visualizar las consolas a nivel de JavaScript, HTML. Y claro, ojo, aquí es importante entender que algunos proyectos ya tienen código 
+ofuscado o considerado como espaguetti. Sí, es una eh forma de ofuscar la información para que no se presente de forma visualmente legible en el navegador. También tenemos que visualizar los logs 
+del backend en tiempo real, que sería lo mejor. Loss, la consola, lo que habíamos mencionado hace un momento atrás. Posterior a ello, la fórmula de la hipótesis. Creo que el backend no recibe 
+una variable. ¿Cómo llegamos a esta hipótesis? A través del análisis del comportamiento del aplicativo. Primero, los síntomas, se reproduce el error, se analiza, se recolecta evidencia y 
+después de ello formulamos la hipótesis. Una vez que ya hemos logrado este punto, vamos a validar, a verificar si la hipótesis que tenemos es la correcta. Puede que el back no esté recibiendo una 
+variable o puede que la variable ya no funcione. Esa es otra. Cuando usamos o gestionamos variables de entorno, que ya lo vamos a tomar al final, hay tres formas adecuadas de usar las variables. Si 
+pasamos ahora a la verificación y aquí es el punto donde se cae, obviamente tendríamos que pasar al proceso de corrección, luego validar y publicar la solución. Claro, repito, esto tiene que ser 
+en caliente eh lo más pronto posible. Cuando digo en caliente, no quiero decir que vamos a topar de forma directa en producción, sino que vamos paso por paso hasta llegar a la solución. Es como 
+una analogía hacia un médico. Primero ustedes van a medicina general, se hacen una revisión, luego verifican qué es lo que está ocurriendo, crean el doctor crea una hipótesis de lo que puede 
+estar ocurriendo, manda hacer exámenes para validar si es que su hipótesis es correcta y al final aplica medicamento o en casos críticos aplicaría una cirugía. es exactamente lo mismo. Ahora 
+vamos a ver un campo bastante interesante que son las variables de configuración. Actualmente las variables eh podemos trabajarlas con un aspecto clave valor. ¿Qué quiere decir en este punto clave 
+valor? Un valor mal puesto rompe todo el ambiente. Nosotros podemos hacer referencia a una de estas variables. Por ejemplo, en el backend se conecta al frontend, ¿cómo? Mediante la variable app 
+URL. Llaman la URL equivocada, pues obviamente va a dar error o de la red o comunicación o error 404. Un debook a nivel de detalle, de error o de locks expone información sensible en producción o 
+dificulta el diagnóstico en dep. Feature flag x viene a ser una activación de una función. Menciona un buleano entre que sí, entre no está activa o desactiva alguna función. Claro, estos son 
+algunos prefijos de los que se llegan a utilizar, pero como pueden ver es bastante intuitivo. API Base Regel hace referencia a las conectividades y de la misma forma con el resto de conexiones. 
+Ahora, ¿qué es lo que ocurre aquí? Si nosotros saltáramos directamente al desarrollo, ¿cómo se visualiza esto? Cuando estamos en el ambiente de desarrollo, nosotros tenemos un área de 
+variables de entorno, como lo perdón, [carraspeo] cómo lo que vemos exactamente en pantalla. Por ejemplo, API Base URL hace referencia hacia la conexión del backend con el API. The book ent en el 
+ambiente de producción, API USL hace referencia hacia otro entorno y va a mencionar si está en book o no. true o false. En este caso, muy bien ambiente productivo hace mención hacia false y claro, 
+uso de código en el frontent podemos distinguirlo mediante el código referente hacia book. Sí, en este caso va a ser un fetch hacia un URL y posteriormente eh con el slash API hacia la consulta 
+del end point de usuarios. Claro, esto lo va a realizar el frontend, pero esas variables de entorno puede que generen un problema. En Asure tenemos tres formas de levantar los las variables en torno. 
+La una es levantando en el app settings cada una de estas variables. Opción dos, podemos hacerlo incluso en el ambiente dentro del depops. Y un tercero es que se quede anidado el app settings 
+directamente, ojo, directamente se quede anexado el app app settings en el código, en el proyecto. Daniel, pero y qué sentido tiene, o sea, ¿qué está ocurriendo cuando nosotros codificamos el 
+proyecto, levantamos el ambiente? Al momento de hacer una compilación, el building del proyecto, se también se compila las variables de entorno o las referencias hacia las variables de entorno. 
+¿Qué quiere decir esto? Cuando hacemos el building compilamos las variables de entorno. En este caso, como vemos en pantalla, hacemos un llamado directamente a esa data. Pero hay otra forma. ¿Qué 
+tal si hacemos una referencia a una variable de entorno y esa referencia va a ser un llamado directamente hacia una ubicación donde tenemos almacenados los secretos de forma adecuada? Sí, 
+[resoplido] en un punto que se consume mediante APIs, pero es completamente segura su trazabilidad de información traqueable, legible y actualizable. Esta de aquí viene a ser una de las soluciones 
+que también proporciona Asure, actualmente manejando Asure Kit Value, baúl de secretos de Asure. Aquí nosotros podemos levantar secretos, certificados e incluso en planes premium podríamos hacer 
+uso de tokens físicos y gestionarlos desde la plataforma. ¿Qué beneficio? ¿Qué beneficio nos brinda el manejar key value? Cuando nosotros quemamos las variables de entorno en el proyecto, para 
+poder hacer un cambio, tendríamos que hacer un cambio en la variable, reiniciar el servicio y nuevamente tendríamos conectividad. En key value simplemente hacemos el cambio, como está referenciado 
+en las variables de entorno, vamos a hacer el cambio en key value. Actualizamos, habilitamos el nuevo la nueva actualización y de forma instantánea el cambio se hace en producción. mucho más 
+fácil, más rápido, sin interrupciones y claro, 100% seguro, casi 100% seguro. Recuerden que ninguna información es segura. Ahora, pasando un poquito a los niveles de seguridad, vamos a ver el 
+tema de course y seguridad. ¿Cómo se conectan los servicios? Podríamos limitarlos para que puedan conectarse hasta cierto punto o tengan opciones de conectividad. Los cores y la seguridad 
+netamente tienen tres focos principales. Primero, un origen, que es el protocolo más el dominio más el puerto, viene a ser algo parecido como lo que tenemos aquí arriba, local host host 5,000. 
+Sí, el protocolo va a ser el cual se utilice http https luego el dominio, posterior a ello el puerto. Con esto nosotros ya podemos ir verificando desde aquí si es que es una ubicación segura o no. 
+Cuando nosotros desarrollamos el backend, esto es muy importante porque cuando nosotros levantamos eh la lógica del backhand, tenemos que considerar hacia dónde va a ir la información, por dónde 
+va a ir la información y qué información se va a proporcionar, que serían los inputs. Ahora, ¿cómo podríamos hacer una limitación para ello? Podríamos hacerlo a través de código poniendo 
+eh dependiendo la tecnología que se utilice. Claro que sí. eh habilitando los cores y proporcionando únicamente las ubicaciones, los dominios que van a poder hacer consumo directo de ese servicio. 
+Daniel, espera, me acabas de decir que no van a poder consumir estas ubicaciones si habilitamos los corse. Sí, correcto. Los cores nos van a crear una especie de cajita en donde solamente las van a 
+poder ingresar y salir peticiones de una sola ubicación. Con eso, si es que alguien quiere ingresar de forma directa al aplicativo haciendo una consulta o consumo del servicio sin eh la capa media, 
+que sería el frontend, no lo vamos a aceptar, lo vamos a rechazar. Con eso esta capa de seguridad nos permite evitar cualquier ataque. ¿Okay? Por ejemplo, un ataque de dos es muy habitual cuando 
+estos estas configuraciones no están habilitadas. En este punto, por ejemplo, el frontend llega con un origen de destino desde el backend. Luego viene el profit eh prefit, que bien nos llean a ser 
+las opciones. El navegador pregunta primero, esto está permitido. Luego el backend responde. Vamos a visualizar las cabeceras si son las correspondientes. Si las cabeceras dicen que todo está bajo 
+control, está aceptado, okay, pasa. Pero la petición real se ejecuta si el origen fue autorizado. Es decir, entra la petición, revisamos si es que es la adecuada, verificamos el origen de dónde 
+viene la petición y respondemos. Si llega una petición, verificamos los las cabeceras, el origen es de una ubicación completamente desconocida, la bloqueamos, no vamos a dar acceso y en ese punto 
+nos va a dar un error 500. ¿Qué quiere decir? un problema de course, comunicación o incluso podríamos tener algunas configuraciones en las opciones para identificar si es que está permitido o no 
+las opciones. Estamos hablando, por ejemplo, el uso de tokens en las cabeceras, ¿correcto? Ahora es muy importante entender que existen otras formas de capa media, puede ser a través de course y la 
+otra puede ser mediante middlews. Los middlews vienen a ser ejecuciones, pequeñas acciones que trabajan en medio, pues son middle wars, ¿sí? en medio de la lógica para poder interactuar sobre las 
+funcionalidades de un aplicativo, acción, función o proyecto. Daniel, ¿podríamos entonces crear un midlew para identificar los scores de los de las cabeceras o del token? Por supuesto que sí. De 
+hecho, es una buena práctica poder visualizar lo que tenemos en las cabeceras, corroborar que el token que viene en caso de que utilicen JW [carraspeo] tokens, eh validar todo el paylot, confirmar 
+que las credenciales sean las adecuadas e incluso que el token todavía esté válido. Todo eso podemos hacerlo mediante ahora. Mensaje de course en la consola del navegador. Este es un pequeño 
+ejemplo de un acceso que está haciendo una petición hacia el origen, que en este caso es mi app front y nos dice que está bloqueados por políticas de course. No van a tener acceso, ya que tienen 
+en la cabecera presente el access control allade. Sí, eso está presente en la cabecera, en la respuesta. Por lo tanto, tendríamos bloqueado ese acceso. ¿Qué tendríamos que realizar? Verificar 
+que los cores estén adecuados, que la ubicación de donde estamos haciendo la consulta sea fidedigna, sea adecuada y claro, sea autorizada más que nada dentro del de la del tablero de los cores que 
+podamos implementar, porque sí, claro, podríamos eh tener más de un core eh una configuración de cores. En este caso podríamos tener course y, incluso poder poner de una o varias ubicaciones o 
+dominios de donde se van a aceptar consultas. Daniel, pero eso no me generaría problemas, por ejemplo, si es que estoy tercerizando mis APIs. Sí, correcto. ¿Qué puedes hacer en esos casos? Puedes 
+crear una capa media de tu proyecto manejándose Qws. Sí. Entonces, con eso podrías hacer una limitación de las consultas mediante versionamientos y APIs y los NPTs. Entonces, así podrías dar un 
+seguimiento más legible y segmentado para quienes quieras tercerizar esos servicios de tu API mediante ciertos. Claro. Ahora, ¿qué pasa si lo hacemos permitiendo ciertos métodos? Por ejemplo, 
+este es un ejemplo a nivel de Node con Express. Vamos a crear una variable referente a los cores. Vamos a en la consulta del servidor, en este caso levantado por app, vamos a decir que vas a utilizar 
+los cores del cierto origen, ¿sí? a de cierto origen, que en este caso esme, este es el origen de donde va a venir la consulta y vamos a aceptar, ojo, vamos a aceptar ciertos métodos, en este caso 
+get, post, put and delete. Solo estos métodos estarán permitidos. Si se realiza otro tipo de consulta como otro método, obviamente no nos va a dar error de CS. Pero, Daniel, ¿por qué utilizar 
+esto para segmentar por origen? ¿Qué beneficio nos brinda? Primero, aislamiento por orígenes, tener un control de lo que van a consultar y qué método y qué información quieren obtener. Por 
+ejemplo, si solamente tienen que obtener información, no tienen por qué actualizar, por qué borrar, no tienen por qué insertar información, simplemente le damos un método get y lo tenemos 
+aislado mediante los corse. Con eso tranquilamente evitamos una brecha de seguridad bastante fuerte. Ahora pasamos a los HCH. Este apartado es muy bonito, ya que es la forma de confirmar, ojo, de 
+confirmar que esté funcionando, que esté activo y el sistema se mantenga de forma continua. Hay dos enfoques en la salud de un aplicativo. El primero es lightness y el otro rat. Lightnest hace 
+referencia a que el proceso sigue vivo. Se revisa si la aplicación responde en lo absoluto, si falla, normalmente significa un reinicio de algún proceso. Ya. Y en redline eh tenemos esto está 
+listo para recibir tráfico. Estamos habilitando todo. Revisar las dependencias, por ejemplo, bases de datos, servicios externos. Si falla, no le mandamos tráfico todavía. Esto es un punto 
+importante para determinar incluso si realizamos un despliegue directo de un proyecto o no. Per un segundo. Ahora, esto lo podemos realizar tanto en end points, procesos, almacenamiento y el 
+tráfico, ¿no? Que vendrían a ser internamente los points. Vamos a ver un ejemplo de cómo se observaría este proceso. En este caso vamos a ver una respuesta saludable versus una respuesta que 
+generó fallo. Dicho esto, tenemos en la parte superior sobre la salud del aplicativo, un estatus, ¿okay? Donde podemos validar que todas las dependencias, toda la salud del aplicativo o el servicio 
+incluso esté levantado de forma adecuada. El el estatus está okay. El check con conexión a bases de datos está check external API, es decir, está haciendo una conexión hacia una API externa. 
+Está okay, no hay ningún problema. Ahora, ¿qué es lo que ocurre por acá abajo? Vamos a ver. En el Healthly nos dice que el estatus está degradado. Estatus, obviamente, está degradado, pero 
+¿qué fue lo que pasó? ¿Qué ocurrió? En este punto, la base de datos nos dice que está teniendo un error y en las conexiones de time out. ¿Qué quiere decir? Tal vez hubo algún problema en la 
+conexión con la base de datos. Quizás la base de datos falló o incluso quizás pudieron cambiar algunas eh extensiones de solicitudes de aprobación en la base de datos, algunos certificados. 
+Entonces aquí ya podemos tener una conexión time out. Intenta conectarse, pero no hay respuesta, por lo tanto se cae la conexión. Por ello nos dice que está degradado. Claro, esto nos dice un 
+punto más elevado de qué es lo que puede estar ocurriendo. Este apartado eh tiene el enfoque más relacionado hacia el backhend. ¿Por qué? Como pueden ver, el Healthly nos puede dar información 
+sobre el estatus del proyecto. Si es que tenemos conexiones, dependencias, esto va a ser mucho más relevante visualizarlo sobre la arquitectura que se tiene dentro del backend, obvio. Y en este 
+caso, las condiciones de hacer la base de datos nos menciona que está con algún problema. Tendríamos que hacer nuevamente este proceso en el cual estaríamos primero verificando qué es lo que 
+ocurrió, cuándo ocurrió, por dónde, cómo, cuándo y dónde. Posterior a ello, el segundo proceso, verificar logs, consola, eh conexiones. En este caso, ya estamos viendo que el problema es una 
+conexión. Ahora, ¿qué? ¿Nos pasaríamos? A la hipótesis. Yo creo que en este caso el error es la conexión a la base de datos. Vamos a verificar. Vamos a validar si es que la base de datos se 
+cayó. Vamos a revisar. Hacemos un proceso de validación y decimos, "Sí, la base de datos se cayó. Ahora, ¿qué nos toca? Arreglar." Pero, ¿qué pasa si es que nos equivocamos? Ocurrió un 
+problema, llegamos a la hipótesis y decimos, "Okay, vamos a validar si la base de datos se cayó." Y resulta que la base de datos está conectada, está funcionando. Ah, okay. Entonces, esa 
+hipótesis está mal. Vamos a regresar nuevamente a verificar al punto dos. Ya vimos cuál fue el error, que cuál es el síntoma. Vamos a los logs, revisamos otro contexto que sea de la conexión y 
+por último, nuevamente sacamos otra hipótesis. Ah, time out. La base de datos está conectada, está funcionando. Vamos a ver si no es algún problema de red. Ah, okay. Pasamos a a la base de datos 
+y resulta que en la base de datos han habilitado una configuración para aislamiento de red, es decir, solo se va a conectar mediante a ciertas eh IPs públicas para poder tener conexión. Ah, okay. 
+Tenemos del fallo, lo validamos, lo comprobamos, hacemos la corrección y publicamos. Claro, es el problema por el cual nos daba un time out. Out. Okay, vamos a ir con un siguiente punto, el cual ya 
+lo habíamos visto previamente en otras sesiones, los cuales son los protocolos HTTP. Comúnmente es gestionado el error 500. Es un síntoma muy genérico, sin embargo, es muy rápido identificar. Un 
+error 500 es porque no hay conexión de forma directa con el servicio. Un estatus 200 en cualquiera de sus estados de forma general, porque cada uno tiene un código distinto y un un proceso de 
+avalidación correspondiente. Un estatus 200 hace referencia a que la petición se realizó correctamente. Un estatus 300 significa que se uso se hizo una redirección de este contenido. El recurso 
+está en otro lugar. Si se hizo consulta hacia otra ubicación. Ahora pasamos al punto cu, es decir, estatus 400. Este es uno de los más bonitos, interesantes, llamativos y que generan dolores de 
+cabeza a los desarrolladores. Las peticiones están mal formadas. Tal vez algún problema, alguna conexión, alguna algún impedimento. Estatus 400 significa que no encontró la página, no encontró 
+el point. 401, 402, 403, algún problema en las conectividades, problemas de eh credenciales, no hay no se está autentificando, tal vez incluso problemas de tokens y obvio, todos estos códigos 
+tienen distintas variaciones. El estatus genérico, como les comento, es el estatus 500. El 500 ya es porque no hay comunicación directamente con el servicio. Se ha perdido conexión. Honestamente 
+no es el servicio al cual estamos haciendo consulta. Ojo, se ha perdido conexión con el servidor o netamente no es el servicio al cual estamos haciendo la consulta. Un ejemplo, siempre validen que 
+la conexión a ese servicio sea exactamente tal cual es el dominio. suelen ocurrir en algunos despliegues errores de capa och 8o, un pequeño eh una pequeña letra, un un símbolo o incluso un 
+número en el dominio pueden cambiar todo el contexto de la solución y generar caos, problemas e errores y errores que pueden darles dolores de cabeza como no se imagine. Obviamente aquí es en 
+donde nace el típico mensaje del programador. Es mejor hacer copy paste, control C, control V para evitar errores de texto. ¿Okay? Ahora, visualizando este este log este error 500. Este es un 
+ejemplo en donde tenemos el error 500 en la dirección API pedidos 45. tipo de error. Eh, la no puede leer la propiedad total. ¿Por qué? Está en undefined. Vemos acá add calculator total y 
+procesar pedidos. Sí, aquí nos está diciendo más o menos de dónde estaría viniendo este problema. Volvemos a la al punto dos. Este es un log. Lo visualizamos. vemos qué error tiene el cliente 
+o nuestro proyecto. Deszamos logs y consola. En este caso es un error 500. Y posterior a ello hacemos la hipótesis. Causa raíz. Sí, el feature flag, validación final, espera el campo total que 
+solo existe si la validación está activa. En este caso, el campo total no se está validando, no hay comprobación de ello, por lo cual está fallando en todo el proceso dentro de la lógica de 
+consulta. Por lo cual el servidor dice, "¿Sabes qué? Yo no me hago responsable. No te voy a responder porque es un fallo. Okay. Pero, ¿qué fallo? Ah, mira, aquí están los blogs. Aquí tenemos 
+que no puede leer la propiedad total porque es defined y nos dice inglés start tracce eh por dónde podríamos guiarnos para eh focalizarnos en la solución del mismo. Ahora ya vemos el contexto a 
+dónde vamos hacia la lógica del backend. Vamos al backend, hacemos la validación y hacemos la corrección corrección correspondiente. Lo esencial de hoy básicamente es cómo nosotros trabajamos 
+con la información. Primero [carraspeo] [resoplido] se diagnostica lo estructurado, se verifica el síntoma, evidencia, hipótesis, se verifica y se valida el comportamiento para la solución. Luego 
+pasamos a las variables de configuración, vemos si es que algo está fallando, hay algún problema. Y ojo, aquí hay que considerar los tres puntos que les había mencionado. Luego vemos los cores. 
+¿Hay algún impedimento dentro de los cores o netamente es un problema del Hellcheck? ¿Está validado, está funcionando? ¿Está trabajando el servicio, está todo operativo? ¿Hay alguna 
+degradación dentro del proyecto? Y por último, pero no menos importante, los protocolos HTTP. ¿Qué fue lo que ocurrió? Este punto CCO se une mucho con el punto tres, porque los protocolos HTTP 
+pueden dar un mensaje de corse o también de errores de cabecera. Entonces, los HTP en los mensajes podemos ya visualizar de de consola. Claro, podemos visualizar qué es lo que está ocurriendo, que 
+por dónde podríamos ir avanzando, qué podríamos hacer. Por ejemplo, voy a mostrarles cuando levantamos un servicio cómo se visualizaría eh algunos puntos de configuraciones en donde nosotros 
+tendríamos que hacer este tipo de validaciones. Obvio, cuando nosotros iniciamos un proyecto, iniciamos desde el área de devobs. Entonces, por ejemplo, pasamos por acá. Este es un pequeño 
+ejemplo. Tenemos este pequeño ejemplo de este proyecto. Tenemos la rama principal que es la master. En este caso, este proyecto tiene CCD, por lo cual esto se levanta mediante pipelines. Esperamos 
+que nos cargue el de BOPS. Y miren, por ejemplo, se ha levantado este proyecto. En este caso, si yo ingreso al pipeline, puedo hacer una edición. [resoplido] Obvio, recordemos que los pipeline se 
+levantan mediante YMLs. Entonces, todas las configuraciones de la distribución y conexiones se van a hacer netamente desde aquí. Ahora, obvio, ¿dónde visualizamos las variables? ¿De dónde 
+sacamos eso? Estas variables van a estar desde la compilación del proyecto hasta la publicación. En la parte superior derecha tenemos variables, ups, variables. Estas variables las podemos 
+modificar, crear, aumentar en base a configuraciones clave valor, algo parecido a lo que vamos a ver en el resto de configuraciones de los otros proyectos. Una vez que hacemos una modificación en 
+las variables, como les había dicho, se compila y desde ahí es inmutable hasta que se vuelva a guardar, se vuelva a compilar con el nuevo de información, por lo cual las variables al momento de 
+modificarse se extraen hacia el proyecto y tendríamos que modificar el código o las variables y hacer un red un redespliegue. Es así se modificaron las variables y ahora, ¿qué nos toca? Correr 
+el Peline para publicar la modificación. Ojo, esto es variables dentro del entorno, dentro del ambiente de Debobs. Se utiliza bastante en CCD. Ahora, Daniel, pero nos habías mencionado algo sobre 
+las referencias. Okay, vamos a ir sobre ello. Permítanme. Vamos a pasarnos al área del Asure y les comparto cómo se visualizaría este contexto. Vamos a levantar un recurso para que puedan 
+observar en qué ubicaciones podríamos visualizar estos puntos importantes de las variables. Okay, vamos a pasarnos por acá. Okay, estamos en nuestro grupo de recursos preferido. Vamos a crear 
+nuestro recurso y en este caso vamos a levantar un eh Up Service. Sí. Okay, vamos a levantar un huev para que se levante todo completo, algo más rápido. Listo. Vamos a poner un ejemplo de eh 
+webcopa. Y miren, por ejemplo, aquí ya me dice que no aceptan guiones bajos. Pero sin guiones medios. Ya listo. En este caso va a ser un proyecto a través de código el stack. Vamos a seleccionar 
+punto net en este caso pun 10. El on ya está saliendo, como pueden ver. Vamos a manejar Linux, no vamos a manejar Windows. Quiero mostrarles algo interesante. El grupo de recursos, la región, el 
+plan que vamos a manejar. redundancia. En este caso no quiero aplicarlo, es un tema demostrativo. Y esperamos unos segunditos. E ya se ha creado nuestro eh recurso. Sí. va a ser web copa test y 
+claro va a ser con punnet. Vamos a crear el recurso. Okay, aquí miren, por ejemplo, ya me está dando un error de un bad request con este estatus. Vamos a ver si es que eh se termina el deploy y 
+hace una remodificación Asure para completar el proceso. Okay, en este caso nos dio un error en deploy y podemos visualizar los detalles porque sí, claro, en podemos ver los detalles de qué es lo 
+que ocurrió. Okay, en este caso es un tema de que no soporta la región. Vamos a hacer un cambio aquí. Vamos a hacer el grupo de recursos. Okay, se ha levantado el application Insights, pero 
+necesitamos de recurso como tal. Entonces, vamos a buscar un web app nuevamente y vamos a seleccionar otra región que en este caso nos menciona que el problema netamente fue la región donde se 
+levantó. Listo. Vamos nuevamente esto igual 10. Cogemos Windows, cambiamos la región. En este caso vamos a usar eh el este de Estados Unidos. Okay, vamos a saltarnos todos los procesos. En este 
+caso seleccionamos un plan premium para que vean todo completito con el mapping. Okay, igual podemos ver aquí que vamos a tener cuatro. Eh, ya nos quitó el mismo portal. Esperemos unos segunditos 
+igual hasta que termine el deploy del recurso con todas sus conexiones directas con el resto de activos, ¿no? Okay, miren por acá ya no ningún problema. está creando el temp plate y tenemos 
+listo. Okay. Mientras se despliega esto, voy a mencionarles que también quiero mostrarles los baúles de secretos. llamados BS. Okay, aquí tenemos los keyboards. Estos baúles de secretos les van a 
+permitir gestionar algún tres recursos e puntuales. Denme un segundo. Vamos a ponerle secret copa este y un plan estándar más que suficiente en el plan premium. Obviamente miren, aquí ya me habla 
+sobre el la gestión de tokens o llaves físicas. Sí, por el momento un estándar más que suficiente, solamente hay plan estándar y premium. con un plan estándares más que suficiente y pasamos 
+directamente a create. Mientras se termina de hacer el deploy de ello, igual vamos al grupo de recursos y tenemos nuestra web. Nuestra web sí tiene esta dirección, este dominio. Miren, la 
+aplicación web está ejecutando y está esperando el contenido, es decir, ya podríamos levantar el código, publicar el contenido de lo que queramos eh desplegar. Ahora, en la parte inferior, 
+recordemos que tenemos el monitoreo de este tipo de eh proyectos con una consulta. En este caso, si gustan, les voy a compartir el enlace para que puedan ingresar y van a ver que les va a mostrar 
+exactamente el mismo contenido que tengo yo aquí en pantalla. Les comparto en el chat. Listo, pueden probarlo, pueden ir ingresando y aquí me saldrían dentro de las métricas las consultas que 
+tendrían por parte de ustedes. ¿Okay? Obviamente esto va a ser de una hora. Podríamos cambiarlo con los tableros que habíamos visto en las anteriores cler. Ahora, en configuraciones tenemos aquí 
+variables de Tor. Hay dos formas de modificar esto y hay dos flujos que se deberían de trabajar de forma adecuada. Primero tenemos las variables de entorno que vienen dentro del app settings y 
+también tendríamos conexiones string. Las conexiones string vienen a ser conexiones, por ejemplo, hacia dominios de base de datos, información de conexiones sensibles donde tendríamos que 
+encriptarlas. Obvio, esto estaría dentro del proyecto. Al momento que se despliega, esto también se almacenaría dentro del build. Ahora, hay dos formas de visualizar este contenido. Primero, 
+mostrando las variables que se encuentran aquí con eh las opciones clave valor. El valor se puede ocultar, se puede mostrar. Y la otra, la cual yo considero que es de la más la más cómoda, al 
+menos eh para mí, es de forma avanzada. es un JSON en donde tenemos todas las variables. Y algo interesante aquí es que habíamos mencionado sobre los slots. Podemos hacer que una variable sea 
+conutable entre slots. Así que podríamos configurarla aquí sin ningún inconveniente. Igual tenemos clave valor sobre las preguntas que se tienen eh del contenido de las variables. ¿Sí? Ahora, 
+muy bonito las variables modificarlas desde aquí, pero Daniel, ¿cómo haríamos las referencias hacia el key value? Desde aquí mismo. Podemos modificar alguna de estas, podíamos eliminarlas, 
+podríamos actualizarlas simplemente dando un clic y podríamos cambiar estos valores. Si yo elimino, por ejemplo, esto, podríamos hacer referencia con consultas eh hacia el API de Key Valet. para 
+traer esa información y como sería solo una referencia, el valor netamente estaría en key value donde va a estar el valor correcto. ¿Listo? Ahora, Daniel, hace un tiempo atrás desplegé una 
+función, desplegé un proyecto backend, pero es como que si estuvieran quemadas las variables directamente en el asure function, en el app Service. ¿Qué es lo que ocurre? Cambio las variables de 
+aquí y no funcionan. ¿Qué es lo que ocurrió? Vamos poco a poco. Recuerden que un App Service es una página, una plataforma que tiene conectividad con un servidor. Este servidor podremos 
+conectarnos a él para verificar cómo se levantó el proyecto compilado, es decir, podemos acceder al build. ¿Cómo lo hacemos? En la parte inferior tenemos algunas características para 
+desarrolladores y entre ellas tenemos los Apps Service Edit. Esto de aquí nos va a llevar hacia Kudu. Kudu es un ambiente donde podemos visualizar el building del proyecto que se desplegó sobre ese 
+up service plan. Okay, en este caso ya ingresé. Miren, por ejemplo, tengo esta página web aquí. Esto fue lo que se hizo un building. Y claro, en este caso, cuando nosotros hacemos el despliegue de 
+un proyecto, aquí muchas veces queda dentro de del del W root. Aquí nos queda un documento llamado app settings o variables de entorno o punto, como hayan mencionado las variables en torno en su 
+proyecto. Aquí es en donde está el problema. En esas situaciones se quedó congelado el proyecto, tal vez lo publicaron en modo ZIP al proyecto y se hizo ZIP también con las variables y se subió 
+hacia este ambiente. Por ello tienen estas variables aquí y van a estar quemadas, por lo cual puede ser un poco molestoso, conflictivo, ya que no pueden darle un tracking adecuado de las variables o 
+cambiar de ambientes, que muchas veces eh se quiere hacer un cambio tal vez de alguna credencial, algún token para poder acceder a algunos recursos o que genera algún conflicto dentro del flujo del 
+proyecto. Esto tienen que visualizarlo aquí. C es una de las soluciones que les va a permitir observar eh el build del proyecto, pero no solamente eso, ojo, en la parte igual superior izquierda 
+podemos ver hacia dónde está referenciado con su git, hacer búsquedas, incluso podríamos entrar a la consula, podemos visualizarlo a nivel de código, qué es lo que ocurrió. Podríamos salir y 
+ver qué es lo que está ocurriendo en los logs del proyecto y de esta forma poder tener un contexto más amplio. Obvio, si yo doy en la parte superior en App Service Editor me va a llevar hacia la 
+información de la documentación sobre CUD. Aquí van a tener un amplio contexto de cómo gestionar, cómo modificar, cómo trabajar, incluso cómo dar seguimiento de un error mediante CUD. Puede 
+ser una de las eh opciones para dar seguimiento y validar ciertos errores, pero como tal mucho cuidado, ojo, mucho cuidado con hacer las modificaciones en Cudo. Si están en ambiente productivo, 
+obviamente se van a ver afectadas de forma instantánea. ¿Por qué? Si yo hago una modificación en algún archivo, esto se guarda de forma automática. Okay, mucho cuidado con ello. Claro, también 
+podríamos incluso eliminar, renombrar, copiar los archivos, realizar un preview de qué es lo que se observa en ese archivo. Y miren, justamente es la consulta que se ve en la plataforma, ¿no? 
+Entonces, Kudu es una herramienta bastante fuerte para solventar algunos problemas, pero no se fíen de ello. por favor, tener mucho cuidado y mejor aislar en los ambientes de modificación que 
+serían dev o qua para desarrollar la solución que corresponde a ese problema de tamb. Ahora, eh ya se visualizó este contexto para favorecer, enriquecer procesos de solución al desarrollador. 
+Ahora nos queda algo chiquito que son los cores. Nosotros ahorita tenemos habilitados los cores para todas las direcciones. Yo hago una consulta por acá. A ver, permítanme. Voy a poner un save. 
+Listo. Y en este caso, si yo hago la actualización, lo refresco. Okay. Me dio este esta consulta sin ningún problema. ¿Qué pasa si es que eh yo pongo una dirección exclusivamente aquí? 
+Obviamente esta dirección va a estar eh segmentada para que dé respuesta a esa dirección. Por ejemplo, aquí nos dice este ejemplo que puede poner este de aquí con su propio dominio, como por 
+ejemplo, ¿no? Entonces esta ubicación, esta dirección va a recibir las consultas de los CSE. Lo he habilitado. Vamos a ver por acá. Ah, tengo que actualizarle. Hay algunos cambios dentro de Asure 
+que sí requieren, ojo, que sí requieren hacer un reinicio para favorecer algunas funciones. Ah, antes de aquí tenemos también las configuraciones. en configuraciones. Okay, tenemos algunos puntos 
+importantes a considerar, entre ellos, si es que quieren hacer la publicación del código, pueden usar la autentificación de publicación con C, eh, perdón, SCM y FTP básica para levantar los el 
+código, por ejemplo, desde el Visual Studio Code. Les va a facilitar muchísimo la vida. Otro proceso es si requieren hacer un debugueo desde el Visual Studio, lo pueden hacer, ¿sí?, sin ningún 
+problema. Eso sí, obviamente eh tienen que incrementar algunos eh eh credenciales y certificados para poder conectarse. Eso igual lo pueden hacer desde eh Visual Studio Code. En este caso voy a 
+descartar las conexiones y claro, Daniel, la verdad es que tenemos un problema porque nos sale un mensaje de que Punet 8 ya está por deprecarse. ¿Cómo hacemos? Ya tengo cambiado a nivel de 
+código, pero subí el código al app. y no funciona. ¿Qué tengo que hacer? Muchas veces hacen ese cambio y se olvidan de que tienen que cambiar también aquí el stack de su proyecto. Si estaban 
+en ocho, tienen que cambiar a nueve o a 10 según corresponde, ¿no? También tenemos el Hellcheck de forma directa aquí. En este caso yo lo tengo eh deshabilitado, pero si yo lo habilito podríamos 
+visualizar eh más soluciones de consultas hacia el input que va, perdón, [carraspeo] que nos muestra el estado de salud del aplicativo. Si hay algún problema aquí, ya nos puede dar un 
+diagnóstico, nos puede dar una solución. El balanceador de carga, en este caso podríamos ir cambiándolo, pero claro, tendríamos que levantar un endución sobre el headchck. Okay, en este caso no 
+va a estar, ¿okay? Eh, defaults documents vienen a hacer los documentos por defecto para presentar directamente en el principio de la solución. tenemos el mapping eh eh patch mapping para eh 
+observar dónde se van a distribuir las soluciones, porque hay aplicaciones o proyectos que se eh distribuyen también con backend y frontend de forma directa. Por ejemplo, un eh ASP.net. Puede que 
+tengas el backend, pero también puedes tener el frontet y hacer consultas directas hacia el back. Entonces aquí podríamos gestionar todas esas esas rutas. Y por último, pero no menos importante, 
+recordemos el error de pantalla. Hay algunos errores que podríamos gestionar, previsualizar y mostrar mediante el aplicativo. Por ejemplo, un error 403, un error 502 o 503. Nosotros podríamos 
+configurar una pantalla para cuando existan estos errores de forma exclusiva. ¿Sí? Entonces nosotros podríamos seleccionar, vamos al Brossware, buscaríamos el HTML correspondiente y cuando 
+lleguen a esta falla automáticamente se va a mostrar esa página en el aplicativo para que puedan tener un tracking más visual. Okay. Y antes de salir de aquí quería mostrarles el apartador acá. 
+Ah, ya me salí. Okay. Los secretos. Para el uso y gestión de los secretos tenemos que tener algunos roles asignados. Por ejemplo, si queremos hacer uso de modificación de secretos, tenemos que 
+pedir o solicitar al dueño de la suscripción o el user admin para que nos ayude con el rol dentro de los secretos, con el rol de user secret admin o read secret user. Sí, en este caso tenemos 
+algunos objetos como podrían ser llaves secretos y también credenciales. Las credenciales son las más utilizadas, son de clave valor. Obviamente, como les comento, ahorita, tendría que yo 
+asignarme un rol de user key valute reader para poder leer o administrator si quisiera administrar los secretos dentro de este baúl. Igual eh los keys de algunos aplicativos podemos ponerlos de 
+aquí de forma interna o por último los certificados. Hay un cuarto que sería los tokens, pero eso tendríamos como opción en el plan premium de los keyboots. Y okay, cuando algo falla, no olviden 
+que deben seguir la evidencia en la programación. No hay brujería, simplemente fallos. Ahora vamos a ir con el apartado de las preguntas. Vamos a ver por aquí tenemos algunas. Okay. Y aquí nos 
+menciona Ewell, ¿cómo podría eh subir una web que ya tenga en el GitHub o subirla al apps eh al servicio de la web app? ¿U que da en Asure? Tal vez eh me parece que la cambio. Sí, directamente 
+en el momento que nosotros hacemos el despliegue de alguno de estos proyectos, tranquilamente podemos hacer el despliegue con CCD. incluso post creación del recurso. Por ejemplo, vamos aquí a la 
+web y tenemos el apartado de deployed. Vamos a deployment center y okay, aquí nos da las opciones de subir, hacer un push del código mediante eh un zip o manejarlo con CCD. Si lo hacemos con CCD, 
+podríamos hacerlo con GitHub, con Bit Bucket, un local giture repost con Asure Bobs. Si se a ver, eh Luis nos dice, si se despliega una app containerizada, ¿cuál sería la mejor forma de manejar 
+las variables de entorno? Muy buena pregunta. Excelente pregunta. En este caso, tomar en cuenta que si gestionamos el despliegue de esta solución con variables de entorno en un contenedor, la mejor 
+forma serían haciendo referencia al SOS Keard. Uno, dos, también recordemos que el app tendría que tener un entorno, un ambiente containerizado, por lo cual las variables tendrían que venir 
+seteadas eh con referencia o ya seteadas para el build desde el assure container registry. Pueden igual hacer esas modificaciones dentro de los task. Okay. Nos preguntan por aquí por qué el primero 
+despliegue de la app daba un error. Ah, ya. Este primer despliegue de la app eh que dio error fue porque eh hubo una eh un límite en esa región en donde este recurso no se podía desplegar. 
+Entonces, desde un inicio ya nos dijo, "Aquí hay un error." Leímos los eh mensajes de error en loss y nos dice, llegamos al límite de este recurso dentro de esa eh región. ¿Qué nos toca hacer? 
+Hacer un redespliegue, pero en otra región sin mayor problema. Sí, puede ser por la zona de disponibilidad el error. Sí, correcto. En ese caso lo menciona bien, eh, Luis. Okay, esas serían las 
+preguntas principales. Perfecto. Y solamente para muestra, vamos a ver si es que tal vez ingresaron más personas al enlace y poder, miren, ya tenemos una un mapping de algunas personas que 
+intentaron ingresar al aplicativo, la observaron, lo analizaron, ya pudieron hacer una consulta. Por ejemplo, por acá ya tienen conexiones, consultas, request y algo importante, como soluciones eh o 
+análisis con cliente, es recomendable utilizar el inspector de soluciones del navegador, porque esta herramienta es superperosa dependiendo de cómo la queramos utilizar. Tenemos primero los 
+elementos que están principalmente visuales a nivel del front en el navegador, renderizadas después del Doom. También tenemos la consola, si hay algún problema, error, nos muestra en tiempo real. 
+También tenemos eh cómo se está organizando el proyecto con sus carpetas y el código. También tenemos el apartado que este nos brinda una solución extraordinaria, dar seguimiento de tracking a 
+los networks o las conexiones. Si yo actualizo esta página, ustedes dirán, "No se ve nada." Pero en la parte superior nosotros hemos aplicado un filtro. Podemos aplicar filtros para documentos, 
+para contextos CSS, JavaScript, front, imag, media, eh consultas hacia otros direcciones fetch o XHR. Entonces, si yo quito el filtro y pongo todos, ah, miren, ya nos apareció más información. 
+Podemos ver el contenido de esta consulta, por ejemplo, vamos por acá. Miren, [carraspeo] ya nos dice un eh 304 modified. Tenemos por acá un 200 por aquí. Eh, miren, por ejemplo, aquí me está 
+dando una restricción a nivel de course este de imagen también me dice que es un estatus 200 y viene a través de la memoria cachel. Amos para acá, hace una consulta a Chrome, igual un estatus 
+200. Y claro, aquí podemos hacer una previsualización de lo que se envía, de lo que responde, si es que hay indicadores o no. Podemos ver los tiempos de respuesta, la duración y claro, aquí 
+podríamos visualizar si es que un API o un servicio está tardando mucho o no. También si es que tenemos Adlocks, también podemos analizar en casos que solamente correspondan. Ahora, algo 
+interesante es este apartado de aquí, el preserve lo logs. Cuando ustedes tienen más consultas y se actualiza la página, obvio, se borra todo el histórico, pero si nosotros hacemos que esto quede 
+permanente en el análisis de la solución, se van a ir acumulando a pesar de que se actualiza la página. Ahora, Daniel, ¿qué otro beneficio tenemos de forma instantánea, inmediata? ¿Podemos 
+hacer que el internet se ponga raro? Sí, claro que sí. Podemos utilizar este apartado de deshabilitar el internet, pasar a una frecuencia de 4G, 3G o incluso quitar el internet a esa página para 
+que veamos cómo es el comportamiento de la misma. Todo esto lo podemos manejar y gestionar. Daniel, muy bonito y todo, pero la verdad yo utilizo Cloud. ¿Cómo podemos hacer un análisis más 
+profundo sobre esto? ¿No le puedo decir a Cloud que entre y verifique todo este contenido? O sí, claro que sí lo podemos hacer, pero pasando la descripción de todo el proceso que se realizó 
+mediante este archivo. En la parte superior de aquí podemos utilizar este botoncito y descargar toda la lógica de consultas que se han realizado. Esto es un eh archivo hard, por lo cual podemos 
+pasar a la podría ayudarles a hacer un análisis y solucionar algunos inconvenientes, ¿por qué no? Sí. Ahora también tenemos un punto interesante que son los de application. Dentro de 
+application nos dice cómo está trabajando la aplicación. Vamos a visualizar que también tenemos información en local storage, tal vez en el sion storage quien quita que el extension storage, por 
+ejemplo, miren, aquí tenemos más, si es que tiene cookies o no, podríamos alterarlas, modificarlas, incluso eliminarlas. Por ejemplo, acá tenemos información más relevante. Aquí está. Miren, 
+por ejemplo, vamos a ver si tenemos algo de cloud. Eh, tenemos información y nosotros podemos extraer seguimiento o incluso identificar que podríamos almacenar alguna que otra característica, ojo, 
+no variables de entorno, mucho cuidado con ello, que si ahí se ha logrado ver incluso en ámbitos productivos que eh guardan tokens, usuarios, contraseñas en texto plano y es un poco eh caótico 
+porque genera que la aplicación sea sea vulnerable. Sí. Entonces, mucho cuidado con el mantener información aquí. Okay. Eh, tenemos más preguntas por acá. Eh, Ian nos dice, "¿Alguna página de 
+documentación para los temas vistos del día de hoy? es un poco difícil, ya que esto más se ve con la trayectoria del desarrollo, como alimentarse poco a poco de la experiencia que se tiene. 
+Claro, hay algunas [carraspeo] reglas, por ejemplo, Clean Code, una un eh libro que te da eh puntos de cómo desarrollar de una forma limpia, adecuada, principios solid son muy importantes 
+considerarlos cuando levantas un proyecto. Y claro, a nivel arquitectónico, las soluciones simplemente puedes irlas eh analizando en base a tu experiencia, el conocimiento que tengas del desarrollo 
+y eh qué tanta expertiz tengas en la nube, porque sí, en la nube siempre hay evolución, por lo cual hay algunos recursos, hay algunas sectores que van cambiando, vanando, van integrándose y estas 
+soluciones a nivel arquitectónico pueden mejorar. ¿Cómo recomienda cifrar la información? Okay, para cifrar la información en este punto, no sé si nos referimos a las variables, el mejor punto 
+sería eh usando eh gate values para poder tener una limpia trazabilidad a nivel de las variables de forma interna dentro de Ashure y quedaría expuesto el servicio más no las variables. Ahora, si 
+es que quieres presentar una capa extra de cifrado quizás a la información, podrías aplicar una doble salificación para que puedas utilizar la doble clave, clave pública y privada o netamente 
+doble salificación, que sería lo más recomendable. Obvio, va a depender mucho de cómo eh compartas la información en la red. Eso sí es muy importante. Okay, esto sería hasta aquí entonces eh 
+la presentación. Más bien le daría paso a Luis. Muchas gracias, Daniel. Eh, bueno, pues como vieron, muchachos, ha sido una eh una noche de mucho conocimiento, mucha información. Eh, no se 
+preocupen, Víctor, justamente iba a mencionar eso. Estas grabaciones se van a subir a YouTube para que las puedan tener, las puedan repetir, puedan eh replicar lo que lo que vieron, lo que se dio 
+aquí, lo que se presentó. Y además de eso e queremos también compartirles información importante. Eh, la próxima semana va a realizarse el último workshop. Eh, sin embargo, el workshop va a 
+ser el día lunes, lunes 14, para que tengan eso en cuenta. Además de eso, este workshop va a estar específicamente dirigido para atender consultas sobre eh lo que es un lo que son los documentos 
+que se van a tener o básicamente parte de lo que se va a utilizar durante eh los retos. Permítame, comparto pantalla. [carraspeo] para que lo puedan ver. en el chat eh se compartió un enlace que 
+es eh un enlace de eh básicamente del documento que se quiere atender, se quiere abordar la próxima semana, el día lunes, que son que es una guía para que ustedes puedan eh desarrollarlo, puedan 
+eh realizar todo ese flujo. prácticamente [carraspeo] parte de los recursos que se van a utilizar eh para la resolución de los de los eh de los retos. Y es importante que lo hagan para que puedan 
+tener ya esa parte, ese recurso ya de lado de ustedes y si tienen alguna dificultad, tienen algún tema para poder eh completar ese esa guía, puedan llevar entonces esas dudas el próximo lunes. 
+¿En dónde lo pueden encontrar? Si en todo caso no eh no tienen el enlace o no pueden eh seguir con el enlace que está en el en el mensaje eh en el chat de esta sesión desde la página web 
+jacatoncopa.com en la sección de recursos. Aquí puede eh van a encontrar lo que son diferentes enlaces a tanto la guía de estudiantes de Drace, que es el documento que se quiere abordar el 
+próximo lunes. Además de eso, algunos conceptos claves de observabilidad en Dynat race y además de eso también cápsulas informativas de Microsoft, que son básicamente [carraspeo] información 
+que se ha estado compartiendo a lo largo de todos los workshop, eh, desde el primero hasta hoy que se ha hecho el quinto workshop. Aquí toda esta información se va a estar eh adjuntando para que la 
+puedan eh tener, la puedan visualizar, la puedan tener con ustedes y la usen también de guía eh para la resolución de los casos de los retos el día del evento. Aquí únicamente entran en lo que 
+es el enlace del archivo PDF y podrán entonces desarrollar toda esta guía, hacer todo el paso a paso para que puedan registrarse en la plataforma y tener entonces ya este acceso listo y pues sin 
+ningún inconveniente de nuevo es importante que lo eh que lo hagan para que puedan tener esas dudas si tienen algún inconveniente para que puedan llevar todas esas preguntas. al workshop la 
+próxima semana, día lunes a las 7 de la noche. Eh, el enlace igual lo van a encontrar en la página eh en la sección de workshops. Aquí lo van a tener, aquí está señalado, aquí podrán 
+ingresar eh para que puedan entonces entrar al Dona Trace eh eh Playground. Muy bien. De momento hay alguna duda al respecto sobre este punto? Perfecto. Bueno, eh de mi parte pues no me queda más 
+que agradecerles a todos por el tiempo que nos han permitido eh compartir con todo esta eh toda esta información que pudieran ustedes recibirlas. Tienen eh bueno, quizás Daniel, no sé si tienes 
+alguna algo más que agregar, algo que les puedas que les quieras decir a los muchachos. Bueno, de mi lado nada más que desearles mucha suerte. Eh, mejoren sus habilidades, siempre manténganse 
+estudiando, manténganse hambrientos con mucha sed de conocimiento. Recuerden que en la programación la tecnología siempre está evolucionando, así que lo mejor que pueden hacer es evolucionar 
+junto con la tecnología. Nada más que desearles mucha suerte y con todo gusto estaremos atentos para cualquier eh duda o pregunta que tengan en cualquier ambiente. Les agradezco mucho. Hasta una 
+próxima. Excelente. Muchas gracias, Daniel. Larisa, ¿algo que le quieras comentar a los muchachos? Sí. Bueno, comentarles que las inscripciones eh para la sede Santiago se abrieron en el día de 
+ayer y aún tenemos cupos disponibles. Quedan pocos equipos disponibles, así que si hay aquí participantes que van para la sede Santiago, los animamos a que se puedan inscribir. Excelente. Así es, 
+muchachos. Ya eh las inscripciones están abiertas para eh el jacatón que se va a realizar por primera vez en Santiago para específicamente pues estos estudiantes de estas sedes regionales del 
+interior del país, Bocas del Toro, Chiriquí, eh Azuero, Veraguas, Coclé, para que puedan tener ese espacio y eh pues disfrutar porque muchas veces no se tenía no se no se podía recibir tantas 
+personas de estas provincias en Panamá, pues por las limitantes de eh diferentes limitantes que se tenían en lo que es la logística, pero pues este año se tuvo la oportunidad de organizar este 
+evento pues para darle la oportunidad a todos estos estudiantes eh de esta región para que puedan tener un espacio eh perfecto, un espacio único en donde puedan compartir y aprender. Muy bien. De 
+mi parte no queda nada más, simplemente pues recordarles completar lo que es el formulario de asistencia, visitar todas nuestras plataformas tanto en YouTube, eh nuestro canal de difusión en 
+WhatsApp, puedan estar pendiente pues de todos los anuncios que se van a estar dando. Suscríbanse a nuestro canal de YouTube para que puedan recibir las notificaciones una vez todas las grabaciones 
+sean eh subidas y pues desearles una excelente noche y una excelente semana. que estén muy bien. Muchas gracias. Hasta la próxima.

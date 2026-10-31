@@ -1,0 +1,276 @@
+Muy bien, muy buenas noches a todos. Muchas gracias por participar en este tercer workshop del Hakaton Copa 2026 con el tema este año de API, devops y observabilidad. En la noche de hoy, pues como 
+ya lo mencioné, vamos a tener el tercer workshop. En efecto, es el tercer workshop que llevamos eh a lo que eh a lo que va de este mes, de este año. Los dos workshops anteriores ya se encuentran en 
+nuestra página de YouTube, nuestro canal Hakaton CM, para que puedan verlos, revisarlos y no perderse nada de todo lo que se ha compartido en estos workshop, ya que le será de mucha ayuda para la 
+solución de los desafíos en el Jacatón, tanto que se hará en Santiago como el que se hará en Ciudad de Panamá. Esta noche por parte del equipo de la organización nos acompaña el señor Hugo 
+Aquino. También están como parte de los moderadores y voluntarios eh compañeros de Business IT. Emily está también Dominic y también Carelis eh que nos estarán acompañando durante esta 
+sesión. Eh, en la noche de hoy tenemos el tema de DevOPS, perdón que se me va un poco la iluminación. tenemos el tema de DevOPS, eh Git, GitHub y Terrafone, eh la cual pues será impartida por 
+nuestros compañeros de eh Business IT. También quiero recordarles que eh para mayor información, cualquier consulta que tengan acerca de este evento y de las actividades que se están llevando con 
+respecto al jacatón, pueden hacerlas a nuestro correo directo jacatoncopa@copar.com. Allí pueden dejar todas sus consultas, es el canal directo de consultas, eh, y eh básicamente para pedir mayor 
+información. Si en todo caso hay algo que dentro que dentro de lo que tenemos en nuestra página web eh hacatoncopa.com, eh quizás eh tienen alguna duda que no logran o algo que no logran entender 
+en la página web. Eh, de igual forma los invitamos a visitar nuestra página eh hacatoncopa.com en donde podrán ver las bases legales de lo que es este evento para que no tengan ningún 
+inconveniente el día de los eventos. También eh quiero eh recordarles que pueden seguir nuestro canal de difusión en WhatsApp, es Jacatón Copa, para que puedan también estar eh anu que se esté 
+compartiendo acerca de este de este maravilloso evento. Mi nombre es Luis Martínez, yo soy voluntario del Jacatón desde el 2022 y bueno, ahora le doy paso a nuestros compañeros de Business IT, 
+Dominic, para que pueda continuar con la presentación. Muy buenas noches, chicos. ¿Cómo están? Eh, bienvenidos a la sección número tres. Les presento a su instructora del día de hoy. Ella es 
+Emily Chimbo, quien nos va a acompañar con todo su conocimiento para poder ponernos al día en este tema muy importante como lo es debobs, Deep, Jithaub y Terrafo. Por favor, ante cualquier 
+inquietud que se vaya presentando, nosotros vamos a estar super pendientes del chat por cualquier consulta y de la misma forma, por favor, no duden levantar la manito si tal vez tienen alguna 
+inquietud para ir solventando las inquietudes que se vayan presentando. Emy, muchísimas gracias por acompañarnos. Puedes continuar. Muchas gracias, Dominic. Buenas noches a todos. Eh, me presento. 
+Mi nombre es Emily Chimbo y como lo mencionaban, el día de hoy les voy a acompañar en esta sesión tres. La idea de esta clase no es que memoricen eh herramientas ni comandos aislados, sino vamos a 
+conectar todos los conceptos para que ustedes lo puedan ocupar eh tanto en sus proyectos reales como pues en la jacatón que se viene. Tenemos una forma de trabajo llamada de Bobs, el control de 
+versiones, infraestructura como código y una herramienta muy utilizada actualmente que es Terraf. Quiero que pues al final de el día de hoy puedan entender qué infraestructura creamos, qué pasos 
+se ejecutó y cómo pueden diagnosticar un despliegue cuando pues algo no sale bien. Perfecto, este es el recorrido de hoy. Primero vamos a entender de Bobs como cultura, porque Terrafón por si solo 
+no nos convierte en un equipo de Bobs, sino vamos a ver todo el ciclo operativo de una manera muy sencilla que es desplegar, observar, corregir y validar. Vamos a diferenciar Git de GitHub y vamos a 
+ver todo el tema de versionamiento. Con esa base ya podremos ingresar a lo que es la infraestructura como código y ejecutar pues todos los comandos contra eh Asure en especial, pero pues ustedes 
+pueden usar el eh la herramienta que ustedes prefieran. Quiero aclarar que de igual manera este es como que el alcance técnico y les voy a estar pasando también un zip con el eh con el código que 
+vamos a estar utilizando el día de hoy. Perfecto. Entonces, eh antes de hablar de teorías y sí me gustaría revisar como ciertas condiciones que ustedes deben de tener para poder iniciar con el 
+tema de de Bobs. En su equipo necesitan tener instalado algunas cosas que son, por ejemplo, Git, Terraform y Asures LI. Eh, Terraform requiere pues acceso a internet constante para hacer los comandos 
+de Init y todo el tema de descarga de providers, así que es importante que tengan también una buena conexión de internet para Assure, si necesitan tener una suscripción activa y permisos 
+suficientes de creación. El código que les voy a pasar va a crear un grupo de recursos, por lo que sí es importante que no tengan eh solo permiso de vista, sino también de escritura dentro de 
+esta suscripción. Perfecto. Además, pues eh voy a usar un nombre de proyecto único. Si varias personas pues usan la misma suscripción, todas pueden conservar eh esta mismo esta misma demo, ¿no? 
+Listo. Ahora sí vamos con la parte un poco teórica, que es el tema de Debobs. Devobs surge para resolver una separación histórica. Tenemos al equipo de desarrollo que escribía el código y al 
+equipo de operaciones que recibía ese código al final para desplegarlo. Cada vez que aparecía un problema, cada equipo veía únicamente por su parte. Entonces, DevOps nos propone una 
+responsabilidad compartida durante todo el ciclo de vida. Desarrollo no se detiene después del comit y pues operaciones no participa únicamente cuando llega al despliegue. Ambos equipos deben de 
+compartir el tema de automatización, observabilidad, retroalimentación y objetivos de servicio. Quiero remarcar algo que es que Debobs no es una herramienta, no es Terrafone y tampoco es un cargo, 
+es una combinación de cultura, prácticas y herramientas. Git viene a ser la base de eh toda esta cultura de Bobs, ya que nos va a ayudar con la trazabilidad. Terraform nos va a ayudar con el tema 
+de repetibilidad y Ashur, pues nos eh aprovisionará los recursos necesarios para nosotros poder utilizar nuestra aplicación. Pero el valor sobre todo aparece cuando estas herramientas forman parte 
+de todo un proceso colaborativo. La meta es que no hay que desplegar por desplegar, sino más bien es poder cambiar con mayor frecuencia, reducir pasos manuales, detectar problemas antes y poder 
+recuperarnos rápido cuando algo eh llega a fallar, ¿no? Perfecto. Para el reto utilizaremos este ciclo operativo. Primero desplegamos una versión de la infraestructura, después observamos el 
+resultado, revisamos el plan, qué mensajes nos brinda Terraf, eh los recursos de Asure y cualquier error devuelto por la plataforma. Si nosotros llegamos a encontrar un problema, no hacemos clics 
+aleatorios en el portal para intentar arreglar. Volvemos al código, corregimos el archivo, que estos archivos de terrafon por lo general tiene una extensión de punto tf y volvemos a ejecutar. 
+Finalmente, pues validamos que el resultado real coincida con lo declarado. Este ciclo se repite una validación exitosa, pues no significa que el sistema jamás va a cambiar, significa que tenemos 
+una versión que al menos cumple con lo esperado y puede convertirse en una nueva base para el siguiente cambio. También quiero aclarar que este diagrama no pretende reemplazar los modelos completos 
+de Bobs o CCD, ya que estos pueden llegar a tener muchos más pasos, pero pues esta es una versión inicial, es una simplificación para que nosotros podamos reconocer los primeros pasos de un 
+patrón de despliegue, observación, corrección y validación. Perfecto. Ahora vamos con el tema de Git y GitHub. Estos términos suelen mencionarse juntos, pero cumplen funciones diferentes. Git 
+viene a ser el sistema de control de versiones, vive en nuestro equipo, eh registra cambios, crea comics y permite trabajar con ramas, incluso sin conexión a internet. Por otra parte, GitHub viene a 
+ser la plataforma que va a alojar estos repositorios Git y agregar mecanismos de colaboración. Ahí aparecen términos como pull request, revisiones, issues, automatizaciones, todo esto mediante 
+GitHub actions, ¿no? Para nuestra práctica vamos a subir nuestra nuestro repositorio a GitHub, pero este no es el único sitio donde ustedes podrían publicar su código, no existen actualmente 
+muchas otras herramientas como puede ser un Asure de Bobs, entre otras, pero pues GitHub siempre viene a ser la más popular y eh sobre todo por las herramientas que ha brindado últimamente, como 
+puede ser GH Copilo, se ha integrado bastante con el tema de I. Okay. Para nuestra práctica, los archivos de Terrafón son código y por tanto deben versionarse. Un cambio de infraestructura puede 
+ser tan crítico como un cambio de aplicación. Si alguien, por ejemplo, no sé, modifica la región o el tamaño de un recurso o mueve alguna regla de red, entonces nosotros sabemos necesitamos 
+saber quién hizo ese cambio, por qué lo hizo y qué eh revisión recibió, ¿no? [resoplido] Esa es la conexión. Git aporta toda la trazabilidad local y GitHub permite que el equipo revise y 
+comparta el cambio antes de publicarlo a en Asuro. ¿Listo? Entonces, para esto les voy a pasar el código. Deme un momentito. Va, denme un minutito y ya les paso el código porque tengo bloqueado el 
+envío. Entonces, les voy a pasar a través del link para que se lo puedan descargar. Va, mientras les envío, por favor, todos verifiquemos dentro de una terminal que tengan GID instalado. Si no es 
+así, eh les paso también la instalación para que lo puedan realizar en sus computadoras. Está ahí les paso el chat. Por favor, todos verifiquemos que tengamos Git instalado. Listo. En el segundo 
+enlace van a encontrar un archivo punto zip que tiene el el código que vamos a estar utilizando el día de hoy. ¿Okay? Perfecto. Les doy un minutito para que todos descarguen. Veo que ya tengo tres 
+descargas ahí. Por favor, sigan descargando el código para continuar con la práctica, por favor. Listo. Mientras se diguen descargando, voy a presentarles el portal de GitHub, que seguramente 
+muchos de ustedes ya lo han utilizado. Vamos para acá. Listo. Entonces, nosotros cuando ingresamos a githaub.com vamos a poder autenticarnos. En este caso, yo estoy usando mi cuenta corporativa. 
+Entonces, eh de esto también depende de que tengan algunas opciones o no, porque si están usando cuentas personales, puede que tengan bloqueado algunas cosas, ¿no? Entonces aquí vamos a crear un 
+nuevo repositorio donde pueden seleccionar pues el propietario. En este caso pues solo tengo una cuenta que va a ser esta. Aquí ustedes le pueden poner un nombre. Traten de que este nombre de igual 
+manera sea eh bastante representativo para lo que ustedes quieren hacer. En este caso voy a poner eh Terraform práctica de WPS. Listo. Ustedes pueden poner de igual manera algún otro nombre. Si no, 
+pues les pone un nombre por defecto. Igual en descripción vamos a poner eh hm hm incluye una práctica de IAC junto con principios de dev. Listo. Lo pueden hacer público o privado. En este caso lo 
+voy a mantener en público. Pueden empezar con algún template. En este caso vamos a mantenerlo así. También pueden agregar un RMI. En este caso no es necesario un git ignore. El git ignore por lo 
+general es e para ignorar archivos que no quieren que se suba dentro de esta trazabilidad, ¿no? Y pueden también agregar una licencia para que su código esté protegido dentro de su organización. 
+Listo. Esto de igual manera es para eh una herramienta en conjunto que es Ghajopelo, en donde podrían empezar a crear desde ahí, pero por ahora lo vamos a realizar manual. Vamos a crear este 
+repositorio. ¿Listo? Y aquí nos dice cómo nosotros podemos comenzar a eh subir nuestro código, ¿no? Entonces, hay varias formas. Entonces dice una, podemos hacerlo a través de GitHub Desktop o 
+podemos crear un nuevo repositorio usando estas líneas de comando o podemos hacer push a un repositorio existente. Entonces vamos a ocupar esta parte de aquí, pero para ello primero necesito que 
+abran su eh código. Entonces necesito que descompriman el archivo que les pasé. Ya. Aquí ustedes pueden hacerlo a través de una terminal. Pueden poner cmd. y les va a abrir directamente el 
+código. Pueden trabajarlo desde aquí siempre y cuando tengan instalado Git, ¿no? O si no también si ya tienen un poquito más de experiencia en desarrollo, pueden usar su ID, que es pues su 
+aplicación para abrir código de eh su preferencia, ¿no? Entonces en este caso yo ocupo Visual Studio Code y desde aquí también pueden abrir una terminal, pero los dos van a dar el mismo 
+resultado, eso sí que tengan en cuenta. Listo. Entonces, para validar que ustedes tengan instalado Git, también pueden ver un Git version y esto les dice qué versión de Git tienen instalado. 
+Entonces para iniciar vamos a poner el comando de git init y esto nos inicializa localmente nuestro repositorio. ¿Por qué digo localmente? Eso es muy importante porque Git pues tiene dos formas de 
+guardar todos nuestros cambios. una forma local y una forma que es ya en la nube, ¿no? Dependiendo en cuál herramienta estén usando. En este caso va a ser GitHub. Entonces, eh actualmente si 
+nosotros damos inicio todavía no significa que está ya acá en GitHub, sino más bien solamente está local nuestros cambios. ¿Listo? Entonces, ya está inicializado. Perfecto. Y una vez que ya 
+tenemos inicializado, podemos agregarle este tema de aquí, ¿no? Que es un repositorio existente. Si quisiera iniciar desde cero, pues pueden iniciar desde acá, pero como en este caso ya tenemos un 
+código, vamos a venir por esta parte. Listo. Entonces, van copiando una por una las líneas que les van indicando acá. Y me falta una, la de push. Eh, y Windows not much any. Déjenme verlo por 
+acá. Mm. No, Roma mail, eh, branchil punchurini mail. Déjame ver si no se subió. Va, entonces, bueno, adelantándome un poquito. Eh, tenemos algunos comandos. Git branch es crea la rama. Git push 
+es lo que hace que pasen nuestros cambios de lo que está en local. a ya la parte eh remota, ¿no?, que es en nuestro GitHub. Entonces, pero ahorita me está dando un problema. Creo que es porque no 
+he hecho ningún commit aún. Entonces, para hacer un comit lo pueden hacer a través de comandos o pueden apoyarse pues de una herramienta. Entonces, en este caso voy a usar la herramienta aquí de 
+eh Visual Studio Code para pues eh subir los cambios. Voy a poner eh cambios iniciales. Ya tenemos dos partes en donde pueden estar nuestro código, en changes y en stagedes. Estos son como que 
+cambios que ya nosotros hemos probado y mientras que eh changes quedan todavía pendientes, ¿no? Entonces, todo lo que esté en stage, nosotros lo podemos eh eh mantener en un estado todavía que no 
+lo subimos, pero que ya no lo vamos a modificar. Y una vez que aquí ya hacemos el comic, pues se sube los cambios. Perfecto. Déjenme ver si ahí me permite hacer el push. Listo. Me permite hacer el 
+push. Entonces, nosotros ya empujamos todos nuestros cambios a la rama remota y ya podemos verlo directamente en la web. Entonces aquí van a ver que ya tenemos nuestros cambios y nosotros tenemos ya 
+un archivo RMI. Es por eso que ustedes visualizan aquí cierto contenido. ¿Okay? Entonces, aquí están como los requisitos que tienen, los pasos, temas de personalización y ustedes van a ir pueden 
+ir modificando cada uno de esos archivos. Vemos los archivos TF, que es lo que les mencionaba que eran de Terraf, ¿no? Y el Git ignore, que tiene eh algunos archivos que no quiere que se eh 
+mantengan como la trazabilidad, como son los de Terraform, Crash Lock, variables, entre otros. Aquí, sobre todo ya en temas de desarrollo podemos agregar los environments, podemos agregar e 
+secretos, entre otras cosas, ¿no? Que se ignoren. ¿Listo? Okay. Entonces, déjenme les comparto nuevamente mi presentación. Perfecto. Entonces, ya ejecutamos estos comandos. Como les mencionaba, 
+ustedes pueden apoyarse de la herramienta, o pueden hacerlo desde la terminal. Por lo general, ahora ya hay muchas herramientas para apoyarse en hacer todo este tema de Bobs. Entonces sí les 
+recomiendo si quieren usar un GitHub Desktop o quieren usar directamente el Visual Studio Code, apóyense de ellos porque pues memorizarse todos los comandos a veces de Git es un poco tedioso y 
+también abrir la terminal puede llegar a tomarles más tiempo del eh que ustedes podrían evitárselo, ¿no? Entonces, pero estos son los comandos iniciales, ¿no? para iniciar pues eh mi 
+repositorio, branch para crear ramas, adar todos los archivos, commit para eh crear como que un una versión de todos los archivos que yo he cambiado. Remote para subir todo esto a eh mi origen y 
+push. Pues ya directamente empujo los cambios. Perfecto. Existen muchos otros comandos como Cherry Pig, Pool, que es para justo jalar los cambios, pero pues con estos son los necesarios para la 
+práctica del día de hoy. ¿Listo? Ahora vamos a ver un término que es IAC o infraestructura como código. Esto significa que la configuración deseada de infraestructura se expresa en archivos. 
+¿Qué viene a ser infraestructura? todos estos recursos que pueden ser máquinas virtuales, redes, pueden ser incluso modelos de IA, todo lo que sea eh dentro de eh sea un recurso dentro de nuestra 
+infraestructura, nosotros podemos ponerlo dentro de un archivo. En lugar de recordar una secuencia de clicks en ya sea Asure, o sea, AWS, nosotros no necesitamos eh estar dando clic para crear cada 
+uno de estos recursos, sino podemos declararlo y declarar sus propiedades y relaciones entre ellos. Esto sobre todo va a mejorar la repetibilidad porque podemos aplicar esta misma definición en 
+distintos ambientes. Entonces, eh por lo general dentro del desarrollo siempre se tiene al menos dos ambientes, uno de desarrollo y uno de producción. Si tenemos el costo, podemos permitirnos tres 
+ambientes, que sería desarrollo, QUA y producción. Entonces, para evitar de que decir que, "Ah, mira, pero es que este ambiente sí valía o en mi máquina sí valía." Nosotros podemos usar IAC. 
+para eh que todos los recursos tengan las mismas definiciones y no tenemos que estar eh ajustando las variables uno por uno en cada ambiente, sino más bien en un solo archivo nosotros definimos esto 
+y ya eso mejora la trazabilidad porque el código vive en git, que es lo que acabamos de ver y cada cambio pues queda asociado a un comit. Otro beneficio es la revisión. Antes de crear o modificar 
+recursos reales, el equipo puede revisar tanto el código como el plan de terrafo. Así detectamos si hay cambios inesperados antes de nosotros mandar ejecutar. Eh, IAC no elimina la necesidad de 
+conocer sobre lugar donde van a desplegar, como puede ser Ashware WS, porque cada uno tiene pues sus diferentes parámetros y necesidades, pero nosotros podemos escribir un buen código y eh 
+necesitar también entender los servicios, ¿no? Permisos, [resoplido] dependencias y costos. La herramienta va a automatizar la ejecución y las decisiones de arquitectura pues sí dependen de la 
+responsabilidad del equipo. Listo. Ahora vamos a ver esta herramienta que es Terraform. Terraform utiliza un enfoque declarativo que significa que nosotros describimos el estado deseado y Terraform 
+va a calcular las operaciones necesarias para alcanzarlo. En el laboratorio no escribimos una lista manual de llamadas a laure, declaramos un resource group, una cuenta de almacenamiento, un app 
+service plan y una función app. Las referencias entre estos recursos permiten pues a Terraform construir el orden de creación. Por ejemplo, la function app necesita el identificador del plan y la 
+cuenta de almacenamiento, por lo que estos recursos siempre deben de existir antes de crear mi function app. Terraform también pues compara el código con el estado conocido. Si ejecuto un apply por 
+segunda vez sin cambiar nada, esto debería indicar que no hay ningún cambio en el código, ¿no? Ni en la infraestructura. Esa ID en potencia es una propiedad fundamental del flujo declarativo. No 
+significa que sea mágico, sino más bien la definición. Eh, si nosotros definimos incorrectamente o no tenemos permisos, el despliegue va a fallar. Por eso nosotros siempre tenemos que validar, 
+revisar el plan y entender qué mensajes me devuelve. Listo. Demme un ratito. Ya. Antes de comenzar a ejecutar, quiero que visualicemos exactamente qué es lo que va a crear el código. El primer 
+recurso es un resource group, que es básicamente un agrupamiento de otros recursos, grupo de recursos, tal como le dice su nombre y su traducción. Luego aparece una cuenta de almacenamiento que 
+esto es requerida sobre todo porque estamos creando un Asure eh Function. Si nosotros tuviéramos otro tipo como un appsit, no es necesario crear un storage account, pero pues como es un requisito 
+para este tipo de recursos, tenemos que crearlo. Después vamos a crear un service plan con un SKU Y1. Esto, ¿qué quiere decir? es el plan de consumo utilizado para este laboratorio, porque pues 
+cada uno de estos recursos dentro de Asure a la final tienen un costo, ¿no? Y pues nosotros podemos asociarle un plan para saber cuánto eh, por ejemplo, cuánta RAM me va a dar y esto pues cuánto 
+me va a costar. Y finalmente vamos a crear una function app en Linux para pues eh desplegar ya lo que sería el código. Terraf entiende todas estas dependencias porque el código de referencia eh 
+tiene propiedades entre estos recursos. Por ejemplo, la function app tiene como parámetro el service plan ID del plan y las credenciales de la cuenta de almacenamiento. Entonces, repito la 
+precisión del alcance. Esto crea el host de la function app. El paquete no incluye archivos como un pack a Jason. o Jason o el código de un trigger HTTP para mi function app, sino más bien la ORL 
+puede existir, pero no tendremos una funcionalidad de negocio que responda pues a una ruta propia. Esta arquitectura es suficiente para aprender sobre todo el tema de Bobs y Git y el 
+aprovisionamiento, relaciones entre recursos, outputs y todo el ciclo de vida. El despliegue de código de aplicación ya va a ser una etapa posterior. Va. Ahora, si ustedes abren sus repositorios, 
+vamos a tener estos archivos de aquí. Y si me gustaría que entiendan cada uno. Tenemos nuestra carpeta eh main TF que contiene pues los providers y los cuatro recursos. E dentro de variables, 
+nosotros evitamos repetir valores y permitimos personalizar el nombre del proyecto y también el tema de región. Dentro [resoplido] de outputs definimos la información que Terraf va a mostrar al 
+final, por eso se llaman output salidas y el archivo punto ignore, que como les mencionaba, evita subir el repositorio archivos que son locales y sensibles. Antes de ejecutar, de igual manera, tienen 
+que hacer una revisión técnica del room time que tengan configurado. e tanto como si ustedes, no sé, su function está en Linux, pero pues solo recibe código de Python o solo recibe código de 
+Node. Eso también tienen que tener bastante cuidado, ¿no? Para el tema de despliegues, cómo pues las versiones soportadas cambian con el tiempo, esto nunca se tiene que asumir y siempre pues 
+tienen que validar, no sé, tal vez en una matriz como que cuáles son las necesidades de su asure function y posterior a eso sí ya eh ajustar sus laboratorios. también pues eh revisen que su punto 
+ignore esté completo para que e evitar que se le suba eh información no debida, ¿no? Y pero tampoco que tenga archivos que sí sean necesarios, como no sé, un eh los archivos que tenemos aquí 
+actualmente si necesitamos versionlos. Entonces, siempre tienen que también validar qué archivos están ignorando dentro de su trazabilidad. Listo. Como les había mencionado, eh vamos a utilizar 
+Asure para esta práctica, pero ustedes podrían utilizar posteriormente otro eh servidor e otro proveedor de recursos. Eh, listo. Entonces, para esto vamos a ejecutar algunos comandos. Tenemos a Z 
+login. Esto me permite autenticar dentro de mi computador eh mi cuenta corporativa. De ahí nosotros podemos setearle lo que vendría a ser la suscripción. Esto sirve sobre todo si ustedes manejan 
+varias suscripciones dentro de Ashu, que esto es muy común. Yo creo que tengo como unas cinco suscripciones. Entonces, siempre es importante validar en dónde estoy yo creando las cosas, porque pues 
+cada suscripción implica diferentes tipos de costos, regiones, eh políticas, entre otras cosas, ¿no? Entonces, siempre traten de utilizar su suscripción que eh esté disponible y puedan pues eh 
+crear todos estos recursos, ¿no? También tenemos a Set account show table, que esto básicamente pues nos va a decir cuál es la suscripción que estamos utilizando. Es un modo de log, ¿no? Eh, 
+también tenemos la parte de provider que nos va a mostrar sobre todo el estado de nuestro registro tanto como modo web y modo storage. ¿Okay? Entonces, esta verificación sobre todo evita desplegar 
+accidentalmente pues en otros lados que nosotros no debemos y ver como si esta suscripción también me permite realizar despliegues, ¿no? Porque si no tenemos los permisos necesarios o no tenemos 
+el rol necesario, pues no vamos a poder ejecutar ninguna de eh ninguno de estos archivos. El provider pues utiliza la sesión activa de Asures CLI, así que pues no necesitamos crear un service 
+principal para esta demostración. y ni tampoco pues escribir ni contraseñas porque pues se va a autenticar manual eh con el con el navegador. Listo. Denme un momento, solo voy a validar que tenga 
+esta parte de acá. Esto un momentito. Perfecto. Entonces, aquí en la misma terminal ustedes pueden ejecutar los comandos que tenemos a continuación, que son primero el acet login, como les 
+mencionaba, para autenticarnos. Espera un momento. está cargando. No me está abriendo el navegador. Espérenme un momento. A ver si por lo que estoy autenticada. Voy a limpiar mi sesión. Ya, ahí 
+login. Listo. Entonces, aquí me ya me pide iniciar sesión, ¿no? Entonces, voy a iniciar sesión con mi cuenta corporativa. No. Va, esperemos a que se autentiquen cada uno de los tenants que tengan 
+ustedes habilitados, ¿no? Y aquí les va a hacer seleccionar justo la suscripción. Entonces, la primera vez que se hacen login, por lo general sí les da esta opción. Si no, pues pueden hacerlo a 
+través de los comandos que ven a la izquierda. Entonces, para esto voy a ocupar una de mis suscripciones. Ah, no, eso es literal lo que yo estoy lo que estoy practicando. A login, eso lo que estoy 
+utilizando. Eh, sí, correcto. Es para loguearse dentro de el portal de Ash. [resoplido] Si le sale error dentro de Eso es un muy buen punto. Si les sale error al momento que hacen aceta login, puede 
+que no lo tengan instalado la lli. Entonces, también les voy a pasar la eh link de instalación. Listo. Entonces, aquí ya les pasé. Denme un momentito. Voy a ponerle acá. Ya me preguntaron que 
+para qué son los providers. Esto sobre todo nos indica cuál es el rol que nosotros tenemos dentro de esa suscripción para ver si podemos crear e los diferentes recursos. Entonces, para esto que 
+estamos creando storage account y e function, necesitamos verificar estos dos para verificar si podemos crear recursos. Ya lo vamos a visualizar. Entonces aquí eh podemos seleccionar, déjenme ver, 
+en este caso voy a ocupar las cinco. Listo. Okay. Y vamos a hacer esto. Acepta account show output table. Listo. Entonces ahí nosotros podemos ver si estamos con nuestra cuenta y también si podem 
+si estamos en la suscripción correcta. Entonces en este caso si estoy en la suscripción que voy a utilizar. Listo. Vamos a ocupar justo los comandos que les voy a pasar también por acá para que 
+los tengan. Listo. Okay. Eh, tenemos esta parte de aquí y voy a ejecutaros un ratito. Listo. A ver. Sí. Entonces, aquí tienen que ver que si tengan en estado registrado. Okay. Tienen un 
+registered, es que ustedes no tienen como que ese permiso para poder crear. Listo. Vamos a ver el otro. Mm. ¿Dónde está? Tenía no por ahora. Eh, ¿dónde está el de storage? Listo. Entonces, 
+también está registrado. Entonces, ya estamos en la suscripción correcta con mi cuenta correcta y tengo los permisos suficientes para poder crear los recursos que vamos a ver el día de hoy. Si 
+llegaran a no tener pues permisos, tendrían que ir al due da dueño de la suscripción que pues les brinda los roles necesarios para poder hacer esto, ¿no? Entonces, por lo general este rol que yo 
+tengo en las suscripciones es de colaborador y el que ustedes van a necesitar, ¿no? Siempre traten de tener un mínimo privilegio, no pidan tener ser owners de la suscripción, sino más bien lo 
+suficiente para que ustedes puedan crear los recursos. Okay, perfecto. Entonces, continuamos por acá. Listo. Entonces, dentro de nuestra carpeta, nuestro proyecto, nosotros vamos a ejecutar algunas 
+algunos comandos con Terraform para poder iniciar lo que es el despliegue. Eh, tenemos primero el Terraform Init. Este va a descargar todos los providers declarados y genera, actualiza el archivo de 
+bloqueo de dependencias. La primera ejecución puede tardar porque, como les mencionaba, depende mucho de su estado del internet. Si ustedes tienen un buen internet, esto se tarda menos. Eh, después 
+vamos a ejecutar Terraft, que este comando no despliega nada, simplemente organiza el formato del código para que pues todos trabajemos de un estilo consistente. Si modifica archivos, de igual 
+manera ya lo veríamos en el git para poder ver si eh realizó algún cambio, sobre todo en tema de estructura, ¿no? Finalmente, pues vamos a tener el Terraform Validate. Aquí pues Terraf va a 
+revisar que la configuración esté tácticamente válida y consistente. Entonces una validación exitosa no siempre garantiza de que Asure nos va a autorizar el desplay, eso también tengan en 
+cuenta porque puede todavía existir problemas, puede ser de red, políticas internas como su usuario directo o una disponibilidad regional, que esto también es un problema grave, que puede ser de 
+que eh dentro de su e suscripción donde está publicada, pues no pueden crear este tipo de recursos. Listo. Si de igual manera alguno de estas cosas fallan, vamos a ver pues me hacen notificar el 
+error que les dé o en caso de que me dé a mí pues vamos a tratar de validarlo, ¿no? Para corregir el archivo y volver a validar. ¿Listo? Okay. Entonces aquí está. Listo. Antes de eh antes de 
+iniciar con el despliegue, quiero explicarles este comando que es Terraform Plum. Este comando también es importante porque compara la configuración con el estado conocido y muestra una vista 
+previa. todavía no crea recursos, sino más bien eh ve como que cuántos elementos se van a crear, cuántos se van a modificar o también cuántos se van a destruir, ¿no? Porque pues en este 
+laboratorio ustedes deben deberían tener los cuatro recursos que vimos anteriormente. Y también bueno, tenemos un random string que es únicamente para generar nombres únicos. Ya después nosotros 
+podemos revisar si están bien los nombres, la región y e básicamente pues la práctica correcta no es escribir solo apply inmediatamente después de un plan. Primero debemos de entender el alcance 
+y en un entorno real ya suyo, si el plan muestra una eliminación inesperada, siempre se detiene. El plan, pues es la oportunidad de detectar un riesgo antes de impactar ya nuestra nube. Si el 
+resultado pues no coincide con los elementos que ustedes están creando, siempre traten de investigar antes de continuar. puede existir un estado previo o que el recurso ya fue creado o también 
+puede tener algún cambio no esperado. Listo, tenemos el comando de Terraform Apply. Este nos va a ayudar a calcular y también muestra nuevamente el plan. revisa nuevamente pues el tema de el 
+resumen y después de la creación pues Terraf muestra ya cada recurso en un estado creating y después muestra también como un creation complete. Este proceso también puede demorar algunos minutos 
+especialmente pues dependiendo del recurso que estemos creando. Creo que el que más se va a demorar es el function. Mientras nosotros esperamos, pues eh Terraform tiene un grado de dependencias y 
+pues crea en paralelo únicamente los recursos que no dependen entre sí. Eso también para que lo tengan en cuenta. Perfecto. [carraspeo] Tenemos la parte de los outputs que les había mencionado 
+previamente. Una vez que nosotros ya completamos el paso de validación, ejecutamos el terraform output para recuperar pues el nombre de los recursos que creamos. En este caso nos va a dar el nombre 
+del recurso del resus group, el del function app y el de la URL calculada. Luego ya podemos usar Terraf Show para inspeccionar también el estado conocido de cada uno de estos recursos. También 
+nosotros podemos hacer la validación manual viendo en Asure si efectivamente se creó estos recursos, ¿no? Si aparecen los que nosotros esperábamos y e podemos hacerlo desde el portal, que eso ya 
+también lo vamos a visualizar. Aquí hay una distinción importante que es que Terraform Show confirma el estado que Terraform conoce, entonces no ejecuto una prueba funcional de la aplicación, es 
+decir, que puede que esté levantado e perdón, que esté creado mi recurso, pero no esté levantada mi aplicación. Okay. Entonces, como les mencionaba, nuestro ZIP que les pasé no tiene código. 
+Entonces, e independientemente de que les pueda llegar a dar error cuando ustedes abran su function, la validación de hoy es pues infraestructura, recursos creados, relaciones y que tenga outputs 
+correctos. Ya en un próximo laboratorio vamos a ver cómo agregar código ya a esa función, cómo agregemos una llamada un endpint y validar pues el tema de códigos de respuesta y contenido que se 
+devuelve. Perfecto. Listo. Cuando llegue a fallarles algo, que es algo muy común que puede pasar, si son nuevos, pues en Terrafone, primero siempre traten de capturar la evidencia. Necesitan el 
+mensaje completo, el recurso afectado y la operación que Ashuur rechazó. No basta con decir pues algo en Terraf no funciona, sino más bien traten de clasificar la causa. Si el error tal vez 
+menciona autorization fail, siempre traten de revisar el rol y el alcance que tienen con en con sobre todo con el usuario que están desplegando. Si menciona missing suscript, significa tal vez que 
+no tienen una suscripción activa o que su suscripción tal vez se quedó e e digamos con algún tema de permisos, ¿no? Entonces no tienen algún permiso a esa suscripción. Si señala que pues un 
+nombre no está disponible, simplemente cambian el nombre del del recurso que están creando o pueden agregarle un sufijo. Hay temas que también puedan ver como que la región esté restringida. 
+Entonces, en este caso puede ser propio de Asure o puede ser tema de su organización. Entonces ahí tienen que ver el tema de políticas permitidas. Y si es un tema de sintaxis que también puede 
+darle como sintaxis de error, tienen que validar que pues su estructura de su terraform esté correcto y pues de ahí vuelven a validar. La corrección siempre debe quedar donde corresponde. Si una 
+propiedad de infraestructura está mal, simplemente cambio ese archivo en concreto. No tienen que modificar todo ni pues arreglar manualmente el recurso en el portal. Eso es lo peor que podrían 
+hacer porque van a dejar el código desactualizado y esto suele pasar que ustedes digamos ven como que hubo un problema de red, ya digamos desplegaron su aplicación y me está dando un problema de 
+red que no puede conectarse a un servicio externo. Entonces voy a desde el portal y habilito todas las redes y luego, ¿qué pasa? Que vuelven a desplegar y me vuelve a tener el mismo problema que ya 
+tenía antes, que era el problema de red. Y no saben por qué antes un durante un tiempo sí funcionó y luego no. Entonces, si ustedes comienzan a usar Terrafom, siempre tienen que reconciliar estas 
+diferencias posterior a una ejecución, ¿no? Listo. Finalmente, pues repito un validate, plan y apply para que pues este retorno controlado eh nos dé una expresión práctica del ciclo de vida de 
+inicio a fin. Perfecto. Un momento. Ya hay un archivo también importante que deben de considerar, que es que Terraform necesita recordar qué recursos administra. Esta relación se conserva en este 
+archivo que se llama el state. Entonces, el código describe lo que queremos, pero el state registra lo que Terraform conoce y pues Asure ya contiene la realidad actual. Cuando nosotros ejecutamos un 
+plan, Terraform, utiliza esta información para calcular todas las diferencias. Si nosotros borramos el state sin un procedimiento de recuperación, Terrafor lo que va a hacer es perder la relación 
+con los recursos existentes y puede ser que proponga crear eh recursos duplicados, ¿no? Entonces, el state también puede contener valores sensibles, información detallada. Por eso es que este 
+archivo está dentro del git ignore y no debe de subirse git, ¿no? En una demostración local pues se genera este archivo TEF state cuando nosotros damos un git inet, pero pues ya en equipos grandes 
+normalmente pues se configura en un back en remoto protegido y pues con un bloqueo para evitar que dos ejecuciones modifiquen el mismo estado al mismo tiempo. ¿Okay? Entonces ahora, ¿por qué ahora 
+está actualmente en nuestro repositorio? Si ustedes no lo ven es porque es un archivo pues oculto, pero el punto gitignore pues excluye correctamente este archivo. Esto no es solo orden del 
+repositorio, sino es una medida de seguridad y consistencia pues operativa. Perfecto. Ya antes de continuar con esta parte vamos a denme un momento. Voy a compartirles mi pantalla. para que vayamos 
+ejecutando los comandos debidamente. Okay, un momento. Esto, poner esto por acá y voy a poner esto por acá. [resoplido] Listo. Déjenme les paso también el comando. Dem un ratito. Voy a buscar el 
+comando de Terrafón para que lo puedan instalar dentro de sus computadoras. Listo. Igual en su línea de comandos pueden poner a través de Widget install y de esta manera ya lo pueden instalar. Si 
+no, pueden buscar también en internet les va a salir un eh un archivo para instalar, pero pues la versión más fácil es instalarla a través del comando que les pasé. Listo. M un ratito. Ya, 
+ahora sí les comparto nuevamente. Listo. Tenemos esto por aquí, esto por acá y vamos a dar inicio a los comandos. Entonces, tenemos primero el terraform init. Ah, para verificar que esté 
+instalado le pueden poner terraform version, ¿no? Entonces ahí les dice también la versión que eh ustedes tienen instalado. Vemos que hay una nueva versión, pero bueno, por ahora le voy a 
+mantener a la 118. Perfecto. Entonces ahí sí comenzamos con el terror init. Va, esto como les mencionaba, se demora un poquito, sobre todo por la conexión internet. tiene una mejor conexión a 
+internet, es un poco más rápido. Listo. Okay. Entonces, ya vamos a visualizar por acá. Listo. Sobre todo vemos que nos creó esta carpeta de aquí que es la de Terraform y tiene algunos providers 
+como puede ser el de Ashure inicialmente. Okay. Tiene esto de aquí, tiene licencias y un archivo de Terraform. Okay. Como les mencioné, no hace mucho cambio, simplemente me descarga esto de los 
+providers, que es necesario, pues, para continuar con los otros con los otros comandos. Listo. Bien, vamos a ejecutar el Terraft que, como les mencionaba, solo normaliza los archivos que nosotros 
+tenemos. Listo. Ya que estén normalizados, déjenme ver si tengo algún cambio. No, perfecto. Sobre todo si no están pues eh correcta la estructura. Y con el terf validate de igual manera 
+comprobamos esta síntesis. A ver, validate. Esto. Esperemos un ratito. Ya, perfecto. Entonces vemos que toda la configuración que nosotros tenemos en este repositorio es válido. Okay, esto sí de 
+igual manera inician con código existente, ¿no? Si inician desde cero, pues ya podrían saltarse estos pasos e ir directamente al paso del plan. Entonces vamos a ejecutar Terraf. Aquí tenemos que 
+tener una salida muy parecida a esta, No. Perfecto. Entonces, aquí vamos a ver qué no más nos eh planea crear, ¿no? Okay. Entonces dice que va a ejecutar las siguientes acciones. Tenemos el 
+function app, que aquí me pone como que todas las eh especificaciones, ¿no? Okay, tenemos el resource group, aquí está el nombre, por ejemplo, de Bobs Demo RG, tenemos el service plan, el storage 
+account, son diferentes recursos, ¿no? Y este de aquí que simplemente es para agregar un sufijo dentro de los nombres. ¿Listo? Okay, algunos cambios que van a tener, sobre todo el nombre del 
+function app, la URL y el resource group. Okay, esto solamente se va a saber, pues, una vez de que nosotros pongamos el apply. Listo. Entonces, una vez de que nosotros ya validemos cada una de estas 
+cosas, esta es una práctica bastante pequeña, pero pues ya con una infraestructura bastante grande, pues tendríamos que checar sobre todo eh si es como que el service plan que yo necesito, si pues 
+el los nombres coinciden, si necesito como que bloqueos de red, entre otras cosas, ¿no? Pero por ahora pues como les mencionaba, es una práctica bastante sencilla, solo son pocos recursos que vamos 
+a crear, entonces vamos a aplicarle directamente, ¿no? Okay. Entonces vamos a hacer un terraform apply. y esperamos un momento. Tam. Listo. Entonces, aquí, como les mencionaba, nos va a pedir 
+nuestra aprobación, ¿no? Entonces, aquí nos vuelve a dar el plan y nosotros le ponemos en yes para que esto comience a desplegar. Aquí muy importante sobre todo verificar esta línea que es 
+cuántas cosas está agregando, cuántas está cambiando y cuántas está eliminando, ¿no? Entonces eh con esto ya nos damos una idea bastante clara de qué es lo que estamos haciendo, ¿no? Y vamos 
+viendo que va creando uno por uno. Entonces primero creo el su fijo y esto va creando también orden de dependencia. Si pues necesitamos esto para alguna otra cosa, primero crea esto. Perfecto. 
+Entonces, por ejemplo, ahorita ya creó el resource group. Nosotros podemos ya dirigirnos al portal para visualizar si estos cambios ya fueron aplicados, ¿no? Ya, muy importante ubicarse en la 
+suscripción que ustedes seleccionaron. Entonces, ven que yo tengo algunas. Vamos a ir a esta de aquí, que es lo que creé. Vamos a buscar en resus groups. Entonces, aquí tengo varios. Vamos a ver 
+cómo se llamaba el que creó. Eh, Debobs. Okay. Ver. Devops. Demo RG. Entonces, miren, aquí está Yami, grupo de recursos y a medida pues que vaya creando las diferentes cosas, va a ir agregándose 
+dentro de este grupo, ¿no? Va, aquí tengo un problema. Eh, un espet de estatus 401. Ya. Entonces, este es, por ejemplo, es uno de los errores que puede llegar a darles. A pesar de que yo tengo 
+permisos de creación en la suscripción, tengo un 401 para el tema de planes, ¿no? Entonces, un app service plan no lo puedo crear. Entonces, hasta aquí llegaría pues mi eh permiso. Y de igual 
+manera, miren que no tengo eh cuota para poder desplegar lo demás. Okay, entonces este como que es un error que les podría llegar a pasar. Entonces ahí, ¿qué podrían hacer? Pues justo solicitar 
+ya al su dueño de suscripción que les dé pues los permisos necesarios para poder volver a hacer un apply. Si nosotros ahorita le damos un apply, no se va a volver a crear el grupo de recursos, 
+pero pues me va a mantener el mismo error, ¿no? Y si pues ya llegar a ser de que todo les da correctamente, pues ya simplemente les da creación, creación, creación y termina el plan. Okay, 
+perfecto. Listo. Un ratito. Les voy a compartir mi pantalla. Está perfecto. Entonces estáamos por acá. Ya. Entonces ya nosotros conectamos Terraform con Git. Tenemos algunos archivos que vimos que 
+creamos en el tema del Terraform init, sobre todo para poder versionar todo eh esta parte. También pues conviene version hasta ahora lo que tenemos que es un punto logo. HCL porque registrar estas 
+versiones en concretas nos ayudan pues que eh otras personas que ocupen nuestro repositorio tengan eh la instalación de las mismas dependencias. No, no versionamos la carpeta punto Terraf porque 
+esta conviene eh contiene algunos providers locales que no son necesarios para el TEF state que habíamos visto previamente. Okay, listo. Y nosotros, ¿cómo podemos eh terminar esta práctica? Si 
+ustedes ya crearon todos los recursos, pueden visualizarlo. Como les mencionaba, el el function no les va a dar nada de código, pero para esta práctica sí necesitamos ejecutar un plan de 
+destrucción, ya que pues estos recursos necesitan ser eliminados al final porque pues solo son de práctica y si ustedes lo mantienen en su suscripción puede llegar a asumir costos innecesarios, 
+¿no? Entonces, primero confirmo que estoy pues en la carpeta correcta, que mi suscripción esté activa y pues que e lo que vamos a ejecutar pues eh sea correcto, ¿no? Entonces vamos a ejecutar un 
+Terraform destroy. Sí, justo vemos que ya alguien ya lo desplegó. Esto no les va a mostrar nada porque como les mencionaba, no tiene código, pero al menos ya tiene toda la infraestructura pues 
+creada, ¿no? Ya posterior a ello podrían hacer publicaciones ya de código. Muchas gracias, Manuel. Listo. Entonces, para de igual manera todos los demás, vamos a ejecutar este comando que es 
+Terraform Destroy para eliminar lo que nosotros acabamos de crear. Finalmente vamos a ver en Asure si este grupo de recursos ya no existe. Lo importante que no deben de cerrar la terminal a mitad de 
+uno de estos procesos ni asumir que todo se eliminó solamente porque eh desapareció una de las líneas, ¿no? Si Destroy falla parcialmente, siempre tienen que revisar qué recursos quedaron y 
+tratar de volver a ejecutarlo eh después de resolver la causa, ¿no? Este paso pues forma parte del gobierno de costos, ya que pues los laboratorios siempre deben de tener un propietario, tiempo de 
+vida y procedimiento de limpieza. Crear infraestructura es sencillo, pero operar responsablemente pues incluye retirarla cuando deja de ser necesaria. Entonces, para esto voy a volverles a compartir 
+mi pantalla. Vamos por acá. Y vamos a ejecutar el comando, ¿no? Plan. Se recuerden el plan solamente me va a indicar cuáles son pues los recursos que yo tengo, pero el destroy ya me va a pedir una 
+confirmación para ya eh de por sí eliminarlos, No. Listo. De hecho, vamos a ver un ratito. Quiero ver que creo que tres. Tengo dos. Claro, tengo dos ahorita y bueno, uno que no se visualiza porque 
+solamente es un eh sufijo que es el de Bobs de Morje y este de aquí, ¿no? Esos dos básicamente me los va a eliminar junto con el sufijo. Ustedes deberían tener también el el plan service y el 
+app function, ¿no? Listo. Entonces, miren, justo esta línea es la que les mencionaba que es importante visualizar. No va a añadir nada, no va a cambiar nada, solamente va a destruir tres cosas que 
+eran justo la que les había mencionado. Okay, entonces si ya estoy segura, reviso esto, veo que está eh correctamente, entonces ya puedo continuar con el comando de Terraform destroy. Listo. 
+Entonces, aquí me pide la confirmación. Va. Y al igual que la creación van a ver así cuando ya esté pues completado. Entonces, en este caso está destruction complete, pues cada uno de los 
+recursos. 1, dos, 3. Perfecto. Okay. Entonces, cuando nosotros visualizamos acá, vamos otra vez acá grupo de recursos, solo un refresh y vemos que este recurso ya no se encuentra, ya fue eliminado 
+de mi suscripción. Esto, un rato les vuelvo a compartir mi pantallita. Perfecto. Entonces, recapitulando todo lo que vimos el día de hoy, vimos la base de lo que es de Bobs, que es una 
+responsabilidad comparativa, no solo una herramienta aislada. Para el reto de hoy usamos un ciclo operativo en que pues desplegamos, observamos y validamos también pues eh los resultados que nos dio 
+el usar infraestructura como código, ¿no? Git, sobre todo va a conservar el historial local y GitHub pues nos permite colaborar y revisar cambios. Toda la parte de infraestructura como código va a 
+reemplazar las configuraciones manuales que son difíciles de repetir, sobre todo eh si ustedes no tienen mucha experiencia dentro de todo el tema de eh estos recursos, ya sea en Asure o ya sea en 
+AWS o el proveedor que ustedes prefieran. Entonces, tener archivos versionables me ayuda pues a que interprete esos archivos, calcule un plan, aplique cambios y mantenga pues una relación con la 
+infraestructura mediante pues el estado. En esta demostración, como les dije, autenticamos Asure, verificamos suscripción, ejecutamos algunos comandos y pues eliminamos los mismos. Algo que quiero 
+que recuerden es que la infraestructura también es software, por eso necesita un diseño, necesita revisión, necesita prueba, seguridad, control de cambios y un mantenimiento. ¿Okay? Solo para 
+terminar, eh ustedes pueden mantener este código dentro de sus repositorios. Para ello, pues eh tienen la parte de aquí, como les había mencionado, ustedes pueden hacer un comit. Si eh prefieren 
+hacer cambios, agregar más recursos, también lo pueden hacer. Y pues todo esto se va a ir versionando dentro de su GitHub, ¿no? Entonces dentro de GitHubes ya tienen su repositorio, el cual van a 
+ir eh van a poder modificarlo dependiendo sus preferencias. No es bueno que sigan practicando, puedan crear recursos, al final los van eliminando, esto no les va eh incurrir en costos muy grandes, 
+¿no? Perfecto. Y no sé si tienen alguna duda de la práctica que realizamos el día de hoy o pues de algún tema en general sobre el tema de The Bobs o Gidho. Eh, okay. ¿Tienes alguna 
+documentación que explique cómo sabes qué propiedades existen para agregar o modificar en el recurso de cómo sé qué propiedades acepta? Va. Eh, si, si hay documentación oficial, de hecho, ya 
+les voy a pasar en un momento los links de Terraor para que ustedes vean como justo como cuáles comandos tiene. Y pues eh ahí está también determinado por cada uno de estos proveedores para que 
+sepan qué comandos y qué eh estructura tiene cada uno de estos eh pedazos de código, ¿no? Listo. Como resumen de cómo se usa Terraf, básicamente es un es una herramienta que tiene pues una 
+declaración de propios archivos en donde nosotros vamos a definir la infraestructura que deseamos utilizar. ¿Para qué nos sirve esto? Pues con el único objetivo de tener trazabilidad y 
+repetibilidad entre ambientes. Básicamente para eso es terrafa. ¿Alguna otra duda? Gracias a ti, Adem. No, si no hay otra duda, eso sería todo por el día de hoy. De igual manera, ah, hay otra 
+duda. Okay. ¿Alguna forma de correr Terraform en local sin usar Asure? Eh, podemos tener eh Terraform hasta el Terraform init, pero eh crear la creación de recursos, pues sí necesitaríamos algún 
+proveedor de ellos, ¿no? Como puede ser Asure, puede ser AWS, pero de ahí de otra forma, o sea, no le podrías ejecutar eh, o sea, visualizar que los recursos estén creados porque pues 
+básicamente para eso sirve ter, ¿no? Para crear la infraestructura y necesitarías pues un proveedor de infraestructura para poder validarlo. Lo que si puedes hacer es los primeros pasos iniciales 
+para validar que esté correcta la estructura de tu archivo TF, ¿no? De terra. Eso es lo que puedes hacer localmente. Perfecto. Listo. Okay. Si no hay otra duda, pues eh van a tener diferentes 
+talleres. Espero que les haya gustado el día a día de hoy. Es bastante básico. Es pues su puerta de entrada para el todo el tema de The Bobs, que tiene muchísimas cosas más. Si ustedes se meten 
+a GitHub es de igual manera todo un mundo. Si ocupan diferentes herramientas como Asure Devobs también es otro mundo. Entonces al menos con esto ustedes ya tienen una base para poder crear eh sus 
+primeras eh sus primeros recursos, ¿no? Pues nada, les agradezco pues por el tiempo. Perfecto. Muchas gracias Emily. Muchas gracias a todos por participar actividad. Les recuerdo para los que 
+quizás no pudieron eh participar o llevar el hilo del taller, esta grabación se va a estar subiendo a nuestro canal de YouTube Hakaton CM para que puedan ver la repetición y entonces ya con más 
+calma poder replicar todo lo que fueron los comandos, todo el paso a paso que realizó Emily para que puedan tener esa práctica con ustedes. También recordarles que eh se ha compartido, bueno, 
+Emily está compartiendo documentación para que puedan tener a la mano. También se ha estado compartiendo algunos enlaces de lo que son los sitios oficiales de nuestra de lo que es el Jacatón, 
+tanto el canal de YouTube como el canal de WhatsApp y también la página web hacatoncopa.com. así también el formulario de asistencia para que lo puedan llenar eh y quede pues la constancia de que 
+ustedes participaron en este evento. Y pues de momento me despido, no antes dándole las gracias [carraspeo] por permitirnos llegar a ustedes, brindarles este conocimiento, eh recordándoles también 
+que esta información, esto les va a funcionar a ustedes mucho para desarrollar lo que son las actividades y los desafíos que se van a estar realizando en el evento del hacat. Muy bien, sin más me 
+despido. Muchas gracias por su tiempo y que tengan una excelente noche. Muchas gracias, chicos. Ludovico veo que tiene levantada la manito. Tal vez tiene alguna consulta antes de finalizar. Ah, claro 
+que sí.

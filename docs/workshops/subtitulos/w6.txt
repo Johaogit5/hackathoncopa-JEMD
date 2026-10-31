@@ -1,0 +1,348 @@
+ustedes eh crear en la plataforma de Dinat Playground, que es prácticamente uno de los insumos que van a estar utilizando eh durante el evento. En la noche de hoy pues nos acompañan nuestros 
+compañeros de BisneyT, está en este caso Evely Ceballos, también tenemos los compañeros de D TR Trace, está Angel Carlos. Por parte de el equipo de la organización tenemos pues a Larisa Aguilar 
+y al señor Hugo Aquino. Eh, mi nombre es Luis Martínez. Eh, tengo pues ya varios años desde el 2022 como voluntario en el Jacatón. Y bueno, les presento entonces a los compañeros que nos van a 
+estar o más bien que los van a estar a ustedes ayudando con respecto a cualquier duda, consulta que tengan. En este caso, pues tenemos a Carlos Fernández, eh, que pues es un ingeniero en 
+computación ingresado de la Universidad Simón Bolívar en Caracas, Venezuela. eh profesional pues con más de 20 años de experiencia en el campo de la tecnología, principalmente pues en el área 
+de ingeniería y consultoría, representando eh pues lo que son soluciones tecnológicas en diferentes eh para diferentes eh fabricantes y pues ayudando a clientes de diversos sectores de en 
+diferentes países eh tanto en Latinoamérica y el Caribe. También nos acompaña Ángel Alemán, eh, que pues cuenta con más de 6 años de experiencia haciendo que los datos cuenten historias, 
+especializado en dashboard, pipelines de datos y observabilidad cubriendo la región de México, Centroamérica y el Caribe. Apasionado por enseñar y compartir conocimiento, porque la mejor 
+tecnología es la que se comparte y en este negocio pues todos aprendemos de todos. Y bueno, los dejo entonces eh con nuestros compañeros de DAT para que puedan atender sus dudas, consultas, 
+recordándoles, muchachos, que cualquier duda, todas las consultas que tengan, déjenlas en el chat para que los compañeros las puedan atender. Eh, de igual forma se les va a estar compartiendo eh 
+lo que es un enlace de asistencia para que lo puedan llenar y también los enlaces a los canales y sitios web oficiales del Jacatán. Adelante, chicos. Muchas gracias. Eh, buena noche y buena tarde a 
+todos. Entonces, como bien comentan, nosotros vamos a tomar esta hora y media que tenemos por delante para contarles un poco sobre la observabilidad y después adentrarnos un poco a cómo pueden 
+hacer eso con Dyatrace, pues como parte del temario que seguramente explorarán eh cuando vayan hacia el jacatón. Dicho eso, eh les voy a ir contando un poco la historia de quiénes somos nosotros 
+antes de iniciar, de dónde nace Daatres, qué es lo que hacemos y el cómo eh es que apoyamos y hacia dónde vamos enfocados. Entonces, para eso, eh primero que nada eh siempre que nosotros eh 
+iniciamos una conversación de hablarles de qué es Daina 3, nos gusta empezar primero planteándoles qué es lo que vamos a buscar recorrer el día de hoy, ¿no? Vamos a hablarles sobre lo que son 
+cubernetes, ¿no? para quienes no lo conocen, ¿qué es lo que hacen? ¿Cuál es la necesidad de observar? Porque al final muchos de ustedes van a salir de aquí hacia empresas en las cuales van a 
+tener necesidad de ustedes tener que visualizar lo que está sucediendo en todos sus diferentes sistemas, de ir observando eh qué está pasando, cómo poder ayudar cuando sucede un problema y 
+cualquier situación que se pudiera llegar a presentar a nivel tecnología. Y para eso nos vamos a apoyar en los tres pilares que define la observabilidad. Y al final vamos a ver un poco como Dynat 
+puede ir hacia todo ese camino. Entonces, para que conozcan un poquito de nosotros, nosotros eh trabajamos con una plataforma de observabilidad. Esta plataforma de observabilidad busca cubrir muchas 
+diferentes capas a nivel tecnológico de lo que conforman una aplicación, ¿vale? Entonces, eh, imagínense, ¿no?, la aplicación de de Copa, ¿no?, pues esa aplicación que ustedes pueden utilizar 
+para comprar un vuelo o la aplicación que usan para entrar a un banco, para pedir a lo mejor un producto en línea. Todas esas aplicaciones tienen que pasar pues por todas estas capas que pueden 
+tener algún problema en algún momento y que uno tiene que estar eh visualizando cada una de ellas para poder encontrar de forma lo más rápido y efectivo el problema y en su efecto realizar una 
+resolución de eso que no eh les afecte a los usuarios que están haciendo uso del aplicativo. Por eso es que la plataforma se fofoca en que puedan observar tanto la infraestructura, puedan observar 
+lo que es la aplicación, la experiencia del usuario, eh temas, por ejemplo, de la IA que está en su en su boom ahorita, ¿no? De todos querer utilizar pues lls o agentes para poder responder más 
+rápido ante eh algo que a lo mejor uno desee consultar, análisis de logs, de seguridad, temas de software delivery o observabilidad de negocio. Todo eso nosotros lo hacemos a través de una 
+plataforma que hemos ido construyendo a través de los años. La eh Datrice es una empresa que nació eh hace ya eh unos 17 años más o menos, como el nombre de Datrace en Austria, ¿vale? en LS y 
+ha ido evolucionando con el tiempo para poder lograr tener pues toda esta observabilidad a diferentes empresas que eh la están utilizando. Como pueden ver en la parte inferior hay varias eh 
+símbolos que por ahí representan los tipos de datos que uno puede obtener con la plataforma. Los tres primeros que observan ahí, que es la parte de trazas métricas y logs, son aquellos que son 
+los pilares de la observabilidad. Pero nosotros no nos quedamos solo con eso, siempre buscamos expandirnos a más cosas, ¿no? Que por eso hoy viene la parte topológica, el comportamiento, código, 
+amenazas, parte de red y observarlo en cualquier nube de las que existen actualmente en el mercado. Dicho eso, contándoles un poquito de cuál es la historia de la plataforma, vamos a empezar a 
+entrar a este a este workshop, ¿vale? Entonces, primero un poquito, ¿qué es un clúster de cubernetes? Para quien no lo conoce, seguramente muchos de ustedes han trabajado en sus máquinas, ¿no? 
+Desarrollando a lo mejor alguna aplicación, creando un programa, ejecutando eh algo, ¿no?, que está corriendo solo en su aplicación. Pero ahora imagínense pues que eso tiene que ser utilizado 
+por miles de usuarios o millones de ellos, pues su aplicación no puede estar corriendo en su máquina como tal. Necesitamos muchas máquinas juntas que estén funcionando como una sola y que puedan 
+entonces llevar toda esa información de forma automática y que estén listas para que ante a lo mejor recibir más tráfico, una eventualidad, pues puedan ser resilientes y mantenerse arriba, 
+¿vale? [resoplido] Entonces, incluso aquí pongo una analogía que sería como pues una cocina de un restaurante, ¿no? Esos nodos o esas máquinas donde viven las aplicaciones son como si fueran 
+las estaciones de cocina, ¿no? Los pots, que son esas eh contenedores que viven dentro de cada uno de esos nodos, son pues todos esos platillos que se están preparando. Y cubernetes como tal, pues 
+es ese chef que se encarga de decir cómo se va a cocinar todo, en qué estación se va a cocinar, si hay mucha demanda en una, mandarlo a lo mejor a otra estación para que equilibre esa balanza 
+entre todos los elementos. Y así nos lleva pues a las piezas que arman ese rompecabezas. El POD es esa unidad más pequeña, la cual eh pues podemos tener uno o varios contenedores dentro de él que 
+comparten la infraestructura, comparten la comunicación, comparten el almacenamiento y comúnmente comparten una misma tarea, ¿no? Es decir, si por ejemplo creamos un servicio por el cual a lo 
+mejor todos se tienen que autenticar, pues va a haber a lo mejor varios que van a hacer esa misma tarea preparados para que si estimos más usuarios, más gente entrando crezcan y cumplan la demanda. 
+El deployment es cuando tenemos muchas de esas máquinas juntas y es el que se tiene que encargar de poder decir cuántas son las que siempre tienen que estar activas, que no haya siempre menos, que 
+estemos cumpliendo con la demanda y si hay la necesidad es el que se encarga de expandir todo eso. Ahora bien, eso que hablamos ahorita es a nivel infraestructura, ¿no? Para eso dentro de estos 
+elementos suele tener un servicio, ¿no? es una IP donde seguramente se en ruta el tráfico, donde tiene que asegurarse que todo funcione correctamente y que no haya ningún inconveniente. Y al final 
+todo esto pues tenemos que mantenerlo en una gestión. Por eso existe algo que se llama namespaces, que es un espacio segmentado a nivel lógico, no físico, porque recordemos que a nivel físico son 
+muchas máquinas que por ahí están funcionando, pero varias de esas pueden estar asignados de forma lógica para decir, "Oye, todas ustedes van a ser una misma función." ¿Vale? ¿Qué es lo que 
+buscamos al tener todo eso? Pues que cuando alguien, un equipo empieza a usar cubernetes, pues pueda resolver cuatro problemas fundamentales. El primero, que haya autorreparación. Si algo se cae, 
+pueda haber un algo, que en este caso es el clúster de cubernetes, que en automático detecte esto y sin intervención de una persona para hacer esa tarea, pues en automático ponga lo que haga 
+falta en capacidad, en cantidad para que se mantenga ese servicio funcionando. El autoescalado es quitar o mover cantidad de pots, máquinas, contenedores que estén ahí viviendo para poder hacer 
+que la carga de CPU, memoria, tráfico, pues con la demanda que se tenga, pues esté cumpliendo con la necesidad. también busca gestionar la parte de los recursos para ver si hay a lo mejor partes 
+dentro de la infraestructura que están siendo visibles, eh, perdón, que están siendo disponibles y que pueden ser utilizados para a lo mejor algún otro servicio, pues él en automático pueda 
+hacer el despliegue o uso de esos recursos y pues que siempre estemos en óptimas condiciones. Y por último, actualizaciones, ¿no? El terror de todo eh equipo de operaciones, ¿no? donde lo que se 
+busca es que siempre que haya un despliegue, ese despliegue que se haga no tenga que afectar directamente al servicio, se haga de forma gradual y que si en su defecto hay una falla, pues se pueda 
+hacer esa ese rollback y poder tener todo de nuevo a la normalidad, ¿no? Pero ahora, ¿qué hemos estado hablando hasta ahorita? Hay un componente maestro que está monitoreando, perdón, que está 
+eh gestionando a muchos componentes por debajo de infraestructura a nivel lógico, de red, de storage, de tráfico, de servicios y todo eso cambia, sube y baja. Pero, ¿qué pasa si algo empieza a 
+fallar? ¿Cómo nosotros podemos observar que realmente está sucediendo un problema? Entonces ahí es cuando la observabilidad se vuelve un factor clave, ¿no? Imagínense empezar a tener esto en 
+una empresa donde hay miles de servicios y que necesitamos de repente cuando se falle a lo mejor uno que pueda ser muy crítico, poder identificar específicamente dónde está sin tener que estar 
+haciendo una búsqueda interminable, perder tiempo para poder estar probando y pues adivinar en dónde se está presentando el problema. Y eso nos lleva al punto donde si algo no lo podemos ver, pues 
+va a ser muy difícil que lo podamos arreglar. [resoplido] Y con eso es que nosotros necesitamos irnos hacia esa observabilidad para que en lugar de adivinar, pues en tiempo real podamos observar lo 
+que realmente está sucediendo. Aquí le voy a dar paso a mi compañero Carlos para que les muestre un poquito pues cómo se podría ver una complejidad de todo eso en cubernetes. Listo, un segundo. 
+Y ahí ya se puede ver mi pantalla, ¿verdad? Correcto. Listo. Eso que les comentaba ahorita Ángel. que es un clúster de cubernetes. Acá tenemos una representación gráfica de cómo de cómo se 
+ve, ¿okay? Y cómo desde un clúster principal vamos a poder ver diferentes componentes y cómo esos componentes están agrupados, ¿okay? Para darles a ustedes esa visibilidad que comentamos. 
+¿Okay? Aquí van a ver el concepto de Npace que les comentó hace un instante. Entonces van a ver que hay diferentes Npace o servicios agrupados ahí y así sucesivamente se va haciendo esa eh 
+gráfica o agrupación de componentes. Ven también que hay ciertas relaciones como esto pertenece a este otro componente, etcétera, que les ayuda a identificar dónde puede haber algún 
+inconveniente o algún problema en un momento determinado. De hecho, en este caso particular, van a ver que en estos nodos que están acá te representan en color rojo porque tienen algún problema 
+relacionado con esos nodos de Pero más adelante vamos a entrar un poco más en detalle de cómo se ve las métricas y más información de estos clúster en particular. Buenísimo. Gracias, Carlos. 
+Entonces, volviendo para acá, partamos a hablar de cuáles son esas tres pilares de la observabilidad. Entonces, existen tres señales que son las que comúnmente se utilizan en las industrias para 
+poder describir cómo es el comportamiento de un sistema. Y esas tres señales son los logs, las métricas y las trazas. El logs es seguramente el tipo de señal más conocido en todos lados. es tal 
+cual un registro, es una eh línea de texto tal cual que puede contener diferentes tipos de detalles de lo que ha sucedido en a lo mejor un servicio, en la infraestructura, cuando alguien entra una 
+aplicación para cualquier cosa que podría pasar, ¿no? Es una bitácora de todo lo que va sucediendo. Y ahí abajo tenemos un ejemplo. Imaginémonos que alguien trata de conectarse a una base de 
+datos, no pudo conectarse, le dio un error en particular y simplemente se genera una línea con esa información. Error 500 al conectarse a la base de datos a una cierta hora. Eso es todo lo que es 
+un logo. Después tenemos lo que son las métricas. Las métricas son cuando tomamos ciertos números agregados en el tiempo que nos permiten describir cómo es que se está comportando un sistema. 
+Por ejemplo, todos lo tenemos en nuestras computadoras. la cantidad de memoria, la cantidad de CPU que consumimos, ¿no? Cuando utilizamos un programa, ¿no? cuando abrimos, por ejemplo, 1000 
+ventanas en el Chrome, cuando de repente abrimos un videojuego, cuando de repente abren una presentación, un programa, todas esas acciones que realizan en la computadora, pues al final generan un 
+consumo y la métrica se va a encargar de tomar eso seguramente agregado por cómo se vio el consumo en un minuto y reflejarlo para cierto elemento. [resoplido] Y por último tenemos la traza, que es 
+cuando hacemos una solicitud a un servicio. Ese servicio por debajo puede tener n cantidad de interacciones. Todo ese recorrido que realice ese elemento principal con el que interactuamos es lo que 
+se va mapeando en la traza. Y eso, por ejemplo, puede ser, imaginemos cuando ustedes van a comprar algo, ¿no? Al momento de hacer el checkout, pues ustedes simplemente le dieron en el botón que 
+decía comprar y pagar. Eso por debajo a lo mejor llamó a una pasarela de pagos, válido la tarjeta de crédito, válido que haya fondos, eh válido que el producto esté disponible y todo eso lo 
+tiene que hacer de forma rápida, sin tener problemas. Y seguramente lo que ustedes vieron como un simple clic en un botón por debajo representó n cantidad de llamadas a diferentes servicios. 
+Entonces, cuando nosotros empezamos a ver cada uno de estos pilares de forma más segmentada, pues vamos a empezar a encontrar que cada uno de ellos tiene una cierta estructura o en su defecto tienen 
+un caso de uso en particular por los cuales se suelen usar. Por ejemplo, los logs son líneas que suelen contener siempre, por ejemplo, el time stamp, el momento en que se presentó o se escribió 
+esa ese registro. tienen un nivel que se maneja como un estándar para poder identificar diferentes tipos de mensajes. Hay mensajes a lo mejor informativos donde no se presenta ningún problema, 
+warnings donde a lo mejor algo está sucediendo pero no se ha presentado como un error y como tal ya los que son de los errores conocidos como los HTTP. Comúnmente después suele tener un origen y 
+un mensaje, ¿no? Saber de dónde provino ese log, si vino de una máquina virtual, de un de un servidor físico, de un clúster de cubernetes, de un servicio en específico y como tal el mensaje de 
+lo que haya sucedido en ese momento, ¿vale? En el caso, por ejemplo, que hablábamos de los cubernetes, que puede ser una estructura que si bien permite escalabilidad, también se puede volver muy 
+compleja, pues cada contenedor va a escribir sus propios locks y pues eso va a hacer que se pueda volver difícil a veces de hacer todo ese rastreo, ¿no? Cuando tenemos esa alta eh disponibilidad o 
+esa eh crecimiento en todos los puntos que hay que observar. El segundo que mencionábamos que eran las métricas, que son esos números que vamos midiendo a través del tiempo y que les ponía ese 
+ejemplo de eh medir, por ejemplo, el uso del CPU, ¿no? Como la gráfica que tenemos en la pantalla. Para eso existen diferentes tipos de medir esas métricas, ¿no? Está la métrica de counter, que 
+es simplemente contabilizar, por ejemplo, algo y eso puede ser un valor que puede ser incremental. Imaginemos, por ejemplo, la cantidad de personas que se están conectando ahorita esta llamada, 
+¿no? Eso es un valor, ¿no? Y a lo mejor a través de la llamada puede ser que bajen personas, suban, ese valor no lo ayudaría a representar, ¿no? Un gouchemos tener, por ejemplo, en los carros 
+cuando apretamos el acelerador. Ese elemento que sube y baja de forma constante es ese tipo de métricas las que vemos ahí representadas. Y por último tenemos los histogramas, que es cuando tomamos 
+todos los valores que estamos recibiendo y los distribuimos basados en un percentil, ¿no? Por ejemplo, queremos tomar la media para buscar el valor promedio a lo mejor de cada 10 minutos, pues ahí 
+estaríamos haciendo un histograma para medir, por ejemplo, ese valor en particular. Y la tercer señal que mencionábamos, que es la parte de las trazas, el viaje que puede llevar una solicitud de 
+punta a punta hasta que se complete una transacción o tome todos los datos necesarios para completar una transacción. Y aquí tenemos un ejemplo, ¿no? Ustedes, por ejemplo, cuando se loguean, por 
+ejemplo, para comprar un vuelo, pues su usuario se tiene que validar, se tiene que poner, por ejemplo, eh la validación de que usted su tarjeta agregada, sus datos, de que cuando hacen la compra, 
+por ejemplo, pues si hay algo en el carrito que hayan añadido, que no tenga promociones, que si sí el método a utilizar y se les notifica que se hizo la compra. Todos esos pasos son lo que va a 
+hacer el viaje de esa solicitud. Y entonces cerremos diciendo pues cuáles son las respuestas que vamos a obtener con cada uno de estos pilares. Logs nos permite responder la pregunta de qué pasó y 
+cuándo pasó. son eventos específicos y comúnmente solemos tener una gran cantidad de ellos que se escriben. Métricas es para saber cómo es que está funcionando. Algo siempre se basa en el 
+tiempo y pues estas métricas no tienen un volumen alto porque comúnmente son puntitos que vamos viendo como representaciones a través de los segundos o minutos que se estén midiendo. Y por 
+último tenemos la parte de las trazas, que es cuando queremos el detalle, por dónde pasó algo, cuánto tardó en cada uno de esos puntos. cuántas elementos estuvieron implicados en cada uno de 
+esos eh ejecuciones, dónde pudo haber sido exactamente donde se atoró algo, pues ahí lo veríamos y comúnmente esto se suele muestrear para poder tener una visibilidad, no a veces del 100%, pero 
+sí de una representación que permita tener eh la visión completa de lo que sucede. Algo importante de esto es que los pilares no se reemplazan entre sí, se complementan, porque cada uno de ellos 
+nos otorgó una información en particular que probablemente uno de los otros no nos la podría entregar. Y a esto nos lleva a el último punto. Ahorita hemos hablado de tres de estos pilares, ¿no? 
+Pero la observabilidad no solamente se limita en ellos. van a ver que se puede y como lo vieron en el primer slide con el que empezaba, hay más tipos de señales que si bien no son pilares, pues son 
+importantes también de llegar a visualizar. Dicho esto, necesitamos entonces tener una sola herramienta que nos permita poder observar todo en cada un todos estos pilares en un solo punto, poderlos 
+correlacionar para que si en su defecto se de un problema, no tenga que mirar yo tres pantallas diferentes o tres herramientas distintas para poder encontrar lo que sucede, sino ahorrar tiempo, 
+reducir cuánto es lo que tardo en a lo mejor hacer la detección y la resolución de un problema usando estos pilares que uno va teniendo dentro de la plataforma. Ahí nuevamente le doy paso a mi 
+compañero Carlos para que les muestre cómo se ve esto ahora sí en la vida real. Listo. Perfecto. ¿Recuerdan el la araña que veíamos hace un ratito? Pues básicamente acá estamos viendo 
+justamente lo que Ángel comentaba ahorita, ¿no? Estamos viendo acá métricas que nos dicen, por ejemplo, cuánto es el consumo de CPU de ese clúster, cuánto es el consumo memoria, cuántos pods 
+o cuántos servicios o cuántos eh unidades de cómputo están corriendo dentro de ese clúster que veíamos inicialmente, ¿no? Y así vamos a ver diferentes tipos de información como información 
+relevante del clúster, los logs que es otra de esas señales que comenzábamos ahorita. Entonces entender cuántos locks están generando estos clúster, por ejemplo, qué tipo de información 
+tienen esos locks y poder identificar rápidamente, por ejemplo, si tenemos errores, si tenemos problemas que puedan afectar la operación de este determinada aplicación. Volviendo el ejemplo que 
+decía Ángel, por ejemplo, si queremos reservar un vuelo con copa y la aplicación por alguna razón no nos está reaccionando o operando como estamos esperando, puede que por detrás esté un grupo 
+de ingenieros que estén realizando justamente estos logs para entender por qué no podemos hacer una compra, un boleto, por qué no podemos hacer esa reserva de uno. También dentro de lo que es 
+cada cluster de cubernetes van a ver que existen nodos, namespace, wordouts y cada uno de ellos va a tener sus diferentes métricas de consumo, ¿okay? Que nos va a decir cuál está consumiendo 
+más, dónde se está consumiendo más, etcétera. Y podemos ver esa información rápidamente en una pantalla. Entonces, aquí estamos viendo la parte de métricas, todo lo que es la topología de 
+este clúster como tal. Y un punto importante que les va a hacer de utilidad durante eh durante el jacatón, van a ver acá que apareció algo rojo que dice critical finance. La plataforma les va a 
+permitir también observar o identificar vulnerabilidades a nivel de seguridad que pueden estar afectando a estos cargas de trabajo. Entonces, ustedes pueden ahí entrar a ver qué vulnerabilidad 
+está siendo en este punto eh se encuentra activa dentro de ese eh de esa carga de trabajo. ¿Cuál es la el nivel de criticidad de esa vulnerabilidad? ¿Qué componente es el componente que está 
+afectado? ¿Qué versión tiene ese componente afectado? Eta, y qué es información relevante y valiosa para el equipo que está monitoreando u observando toda la información de estos servicios. 
+Otro de los puntos relevantes, aparte de las métricas y los logs que conversamos es la parte justamente de las trazas, ¿okay? Y que entonces, ¿qué es una traza? es esa transacción que ejecuta 
+cada persona que consume un servicio. Entonces, aquí partimos de un servicio, por ejemplo, y podemos ver cómo son esos tiempos de respuesta a ese servicio. Identificar si hay alguna degradación de 
+algún problema que esté que haga que la aplicación esté más lenta o no responda, por ejemplo, como en este caso, donde dice, bueno, no tenía fallas y aquí tuvo un incremento en esa tasa de 
+fallos de la aplicación. o hay request o transacciones que están viéndose afectadas por una falla y qué puede estarando que una persona no haga una transacción, no opere un servicio, etcétera. 
+Entonces dentro de Dina 3 ustedes ven toda esa flujo de información desde lo que vemos antes que era un clúster de cubnetes. Ahora vemos acá, por ejemplo, de un servicio específico, por ejemplo, 
+la reserva de vuel más allá de [carraspeo] todas las funcionalidades que tiene la aplicación de copa en su teléfono, esto puede ser un servicio muy específico como la reserva de vuelos y 
+entonces ver información de los logs que están asociados a ese servicio específico particular. También hay algo interesante que comenzamos hace un ratito, que era el tema de las trazas. Y con las 
+trazas entonces podemos ver todo lo que se hace durante una transacción. Entonces, por ejemplo, yo como cliente o como persona inicio una transacción que puede ser la la reserva muelo, la compra un 
+boleto, una reserva de cine o un pedido de comida o un pedido de un producto, un servicio. Y eso internamente va a pasar por diferentes componentes tecnológicos. La idea es poder mapear todos esos 
+componentes tecnológicos e identificar, por ejemplo, en este caso, ¿cuál de todos ellos falló? ¿Okay? ¿Por qué falló? y identificar esa causa. Entonces, acá podemos ver los logs asociados a 
+ese componente, las excepciones o las fallas que se pudieron haber presentado en ese componente en particular y que evitan que nuestra transacción o que nuestro pedido no pueda ser completado 
+exitosamente. De esa manera, como ven, cubrimos los principales puntos de la observabilidad, que sería la parte de métricas, la parte de las trazas y las partte de los logs asociados a servicios y 
+aplicaciones. Volvemos con Ángel para continuar. Gracias, Carlos. Buenísimo. Entonces, volviendo nuevamente, ahorita estábamos hablando de esos tres pilares iniciales que podemos nosotros utilizar 
+para poder hacer la observabilidad. Esto no es algo que definió Dinatrice, no es algo que eh nosotros dijimos que así es como hay que hacer la observabilidad o el monitoreo de los sistemas, sino 
+que esto proviene de un estándar que ha sido definido con el paso del tiempo y pues que si bien hay varias herramientas que lo pueden llegar a utilizar, cada una de ellas tiene su forma de poderlas 
+observar, ¿no? En nuestro caso, nosotros unimos estos tres pilares en un solo punto y para poder tener como toda esa información de forma rápida y accesible para poder entrar al nivel de detalle 
+de poder saber qué está sucediendo, ponerlo todo en el mismo contexto y no tener que estar navegando entre diferentes puntos, la plataforma tiene por debajo algo que se llama grail. Por ejemplo, eh 
+hay sistemas que utilizan bases de datos, ¿no?, para poner toda esa información y a partir de ahí acceden a ella dependiendo de la necesidad, haciendo a lo mejor algún query eh, como SQL, ¿no? Y 
+trayendo a lo mejor una tabla, sacando un registro, un dato en particular. Digamos que de forma similares que funciona Grail. Ese data lakehouse son como si fueran muchas diferentes bases de datos no 
+relacionales que están siendo ahí eh están trabajando en conjunto, teniendo diferentes tablas, ¿sí?, para cada uno de los tipos de dato, pero que todas están en el mismo sitio y que nos permite 
+que podamos acceder a ellas, ¿vale? Ahorita igual más adelante vamos a mostrar ejemplos de cómo se puede acceder esa información y para eso nosotros pues utilizaremos un lenguaje que se llama 
+DQL, el cual permite que pueda uno acceder a esa data. Una vez que accedamos a esa data, la plataforma tiene capacidades donde puedes hacer uso de esa data para diferentes casos de uso, como puede 
+ser, por ejemplo, oye, quiero crear un dashboard o un notebook donde quiero poner esa información. Puede ser que a lo mejor quiero crear un dashure para ver toda mi infraestructura cómo está 
+operando, otro para mis servicios y saber qué también están viéndose en tiempos de respuesta. O puedo crear uno que pueda ser muy enfocado al negocio para ver, por ejemplo, cuánta gente compra 
+un boleto de avión. Segundo, está lo que es nuestra inteligencia artificial que la plataforma tiene, ya la ha tenido desde hace mucho tiempo, que le permite de forma más eficiente y precisa poder 
+detectar, por ejemplo, la causa a raíz de un problema. En lugar de que tengamos que nosotros de forma manual correlacionar estas tres señales, estos tres pilares de la observabilidad, pues que 
+podamos nosotros con la inteligencia artificial en automático cuando se da un problema, el buscar quién es el que está teniendo ese impacto y a partir de ahí empezar a detectar todos los 
+elementos asociados. Y por último, vamos a ponerlo por ahora, la parte de alertas y workflu, no solamente quedarnos en observemos lo que está sucediendo, sino ir un paso más allá de decir, "Oye, 
+detecto, te notifico lo que está pasando o en su efecto puedo ir hasta el punto de hacer una automatización donde a lo mejor resolvemos un problema sin que haya una intervención humana. Ahora, 
+todas estas señales, ¿cómo es que las podemos recolectar?" Pues para poder hacer eso, nosotros utilizamos algo que le llamamos one agent. Es un solo agente que se suele instalar a nivel de la 
+infraestructura, es decir, en un host, en una máquina virtual, en una máquina física o en un nodo de cubernetes. Y él de forma automática empieza a capturar los logs, las métricas y las trazas. 
+No necesitas hacer esa instrumentación manual, lo que implicaría pues que tuvieras que modificar, por ejemplo, código que tú vas creando de una aplicación, de su funcionamiento para que pueda 
+convivir con la observabilidad. No es necesario. Ese agente se encarga de hacer toda esa instrumentación. Después, eso nosotros lo pasamos por algo que le llamamos Open Pipeline, ¿no? Que es un 
+proceso en el cual nosotros podemos enriquecer esa información, podemos extraeros necesarios y en su efecto enrutarlos para poder hacer diferentes usos. Toda esa data se guarda en contexto en grail 
+en esas dato que les mencionábamos y pues ya eso permite habilitar para que cualquier aplicación dentro de la plataforma para poder hacer análisis de esa data, ¿no? Ya ambas cosas especializadas, 
+uno lo pueda realizar. Ahora bien, ahí se menciona la parte de DQL. Pero, ¿qué es DQL? es el Dynat Query Language, que es un lenguaje que la plataforma desarrolló para poderlo usar con la 
+plataforma para poder hacer consultas de logs, métricas, trazas, eventos, experiencia de usuario, de seguridad, de cualquier tipo de señal o dato que estemos recibiendo en la plataforma para que 
+eso lo podamos leer, podamos encadenarlo como si fuera una secuencia de comandos en igual que en una terminal y que con eso podamos traer la información que nosotros estemos necesitando utilizar, 
+¿no? Ahí, por ejemplo, el que tenemos en la pantalla es un fetch que lo que simplemente dice, ve y tráeme los errores, pero de qué tipo de error. Entonces ahí es cuando podemos empezar a hacer 
+todo ese filtrado, ¿no? Y ir aplicando todo ese análisis. Ahora, para hacer ese eh análisis de más detallado de cómo se vería un query cuando lo empezamos a segmentar, pues todos los comandos 
+comúnmente se encadenan con esa barrita que vemos ahí en la parte superior que se le conoce como pipe. Y el resultado es la obtención de leer esto de forma ordenada de izquierda a derecha y de 
+arriba hacia abajo. Fetch es elegir la fuente donde queremos traer los datos. Filter es reducir el conjunto de datos que estamos trayendo para una condición en particular. Fields nos permite, por 
+ejemplo, elegir o calcular las columnas que vayamos a mostrar. El sumariz nos permite, por ejemplo, agrupar tipos de datos, como puede ser, oye, estoy teniendo millones de líneas de logs y quiero 
+simplemente saber cuántas estoy recibiendo o buscar un dato y sumarizar cuántas veces ha sucedido algo, pues el sumará sería ese ejemplo. y el sort y el limitá que ordenemos el resultado basado 
+en a lo mejor un valor en particular, un campo, el tiempo en el cual queramos hacer el análisis o en su defecto limitar el alcance del mismo. Y abajo tenemos un ejemplo de cómo se vería un DQL 
+aplicado a lo que es a la plataforma como tal, que igual ahorita lo vamos a ver más adelante con Carlos, ¿no? Aquí pongo un ejemplo explicativo nada más para que vean cómo se vería cuando uno 
+ejecutara un query, ¿no? Aquí, por ejemplo, está buscando de lo que son los logs, que serían por ejemplo los que son solamente de un namespace y solamente los que log sean igual a error. 
+Entonces, de todos esos logs que estamos viendo en la pantalla, solamente los que cumplan con esa condición serían realmente los que tendría que presentar la plataforma, que en este caso serían 
+solo aquellos que tengan ese, por ejemplo, nivel de log igual a error, ¿vale? Y solamente serían los que nos dejarían la pantalla. Y así como dice, les voy a poner algunos otros ejemplos que 
+pueden ser aplicados para hacer unos casos de uso típicos que podrían ustedes llegarse a enfrentar durante el jacatón, como por ejemplo buscar errores recientes en un servicio, identificar algo 
+que pasó, a lo mejor alguien hizo un despliegue, falló, pero no sabemos por qué falló. Podría ser una de las razones por las cuales nos gustaría buscar qué fue lo que sucedió. Imaginemos que 
+alguien trató de hacer un pago y no fue exitoso. Queremos saber en qué parte a lo mejor eh dentro de los servicios es dónde se presentó el error y cuál fue el error que se presentó. Otro 
+ejemplo sería por eh quizás contar errores por algún tipo en particular, en este caso, por ejemplo, por un pod. Entonces, queremos saber cuántos hay de cada uno, identificar en a lo mejor en 
+cuál es donde se están presentando más errores, pues podemos ejecutar igual un comando que simplemente aplicando los filtros específicos y haciendo una sumarización para contabilizar la cantidad 
+de errores, pues nos me permitiría saber cuántos de ellos están sucediendo. Y otro ejemplo que si se fijan este tiene una visualización diferente sería ver una tendencia en el tiempo. Aquí hay 
+algo bien interesante con esta parte que es, si bien hemos estado hablando de que las señales no se sustituyen eh, sino que se complementan, hay veces que nos interesa pintar de una forma diferente 
+lo que estamos viendo, por ejemplo, en un registro, ¿no? Que de cierta forma esto pareciera ser como si fuera una métrica, pues al final sí, de cierta forma vamos a decir que tener muchos logs nos 
+permitirían construir un gráfico muy similar a una métrica. ¿no? Usando comandos que pues ya son más avanzados, como ese que está ahí, que es el Make Time Series, que nos permite pasar de algo 
+plano, una simple línea de texto a convertirlo algo mucho más gráfico y claro de en qué momentos es donde está sucediendo algo, ¿no? Entonces, estos son los diferentes ejemplos que podemos 
+nosotros utilizar para ver a DQL en acción. Y ahí igual paso a Carlos nuevamente para que les muestre algunos de esos ejemplos en la plataforma. Seguro. Listo. Acá como ven en la pantalla tenemos 
+algunos ejemplos de esos eh queries o DQL que comentaba Ángel hace unos minutos, donde podemos hacer un fetch logs, por ejemplo, y le decimos, quiero que contenga los registros que tengan error y 
+que estén en una determinada zona geográf. Entonces, de esa manera, Dinatra hace esa consulta y nos trae esos registros de error que estamos ubicando. Okay. También podemos ejecutar filtros, como 
+podemos ver acá, donde le decimos, "Bueno, quiero que me traigas todo lo que venga del cloud provider Asure, ¿okay? Y quiero que lo cuentes usando el comando sumariz que justamente Ángel les 
+mencionó hace un minuto para que lo agrupe y me lo agrupo por el nivel de lock. Entonces, yo puedo ver que por nivel de log cuántos registros tengo en un determinado periodo de tiempo. ¿Qué 
+periodo de tiempo estamos evaluando en este momento? Los últimos 30 minutos. Pero ustedes acá pueden configurar y pueden cambiar su periodo de tiempo dependiendo de qué tipo de consulta o en qué 
+momento lo quieran ejecutar. Acá también ya utilizando eh ese comando de Mtime Series que comentó Ángel, hacer una gráfica a lo largo del tiempo y poder identificar entonces dónde hay picos. de 
+un determinado tipo de eh evento o mensajes de error para hacer un análisis ya más detallado de una situación que estemos encontrar. También podemos hacer comparaciones de esas métricas, ¿okay? 
+Entonces, empezar a comparar métricas dentro de un de un gráfico para identificar igual alguna situación, algún punto de inflexión en una métrica, problemas que se estén ejecutando y que nos 
+permitan resolver un problema o entender qué está pasando con un determinado servicio o aplicación y que pueda representar un problema para nosotros que queremos solucionar. Al final del día lo 
+que hacemos con esto es observar o monitorear constantemente las aplicaciones, los dos o aplicaciones particulares y empezar a empezar a a obtener toda esta información para identificar alguna 
+falla, algún problema, alguna situación particular que no esté operando de la manera correcta. Acá también otro caso de uso donde podemos igual hacer y empiezan a ver ya operadores lógicos como 
+dondea de este namespace y de este despliegue donde paramos el contenido para sacar información donde agrupamos usamos el comando de fields que también vimos ahorita para decir bueno de todo el 
+universo de información que tengo, me quiero quedar solo con una porción de esa información y luego esa porción la quiero sumarizar, la quiero sumar y agrupar Para obtener este gráfico de 
+también podemos hacer la forma de barra. Entonces, les permite graficar diferentes tipos de información con diferentes modelos de visualización para poder determinar en qué momento específico 
+tenemos alguna diferencia o ya cuentas completas. Por ejemplo, acá tenemos, bueno, ¿cuál es el la cantidad de errores que estamos encontrando a lo largo del tiempo? Y si hubo un incremento, acá 
+nos dice, bueno, hubo un incremento del 2000% con respecto al periodo pasado que estábamos evaluando para saber si es que tenemos más errores lo que veníamos viendo, o por el contrario tenemos 
+menos errores y la aplicación se está estabilizando. Otro tipo de visualización que puede ser útil es este tipo de visualización donde cada uno de estos puede representar un servicio o una 
+aplicación. Y entonces acá el rojo nos dice, bueno, tienes que prestar atención en esta porque esa en particular está presentando algún problema. Entonces la idea es que ustedes ya para de cara 
+al jacatón se familiaricen con este eh lenguaje que se llama EQL, que los que ya hayan visto bases de datos y que tengan cierto conocimiento de SQU lo van a encontrar bastante similar, aunque no 
+exactamente igual, ¿okay? pero tiene bastantes similitudes que les permitiría a ustedes avanzar y apoyar en ese proceso. Volvemos con para la parte que siga. Gracias, Carlos. Entonces, volviendo 
+para acá, estábamos comentando la parte de cómo podemos acceder a estas señales. Ya les mostro, Carlos, un poco más a detalle cómo podemos ver la parte de lo que corresponde a loss, ¿no? Y 
+pues si bien esto puede verse como un desafío, ¿no? en el sentido de pensar y decir, "Oye, ahora significa que tengo que aprender DQL para eh a veces poder tener todo ese nivel de detalle." Pues 
+justamente en la plataforma buscamos que los datos no solamente sean accedidos por eh un solamente un comando, no hay muchas aplicaciones dentro de la plataforma que ya muestran esa información como 
+se los fue eh presentando Carlos, donde eh por ejemplo eh si querían ver la información de la infraestructura, ¿no? Tienen que hacer un query, por ejemplo, para buscar la información de la 
+infraestructura, ¿no? Si quieren ver este un log en particular, no necesitan hacer a veces todo el comando de log, sino que a veces ya están asociados en automático a la capa donde uno quiera 
+hacer la observabilidad. Entonces, ¿qué es lo que buscamos aquí? que pues al final también nuestra inteligencia artificial pues permita que cuando haya un problema él en automático relacione 
+todos esos elementos que están asociados entre sí para que se los presentemos de forma automática y que en su efecto se pueda llegar hasta un camino de una respuesta automática completa, ¿no? 
+Desde la detección, notificación y en su efecto la automatización, ¿no? Ese sería un camino idóneo que muchas de las empresas buscan actualmente para justamente pues no tener que a veces eh 
+mucho tiempo en resolver ciertos problemas que a lo mejor ya son más conocidos, que les implica todo un reto pues en poder a veces estar manteniendo y gestionando, ¿no? Con eso ahora le devuelvo la 
+parte a Carlos para que le muestre un poquito más de cómo se podría tener ese tipo de capacidades. si en algún momento les toca utilizar la plataforma con alguna empresa con la que ustedes 
+trabajen y que empiecen a tener eh visibilidad de lo que es eh lo que está sucediendo en sus sistemas, observabilidad de cada una de estas eh pilares que estamos ahorita con nosotros comentando. Y 
+eso también lo pueden hacer a través de la guía que también ahorita Carlos va a a pasar por ella, donde van a poder acceder a nuestra documentación, donde hay algunos videos y cursos que 
+podrían ser relevantes para ustedes para conocer un poco más a detalle sobre todo lo que ustedes podrían hacer con la observabilidad, así como un playground donde ustedes van a poder jugar a 
+explorar la información de datos que ahí tenemos de aplicaciones falsas que estamos ahí corriendo, pero que les permite al final a ustedes poder explorar cómo se pueden visualizar todos este tipo 
+de señales, cómo es que se ve un problema, cómo es que se ve una automatización, cómo es que se ve un dashboard, todo ese tipo de información. ¿Vale? Entonces, le devuelvo la pantalla para 
+allá a Carlos para que continúe con esa parte y nos cuente un poco más de las diferentes otras señales que pudiesen llegar a existir dentro de la plataforma. Perfecto. Segundo. [resoplido] Y 
+dentro de lo que de lo que comentaba Ángel ahorita, hay un punto importante que es la parte de problemas. ¿Okay? Entonces es importante que al momento de que ustedes quieran eh identificar o 
+entender qué está pasando, no digamos no tengan que que empezar a navegar o a buscar por toda la plataforma qué es lo que pasa. Acá Dyra tiene una sección que se llama problemas donde podemos 
+ver justamente si un problema está activo, qué tipo de seguridad tiene ese problema, cuánto tiempo llega ese problema actuando o o abierto, tipo de servicios, componentes de frontend y ahorita 
+vamos a hablar un poquito de eso, que servicios que infraestructura, monitores, usuarios, etcétera, están involucrados en en un determinado problema. ¿Okay? En este caso nos dice que esta 
+aplicación está teniendo un problema, que ese problema está asociado a un incremento de error del JavaScript. Acá vamos a ver un mapa, ¿okay? Una segmento de un mapa que nos dice, bueno, la 
+aplicación se comunica con este servicio. Este servicio es el que tiene el incremento de tasa de files y se identifica, como ven acá, como BX, que identifica que esto es la causa raíz de ese 
+problema. Entonces, ¿qué hizo Dat? o específicamente la inteligencia artificial que está en bebida en analizó todas las dependencias, todas las relaciones, todas esas métricas que comentamos, 
+eh todas esas señales, esos trazas para identificar que de la relación de estos dos componentes, esto es lo que está generando el problema y por consecuencia la aplicación es la que se ve 
+afectado. ¿Okay? Entonces, de esa manera, Dinat ofrece esa información, indica cuál es la causa de raíz del problema, nos muestra cuál es esa señal que tenemos que analizar para identificar esa 
+causa raíz y también comenta o coloca acá información que es documentación con respecto a ese servicio de qué está pasando, qué errores se han presentado, etcétera, y que nos ayude a 
+nosotros a tener un mejor entendimiento de por qué pasó este problema y qué acciones o qué recomendaciones pod tomar en ese sentido. Eso digamos que es como una forma de que ustedes puedan 
+entender qué está pasando en un momento determinado cuando tenemos un problema y tenemos una solución como DTRES que está monitoreando todas esas aplicaciones. Hay algo también que no queremos 
+dejar por fuera que y ahorita lo mencioné brevemente que es la parte de experiencia del usuario. Dentro de Dotis ustedes pueden monitorear aplicaciones de cara al usuario. Puede ser una aplicación 
+móvil, puede ser una aplicación web. En este caso, esta es una aplicación web y nos dice qué usuarios o qué tipo de browsers están usando los usuarios, por ejemplo. ¿Okay? Entonces entender 
+qué versiones de esos browser están siendo involucradas, qué porcentaje de personas cabas de esas eh browser, geográficamente, cómo se distribuyen mis usuarios, entonces de qué lugar, de qué 
+país específico o qué región específica se están conectando los usuarios, si algunos usuarios estén teniendo problemas por alguna región en particular o qué problemas o errores se están 
+presentando en nuestra página donde nos dice, por ejemplo, hay una incidencia mayor de este error de tipo HTTP 403, luego de este que es un HTTP 499 y así sucesivamente. Entonces vamos teniendo ya 
+más información desde la digamos como desde la perspectiva de nosotros como usuarios, ¿no? De una persona que está usando esta aplicación o que está interactuando con esta aplicación para 
+hacer su una compra, una reserva, una adquisición de un servicio o incluso un reclamo, ¿no? De repente yo quiero colocar un reclamo y la aplicación donde coloco el reclamo no me funciona. 
+Entonces, ¿cómo accedo y puedo monitorear todo lo que está pasando desde la perspectiva de la persona que está usando la aplicación? Todo esto que hemos comentado el día de hoy está disponible 
+en un ambiente al cual ustedes tienen acceso o van a tener acceso una vez que se registren, que es el ambiente de Drace Playground. Este ambiente es un ambiente que es gratuito, entonces pueden 
+entrar acá y pueden eh explorar las diferentes funcionalidades que hemos conversado hoy. Van a ver la parte de problemas, van a ver la parte de ese mapa topológico de los clusters, por ejemplo, van 
+a ver los clústers de cubernetes. Acá vamos a ver la parte de los servicios que también conversamos, la parte de las trazas distribuidas, podemos ver los blogs, podemos ver los notebooks, que son 
+esos cuadernos de trabajo con donde veíamos las diferentes consultas que se están realizando, eh la parte de las aplicaciones web o aplicaciones móviles que se están instrumentando, etcétera. 
+Adicionalmente y y dentro de todo este de esta tecnología que avanza rápidamente, involucramos también algo que se llama Date. Assist es un conversacional donde ustedes pueden hacerle preguntas a 
+D, por ejemplo, eso que hablamos ahorita de esas consultas de lo entonces yo no sé bien cómo empezar a construir una consulta. Puedo decirle a Dat, específicamente a SIS que me [resoplido] 
+responda o que me analice alguna situación. Por ejemplo, les puedo decir, muéstrame una lista de todos los eventos, fallas de solicitud, problemas, entidades afectadas y dependencias entre las 6 y 
+las 8 de la mañana para que yo pueda investigar, encontrar qué pasó y determinar una causa raíz. Supongamos que ustedes administran esta plataforma, llegan y dicen, "Ocurrió un problema con la 
+aplicación entre las 6 y las 8 de la mañana, pero no estamos claros qué pasó." Entonces acá le estamos preguntando a la plataforma específicamente, "Dime, ¿qué pasó en ese periodo de 
+tiempo?" Entonces, acá por detrás, Dina 3 empieza a utilizar diferentes eh agentes que consumen todas estas fuentes de datos que conversamos previamente para entregarles a ustedes una respuesta. 
+¿Okay? Entonces va a analizar, va a ver la topología, va a ver los problemas, va a ver las trazas, va a ver las métricas y con todo ese análisis de información, como ven acá, utiliza diferentes 
+agentes, nos va a dar una respuesta. Vamos a esperar unos instantes para que veamos la respuesta. Lo queramos hacer es aquí en vivo para que vean que no es que funciona las bambalinas y en vivo no 
+no nos responde, ¿no? Entonces acá dice, "Bueno, la hora actual fue esta, por lo que el rango de tiempo es específico. ¿Qué se encontraron? Esperar que termine de responder y aquí lo repasamos 
+más fácilmente. Entonces, acá nos dice que encontró esta serie de problemas en ese periodo de tiempo que nosotros especificamos qué categorías de problemas tenían, si están abiertos o 
+cerrados, qué entidades se vieron afectadas por ese tipo de por esos problemas, qué fallas de solicitudes, pero no lo más específicos y en qué horas ocurrieron. Okay. Por ejemplo, aquí hubo 
+muchos asociados a instancias de base de datos, entonces, bueno, hubo diferentes problemas de disponibilidad de la base de datos, ¿okay? Y ven que como consecuencia la primer el primer problema que 
+se presenta es justamente que una instancia de basato especificó, experimentó, perdón, cuatro ciclos de disponibilidad durante este periodo de tiempo. Eso afectó también a nuestra aplicación de 
+Fronend, aplic la aplicación shop y un servicio de chiping. Entonces, toda esta información la analizó D 3, automáticamente nos las presenta a nosotros para que podamos ya hacer análisis 
+posteriores sobre esa situación que se presentó en ese periodo de tiempo específico que lo comentamos de esa manera. Y este ambiente, como les digo, está disponible para ustedes. Pueden explorar 
+la plataforma y pueden ir eh conociendo un poco más de la solución. paraatón no van a tener disponible la sis, así que les va a tocar aprender DQL y buscar la información porque si no seríamos 
+influendo que el equipo de organización les compartió es la guía de los estudiantes. en esa guía y la vamos a repasar acá rápidamente. En esa guía de estudiantes están los pates puedan 
+registrarse en lo que sería el Dynat Plground justamente y el Dy University para que puedan tomar este curso que se llama Dyates Essential, que es un curso introductorio y que les va a ayudar mucho 
+para la resolución de los retos que se van a encontrar dentro del Entonces acá básicamente lo que necesitan para iniciar es un correo electrónico y utilizar un navegador básicamente. donde van a 
+entrar ahí, van a registrarse, van a explorar el playr justamente y ahí se van a registrar como una cuenta gratuita. Se van a colocar su correo electrónico, sus datos, etcétera, y les va a 
+permitir conectarse y tener acceso a este tenan de Play que les comenté ahorita. Ya una vez que estén dentro del tenan de play, aquí los pasos son simplemente para la definición de contraseñas, 
+etcétera, van a poder entrar el ten de playground y dentro del de playground, al finalizar la página van a encontrar un enlace al Dynat University. dentro del Dr University vamosar la misma 
+credencial que se definió eh para el PL y va a poder ahí enrolarse, registrarse para la capacitación que se llama Datens. Lo van a ver en algún lugar de la página, en este caso particular acá. 
+Y después que se registran y aceptan los términos en condiciones de el University, se van a registrar dentro de la capacitación y le van a llevar en tracking de las diferentes lecciones que tiene 
+la capacitación hasta que finalmente obtienen una certificación. Entonces, de esa manera van a poder tener acceso a el playground, a la capacitación del DS entials, a la certificación de 
+Essentials, es preparando ya para el día que corresponde el A. Eso básicamente con respecto a la guía y con respecto al playground. Creo que en tiempo estamos. Eh, alguien preguntó durante 
+Jacatón preguntan si se usará el playground. No, van a tener un tenan eh particular para el jacatón al cual van a ser invitados en su debido momento y dentro de ese tenan va a estar una 
+aplicación corriendo sobre la cual estamos haciendo las preguntas. ¿Correcto? Igual ahí nuevamente compartí el link eh para quien no haya entrado al inicio que compartieron los links de la 
+asistencia eh para que puedan llenar el formulario y completarlo. Bueno, creo que a nivel de tópicos y de información estamos completos, no hay muchas más preguntas en el chat. Entonces, ¿alguien 
+más tiene alguna alguna pregunta adicional o algún comentario? Igual es importante recordarles que eh Sí, correcto, está prohibido el uso durante el jagatón. Le quitaría la diversión a a los 
+retos que ustedes van a realizar. Adicional a que no mucho les va a funcionar porque como la aplicación que nosotros vamos a tener dentro es una aplicación que nosotros creamos para generar los 
+datos y así no van a encontrar una respuesta eh preguntándole alguna externa, ¿no? Entiendo igual ahí puede confirmar el equipo de de copa del Jacatón que me parece que no estará permitido, 
+pero eh al final la idea es que ustedes puedan navegar durante la plataforma, encontrar las respuestas a las preguntas que les vamos a poner ahí, que van a ser sobre la información que nosotros 
+mismos estamos generando dentro de ese TEN tenant eh que se les invitará en su debido momento. Es importante que tomen en cuenta los cursos que ahorita les mencionamos para que puedan tener un 
+conocimiento de la plataforma. ya hayan navegado por ella, explórenla, utilícenla para poder eh eh ustedes poder saber cómo poder estar en ese momento haciendo uso o encontrar las respuestas de la 
+plataforma que se les vayan pidiendo y este sea más fácil del camino que les tome para poder encontrar todas las respuestas, ¿no? Igual ahí veo una pregunta adicional de eh Adrián que dice, "Si 
+pudieran resumir la definición del uso de Dentries, ¿cómo la definirían?" Buena pregunta. Eh, igual ahorita dejo que Carlos responda desde su perspectiva, pero desde la mía es es una plataforma 
+que es un para desde la perspectiva eh digamos de todas las empresas que implican tecnología, que prácticamente son todas, ¿no? o todas aquellas que tengan un servicio que necesite una 
+interacción con otros servicios u es esa eh plataforma necesaria para poder saber cómo funciona todo, ¿no? Al final hay herramientas eh o aplicaciones que pueden ser más críticas para diferentes 
+compañías y que a veces cada segundo que se cae una de esas aplicaciones puede volverse eh muy crítico, ¿no? perder tener una pérdida económica muy grande. Entonces, para dar el resumen, mi 
+definición sería eh la plataforma de Dyrac es ese ente que te permite observar todo lo que sucede su sucede dentro de todos tus eh stack tecnológico y que te permite que el menor tiempo puedas 
+tener de indisponibilidad o de afectación ante alguna eventualidad. Podríamos pensar también o podrían verlo así como que da una tradición esta plataforma o este panel de control general donde 
+ustedes pueden tener una visibilidad completa de lo que pasa en una empresa a nivel de tecnología, ¿okay? O sea, por ejemplo, ¿cuál es la salud de mis servicios, de mis servidores? tengo 
+problemas con aplicaciones y tengo problemas con mis clientes, porque al final del día, digamos, ya cuando estén en las empresas lo va a notar mucho más, la razón de ser de cada empresa va a ser 
+atender a sus clientes. Entonces ustedes van a querer que sus clientes puedan utilizar sus aplicaciones y sus servicios la mayor cantidad del tiempo posible. ¿Okay? Esa es justamente nuestra razón 
+de ser, ayudarlos a que eso sea posible ofreciéndoles esa visibilidad general de los aplicaciones de servicios. Había otra pregunta que era que las trastas se utilizan solo para los microservicios. 
+No se utilizan solo para microservicios. Básicamente cualquier aplicación que interactúa con con otra eh ya genera un atraso. Desde, por ejemplo, una aplicación web que utilice una un servidor de 
+aplicaciones en una base de datos y de ahí vas a tener un atraso. No está resumida o específicamente atada a que sea microservice. Eh, creo que hay otra que se una herramienta de pagas. Sí, es 
+una inscripción que las empresas deben adquirir para monitorear sus servicios y sus aplicativos. Y respecto con la comparación con Rafana, digamos, Rafana es una empresa que compite con nosotros 
+dentro de este rubro de la observabilidad. Eh, tienen fortalezas a nivel de la parte de de ciertas tecnologías, pero da tradición más completa a nivel de ofrecerles a ustedes tú en integre logs, 
+integre servicios, integre métricas, visualización y experiencia de usuario. Pero si son, digamos, son plataformas comparables. Ahí hay una pregunta adicional que dice, "Si una aplicación empieza 
+a responder lentamente, ¿cuál sería el proceso recomendado para investigar el problema en D3?" Mira, comúnmente cuando sucede eso, eh, recordemos que eh en la plataforma cuenta ya con una 
+inteligencia artificial. Entonces es inteligencia artificial commente va censando cada uno de tus servicios para saber cuál es el tiempo promedio con el que siempre responde. Imaginémonos, 300 
+milisegundos, ¿no? Si de repente eso sube a un segundo, pues es un tiempo, ¿no? atípico para el comportamiento que siempre ha venido presentando esa aplicación. ¿Qué es lo que va a hacer la 
+plataforma? Va a generar lo que le llamamos una eh tarjeta de problemas, ¿vale? esa tarjeta de problemas va a contener toda la información asociada a esa falla en particular, ¿no? Porque puede ser 
+que lo que tú ves como una lentitud pueda tener varios síntomas, pero hay que unir todos esos síntomas para identificar quién es el elemento que está generando específicamente ese problema. 
+Entonces ahí es donde comúnmente la tarjeta de problemas te diría dónde está todo eso y te va dando ya los links, digamos, a a entrar al detalle, ¿no?, si así lo deseas, para ir a ver qué 
+métricas son las que se vieron impactadas, qué líneas de locks, por ejemplo, se vieron asociadas a el momento que se presentó la falla. A lo mejor ahí encontramos información relevante de ese 
+de ese problema o en su efecto a lo mejor es un tipo de error a nivel de trazabilidad donde a lo mejor son errores 400 que está devolviendo a lo mejor un servicio con el que está tratando de 
+interactuar esta aplicación. Entonces de ahí nos puede llevar hacia diferentes caminos, pero siempre la plataforma busca que el punto de partida para poder hacer ese ese análisis sea desde la 
+misma tarjeta de problemas que la misma plataforma genere. Correcto. Digamos que pregunta otra pregunta que digamos que tu primer punto de de acceso de consulta para ese determinada situación sería 
+ir a una tarjeta de problemas, ir una tarjeta de problemas que que te debe estar reportando que hay algú alguna situación con esa con esa aplicación que tiene la lentitud, porque justamente esa es 
+la la fortaleza que tiene, ¿no? O sea, que analiza, utiliza la inteligencia artificial y empieza a darte estos indicios probablemente antes de que la aplicación falle, pero sí te puedes decir, 
+mira, tu aplicación no ha fallado, pero se está se está haciendo más lenta. Y ya tú puedes entrar a ese problema, a entender cuál de los diferentes componentes de la aplicación es la que está 
+haciendo que se haga más lenta y a partir de ahí seguir seguir trabajando. Otra pregunta de que si Davis estará disponible en Jacaton, como les decíamos, la inteligencia artificial de Daft está 
+embebida en toda la plataforma, eso va a estar disponible. Lo que no va a estar disponible es el asistente, como vimos ahorita, para que ustedes le hagan consultas. Esta parte si no va a estar 
+disponible ante. Correcto. Igual ahí hay otra pregunta que dice, "¿Se utiliza entres en el proceso de desarrollo antes de llegar a producción?" Eh, sí. Eh, efectivamente, hay muchos equipos que 
+si bien empiezan por observar directamente eh como tal desde lo que es producción, que es lo que es como lo más crítico, ¿no?, eh ya una vez que tienen como esa observabilidad de todo lo que es 
+lo que está operativo, suelen irse hacia las capas inferiores, ¿no? desarrollo, QA, preproducción, testing para que desde que ahora sí ya están creando el producto, el aplicativo, el servicio 
+que vayan a lanzar, pues vayan observando cómo es que realmente es que está funcionando, ¿no? ¿Con quién interactúa, si las interacciones son las correctas, si los tiempos de respuesta son los 
+efectivos, si el consumo de recursos está correcto? Entonces, para que cuando ya llegue a producción, eso implique menos roces con poder presentar un problema, menos afectaciones posibles que 
+podrían llegarse a presentar y pues eso les permite cubrir todo su ciclo de desarrollo. Y están preguntando también si hay alguna documentación. La documentación oficial es la página que les 
+estoy colocando igual en el chat. Eh, pero los invitamos también a que a que se registren y entren el PR. Digamos que ahí tienen las dos opciones. Igual la documentación los va a llevar al 
+playground si quieren alguna consulta. Y por ejemplo, y les voy a mostrar rapidito, acá hay otra en el colocando por ejemplo, esta es la documentación de nosotros donde supongamos algo el fetch. 
+Okay. Entonces acá van a ver esa información de cada comando y van a ver todo ese detalle de la de la documentación. Okay. Igual cuando ya empiezan a ver funciones, por ejemplo, existe la acá 
+dentro de Dynat Fields acá van a ver un botoncito que les guste running playground. Entonces esta consulta que está acá, esto automáticamente los va a llevar al playground para que la corran ahí 
+y vean qué resultado les devuelo. Entonces, de esa manera pueden interactuar con la plataforma desde la documentación e para que puedan consumir esos aclarar esas dudas que puedan tener de los Sí, 
+por eso ahí digamos nuestra sugerencia es que una vez que ustedes eh empiecen a explorar, no solo se vayan a la documentación, sino regístrense, tomen el curso de Dest Essentials, es un curso 
+gratuito, les da una certificación al terminarlo y que a su vez este van tienen acceso a lo que es el ambiente playground, donde van a poder no solamente este explorar parte lo que hemos hablado 
+ahorita, hay muchos otros funcionales que no las tocamos a ese nivel de detalle, pero que pueden ustedes explorar cómo ver la infraestructura, servicios, etcétera, etcétera, y que varios de esos 
+temas van a estar involucrados durante el jacatón, ¿no? Correcto. que con eso respondiendo a la última pregunta que está por acá, eh, que decía si la aplicación de retos que usará el día de 
+Jacatón está basado en problemas de playground y que si constará con problemas que requerirá uso de DQL. Sí, efectivamente se hará uso de DQL durante el jacatón, más sin embargo no haremos 
+uso de lo que es el playground. se les invitará a un ambiente en específico con una aplicación particular donde ustedes harán eh el desarrollo tanto de DQL para algunas secciones como en otras 
+tendrán que encontrar la información que se les vaya pidiendo, ¿no? Eh, como por ejemplo encuentra el nombre de un servicio, de una infraestructura, algo de eso puede venir dentro de las 
+preguntas. Entonces, por eso es importante que se familiaricen con entrar a la plataforma, buscar, explorar, eh tratar de hacer algún query. Hay muchos ejemplos. Igual en nuestro canal de YouTube de 
+Dr directamente hay videos que se suben para que ustedes puedan ir viendo ahí como casos específico. Hay a veces historias que suben con clientes, etcétera, etcétera, y podrán ahí poder tener 
+eh toda esa parte. Correcto. Hay otra pregunta que dice que si entrenan un agente de local si lo pueden usar por el evento. No sé cometer administrador les confirmará si hay tipo de restricción en 
+ese sentido. Sin embargo, lo que si les podemos adelitar es que no van a poder conectar esta gente con el tenan de van a tener ustedes que preguntarle y y basado no sé en cuál contexto y la gente 
+les va a poder responder porque no va a tener acceso a la data que va a estar dentro del tema. Sí, allí va a ser importante, Carlos y Ángel, eh compartir con los participantes y las personas que 
+están conectadas en este momento, que dentro de la agenda van a recibir algunas instrucciones para desarrollar el reto el día uno del Jacatón, tanto en la sede de Santiago como en la sede de 
+Panamá. Entonces, allí también hay una oportunidad grande para definir el uso de la IA y todos estos temas, ¿no? Sí, igual digo, nosotros les podemos adelantar que tener una IA o un agente de IA 
+local eh no les va a ser a lo mejor de mucho uso, puesto que nosotros eh vamos a restringir el acceso a la data desde puntos externos, ¿no? Entonces, eso va a implicar que realmente ustedes tengan 
+que explorar la plataforma, familiarizarse un poco con ella, eh aprender a hacer algunos DQLs para que puedan responder todo el reto e en su debido momento. Hay que estudiar, muchachos, hay que 
+estudiar, hay que revisar, [risas] hay que leer, ¿no? Por eso, de hecho, por eso les dimos acceso también al playground, justamente para que puedan ir experimentando y familiarizándose tanto con 
+la interfaz como con la plataforma de cara a cuando vayan a hacer los retos ya de acato. Listo. Bueno, creo nuestro lado estamos. No sé si alguien más tiene alguna otra pregunta. Pareciera que no. 
+Entonces la lista ya. Ah, ahí sí entiendo que va a ser grabada la llamada y se les va a compartir en el a. Correcto. Sí, todas las los workshop van a estar grabadas. De hecho, ya están públicos 
+los cinco anteriores. Eh, y en pocos días, eh, pondremos esta grabación. Bueno, esta ahí Eric está preguntando sobre Asurbistas. Eh, el equipo de Business IT y de Microsoft estuvieron con 
+nosotros cinco workshops atrás, eh, y este es exclusivo para para el equipo de Daas de observabilidad. Sí, pero entiendo igual que los, o sea, lo que vieron en las sesiones anteriores va a ser 
+parte del reto de Ashur y lo que están viendo de esta sesión va a ser parte del reto deatrix, pero ambos retos forman parte del jacatón. Así es. Estamos juntos, pero cada reto es individual. 
+¿Correcto? Bueno, parece que hemos contestado las preguntas de la audiencia. Ángel, muchísimas gracias. Igual, Carlos, excelente la presentación. Eh, nos vemos pronto en el Jacaton C de Santiago 
+que va a iniciar el 8 y el 9 de octubre en el Hotel Gran David. Perfecto. Bueno, muchas gracias a todos los participantes y asistentes y esperamos verlos enatón. Hasta luego. Nos despedimos. Gracias 
+ustedes. Buenas noches en la plataforma. Creo que alguien quiere hacer una pregunta. Parece que o se despidió. No sé si se despidió. Se está despidiendo. Sí, ahí vi alguien levanto, pero sí, 
+pero a veces es que nos equivocamos cuando presionamos el botoncito. Oye, felicidades, Ángel. Carlos son profesores. [risas] Vamos a hacerlo didáctico y dinámico para también la Gustavo está 
+preguntando, no sé si lograron alguna otra herramienta para poderse mejor. tienen el playground, eh [carraspeo] la documentación, el playground, la capacitación de de University, todas las 
+capacitaciones de están disponibles y también los canales de YouTube. Eso serían como los mecanismos, ¿correcto? El que los invitamos más a que utilicen es que se registren al playground de 
+nosotros y posteriormente se registren al University donde van a encontrar muchos mini videos sobre todos estos diversos temas. Entonces, ese es el mejor lugar para que de ahí eh adquieran el 
+conocimiento. Igual se lo estoy respondiendo acá en el chat por si leen. Yo no sé si esos se los comparten. Dar qué cosa? Perdón, Carlos. El chat no sé si lo comparten junto con la llamada o las 
+preguntas no quedan aquí. Perfecto. Bueno, sí, ahí la respuesta. Sí, digo, también hay oportunidad cuando estamos en las charlas técnicas del primer día en enfatizar algún otro de estos temas 
+y bueno, también hay la oportunidad para hacer preguntas. Listo. Entonces, listo, nos vamos. Muchísimas gracias. Hasta luego. Nos vamos.
