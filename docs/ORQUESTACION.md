@@ -1,6 +1,6 @@
 # Orquestación de agentes
 
-Política para decidir qué agente lanzar, con qué modo y cómo dejar rastro. Adaptada del skill `enrutar-agentes` del proyecto gestion-escolar-saas (ADR-0008 a 0011 de ese proyecto no se tuvieron a la vista: los valores por defecto de modelo y esfuerzo se heredan del skill y **no están verificados** para este reto).
+Política para decidir qué agente lanzar, con qué modo y cómo dejar rastro. Adaptada del skill `enrutar-agentes` del proyecto gestion-escolar-saas (ADR-0008 a 0011 de ese proyecto no se tuvieron a la vista: los valores por defecto de modelo y esfuerzo se heredaron del skill y se verificaron el 2026-10-31 con `agy models` y `~/.codex/config.toml`; no se midieron con tareas reales del reto).
 
 Se aplica junto con el framework de `CLAUDE.md`: Detectar → Observar → Analizar → Hipótesis → Corregir → Validar.
 
@@ -31,8 +31,10 @@ Se aplica junto con el framework de `CLAUDE.md`: Detectar → Observar → Anali
 
 | Herramienta | Por defecto | Subir cuando |
 |---|---|---|
-| `codex` | modelo y esfuerzo predeterminados, sin flags | falla el primer intento: `-c model_reasoning_effort=medium` |
-| `agy` | `gemini-3.8-flash-medium` | síntesis difícil o falla: `gemini-4-argon-medium` |
+| `codex` | `gpt-6.1-sol` en `medium` (config local en `~/.codex/config.toml`, sin flags) | tareas simples: `-c model_reasoning_effort=low`; si falla el primer intento, `high` solo con aprobación del equipo |
+| `agy` | `gemini-3.8-flash-medium` | síntesis difícil o falla: `gemini-4-argon-medium`; segunda opinión de otra familia: `claude-opus-5-5-medium` |
+
+Modelos disponibles en `agy models`: `gemini-4-argon-{low,medium,high}`, `gemini-3.8-flash-{low,medium,high}`, `claude-opus-5-5-{low,medium,high}`, `claude-sonnet-5-5-{low,medium,high}`, `gpt-oss-120b-medium`. Haiku no está en la lista, así que la exploración de solo lectura la hace el subagente `Explore` de Claude Code.
 
 ## Salida: una línea de decisión
 
