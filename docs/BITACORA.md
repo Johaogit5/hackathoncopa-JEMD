@@ -4,9 +4,9 @@
 > Una fila por hipótesis. No borrar las hipótesis descartadas: también son progreso.
 
 **Reto:** Microsoft / Azure: https://github.com/HackathonLabsNetworks/2026-Panama-Microsoft (IaC: https://github.com/HackathonLabsNetworks/2026-Panama-Microsoft-IaC)
-**TeamId:** _(pendiente)_
-**URLs del equipo** (copiar de `terraform output`): frontend `https://...` · backend `https://...`
-**Recursos Azure:** Resource Group `rg-team-<N>` · App Insights `hackathon-copa-panama-2026-<N>-appi` · Apps `hackathon-copa-panama-2026-<N>-frontend` / `-api`
+**TeamId:** 35 (App Service Plan `plan-back-18`)
+**URLs del equipo** (copiar de `terraform output`): frontend `https://...` · backend `https://...` _(pendientes)_
+**Recursos Azure:** Resource Group `rg-team-35` · App Insights `hackathon-copa-panama-2026-35-appi` · Apps `hackathon-copa-panama-2026-35-frontend` / `-api` (confirmar los nombres reales en el portal)
 
 Código: `app/backend` (.NET 10) y `app/frontend` (React + Vite), rama `reto-azure`. Pasos de despliegue en [guias/despliegue-azure.md](guias/despliegue-azure.md).
 
@@ -41,6 +41,4 @@ Resultado: ✅ Resuelto · ❌ Refutada · 🟡 En análisis
 
 ## Respuestas para CTFd
 
-| Pregunta / flag | Respuesta | Evidencia (archivo, línea, query) |
-|---|---|---|
-| | | |
+El repo es público, así que las respuestas se guardan solo en local, en `docs/CTF-RESPUESTAS.local.md` (ignorado por git). La metodología y las consultas están en [PROGRESO.md](PROGRESO.md).

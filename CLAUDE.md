@@ -4,11 +4,12 @@ Repositorio del equipo (4 integrantes) para la Hackathon COPA 2026. Tracks: Micr
 
 ## Antes de trabajar en el reto
 
+0. **Sesión nueva: leer primero `docs/PROGRESO.md`.** Ahí está el estado actual (TeamId 35, errores E1–E6, consultas de Dynatrace y pendientes). Las respuestas del CTF están solo en local, en `docs/CTF-RESPUESTAS.local.md`.
 1. Leer `docs/README.md` y, sobre todo, `docs/contexto/02-charla2-operacion-bajo-presion.md`: describe el tipo de fallas que plantea el reto (API 500, variable de entorno, URL mal configurada, error de integración, CORS, errores en cascada en `/health` → `/health/deep` → `/api/status`).
 2. Guías destiladas: `docs/guias/reto-azure.md`, `docs/guias/reto-dynatrace.md` y `docs/guias/reglas-y-logistica.md`.
 3. Detalle: `docs/workshops/` (transcripciones W2–W6 con puntos clave; en `subtitulos/` están los subtítulos para buscar con grep) y `docs/contexto/` (PDFs oficiales convertidos).
 
-**Importante:** según W6, durante la competencia no se permite IA generativa externa. Claude sirve para preparar y estudiar, no para resolver el reto en vivo, salvo que la organización indique otra cosa.
+**Importante:** según W6, durante la competencia no se permite IA generativa externa. **Actualización: el equipo confirmó que la organización sí permite usar IA.** Aun así, las respuestas del CTF las envía siempre el usuario, y Claude nunca ingresa credenciales.
 
 ## Cómo trabajar
 
