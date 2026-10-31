@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="CopaPassenger.API/CopaPassenger.API.csproj" />
+  <Project Path="CopaPassenger.Application/CopaPassenger.Application.csproj" />
+  <Project Path="CopaPassenger.Domain/CopaPassenger.Domain.csproj" />
+  <Project Path="CopaPassenger.Infrastructure/CopaPassenger.Infrastructure.csproj" />
+  <Project Path="CopaPassenger.Tests/CopaPassenger.Tests.csproj" />
+</Solution>
