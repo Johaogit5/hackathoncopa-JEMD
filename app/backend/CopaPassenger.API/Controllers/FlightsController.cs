@@ -1,4 +1,5 @@
 using CopaPassenger.API.Models;
+using CopaPassenger.Application.Commands;
 using CopaPassenger.Application.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -24,6 +25,13 @@ public class FlightsController(IMediator mediator) : ControllerBase
         CancellationToken ct)
     {
         var result = await mediator.Send(new GetFlightsByRouteAndDateQuery(origin, destination, date), ct);
+        return Ok(ApiResponse<object>.Ok(result));
+    }
+
+    [HttpPost("create")]
+    public async Task<IActionResult> Create([FromBody] CreateFlightCommand command, CancellationToken ct)
+    {
+        var result = await mediator.Send(command, ct);
         return Ok(ApiResponse<object>.Ok(result));
     }
 }

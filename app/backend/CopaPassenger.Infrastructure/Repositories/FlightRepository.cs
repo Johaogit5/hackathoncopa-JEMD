@@ -21,4 +21,10 @@ public class FlightRepository(CopaDbContext db) : IFlightRepository
                 DateOnly.FromDateTime(f.ScheduledDeparture) == date)
             .OrderBy(f => f.ScheduledDeparture)
             .ToListAsync(ct);
+
+    public async Task AddAsync(Flight flight, CancellationToken ct = default)
+        => await db.Flights.AddAsync(flight, ct);
+
+    public async Task SaveChangesAsync(CancellationToken ct = default)
+        => await db.SaveChangesAsync(ct);
 }
