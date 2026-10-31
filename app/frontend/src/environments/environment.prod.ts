@@ -5,6 +5,6 @@ export const environment: Environment = {
   apiBaseUrl: 'https://api.copa-passenger.example.com',
   services: {
     FLIGHTS_ENDPOINT_URL: '/api/flights',
-    RESERVATIONS_ENDPOINT_URLX: '/api/reservations'
+    RESERVATIONS_ENDPOINT_URL: '/api/reservations'
   }
 };

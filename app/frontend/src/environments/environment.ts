@@ -9,6 +9,6 @@ export const environment: Environment = {
   apiBaseUrl: 'http://localhost:5300',
   services: {
     FLIGHTS_ENDPOINT_URL: '/api/flights',
-    RESERVATIONS_ENDPOINT_URLX: '/api/reservations'
+    RESERVATIONS_ENDPOINT_URL: '/api/reservations'
   }
 };
