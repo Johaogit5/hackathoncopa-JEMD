@@ -1,6 +1,6 @@
 # Reto Azure: guía rápida (App Service, Terraform, App Insights, KQL y troubleshooting)
 
-Fuentes: [W2](../workshops/w2-aplicaciones-modernas.md), [W3](../workshops/w3-devops-git-terraform.md), [W4](../workshops/w4-observabilidad-kql.md), [W5](../workshops/w5-troubleshooting.md), [Cápsulas](../contexto/01-capsulas-informativas-microsoft.md) y [Charla 2](../contexto/02-charla2-operacion-bajo-presion.md). El W1 (fundamentos de Azure) no tiene transcripción todavía.
+Fuentes: [W1](../workshops/w1-fundamentos-azure.md), [W2](../workshops/w2-aplicaciones-modernas.md), [W3](../workshops/w3-devops-git-terraform.md), [W4](../workshops/w4-observabilidad-kql.md), [W5](../workshops/w5-troubleshooting.md), [Cápsulas](../contexto/01-capsulas-informativas-microsoft.md) y [Charla 2](../contexto/02-charla2-operacion-bajo-presion.md).
 
 ## 1. Método de diagnóstico
 
@@ -124,3 +124,14 @@ terraform destroy
 - `.tf` = lo deseado · `.tfstate` = lo que Terraform sabe · Azure = la realidad. Corregir **en el `.tf`**, no a mano en el portal.
 - `.gitignore`: `.terraform/`, `*.tfstate`, `*.tfstate.backup`, `crash.log` y `*.tfvars` con secretos.
 - Los providers `Microsoft.Web` y `Microsoft.Storage` deben estar en estado *Registered*.
+
+## 7. Fundamentos de Azure (W1)
+
+- **IaaS / PaaS / SaaS:** en IaaS administras SO, parches, red virtual y apps; en PaaS solo el código; en SaaS solo identidades, usuarios, dispositivos y datos.
+- **Jerarquía:** Management Group → Suscripción (facturación) → Resource Group (ciclo de vida, RBAC, etiquetas) → Recurso.
+- **Regiones y zonas:** una región es un conjunto de centros de datos; las Availability Zones son centros de datos separados dentro de la región; los Region Pairs se separan al menos ~500 km.
+- **Cómputo:** VMs (IaaS) · Bastion (acceso por 443, sin abrir RDP 3389 ni SSH 22) · ACI / ACA / AKS (contenedores) · Functions (serverless por eventos) · App Service (PaaS para web y APIs).
+- **Storage:** redundancia LRS (1 datacenter) · ZRS (3 zonas) · GRS (+ región secundaria) · GZRS. Servicios: Blob, Files, Queues y Tables. Niveles de Blob: Hot, Cool (30 d), Cold (90 d) y Archive (180 d).
+- **Identidad:** Entra ID. Autenticación = quién eres; autorización = qué puedes hacer. También MFA y Acceso Condicional.
+- **Escalado:** vertical (más CPU/RAM al mismo servidor) vs. horizontal (más instancias). **Load Balancer** (capa 4) vs. **Application Gateway** (capa 7, con WAF).
+- **Terraform vs. Azure SDK:** Terraform para aprovisionar infraestructura; el SDK para operar recursos desde el código de la app.

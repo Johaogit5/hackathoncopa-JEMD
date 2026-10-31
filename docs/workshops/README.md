@@ -4,7 +4,7 @@ Cada archivo trae primero una sección **⚡ Puntos clave para el reto** y despu
 
 | # | Fecha | Tema | Reto | Material | Video |
 |---|---|---|---|---|---|
-| 1 | 11-ago | Fundamentos de Azure y Arquitectura Cloud | Azure | ⏳ Sin transcripción (YouTube bloqueó la descarga de subtítulos). Ver [Cápsulas](../contexto/01-capsulas-informativas-microsoft.md) | [▶](https://www.youtube.com/watch?v=vzvzVZH1Bw4) |
+| 1 | 11-ago | Fundamentos de Azure y Arquitectura Cloud | Azure | [w1](w1-fundamentos-azure.md) | [▶](https://www.youtube.com/watch?v=vzvzVZH1Bw4) |
 | 2 | 18-ago | Aplicaciones Modernas: APIs, Frontend y Backend | Azure | [w2](w2-aplicaciones-modernas.md) | [▶](https://www.youtube.com/watch?v=fy6m-dhzGhM) |
 | 3 | 25-ago | DevOps, Git, GitHub y Terraform | Azure | [w3](w3-devops-git-terraform.md) | [▶](https://www.youtube.com/watch?v=MBCEiNpzfa0) |
 | 4 | 1-sep | Observabilidad, Application Insights, Logs y KQL | Azure | [w4](w4-observabilidad-kql.md) | [▶](https://www.youtube.com/watch?v=4uqM6LG0rro) |
